@@ -35,12 +35,16 @@ class KnpUIpsum
         return implode("\n\n", $paragraphs);
     }
 
-    public function getSentences(int $count): string
+    public function getSentences(int $count = 1): string
     {
+        $count = $count < 1 ? 1 : $count;
         $sentences = array();
 
         for ($i = 0; $i < $count; $i++) {
-            $sentences[] = $this->words($this->gauss(16, 5.08), true);
+            $wordCount = $this->gauss(16, 5.08);
+            // avoid very short sentences
+            $wordCount  = $wordCount < 4 ? 4 : $wordCount;
+            $sentences[] = $this->getWords($wordCount, true);
         }
 
         $sentences = $this->punctuate($sentences);
@@ -58,24 +62,26 @@ class KnpUIpsum
      * @param  boolean $asArray whether an array or a string should be returned
      * @return mixed   string or array of generated lorem ipsum words
      */
-    public function words(int $count = 1, bool $asArray = false)
+    public function getWords(int $count = 1, bool $asArray = false)
     {
+        $count = $count < 1 ? 1 : $count;
+
         $words = array();
-        $word_count = 0;
+        $wordCount = 0;
         $wordList = $this->getWordList();
 
         // Shuffles and appends the word list to compensate for count
         // arguments that exceed the size of our vocabulary list
-        while ($word_count < $count) {
+        while ($wordCount < $count) {
             $shuffle = true;
             while ($shuffle) {
                 shuffle($wordList);
 
                 // Checks that the last word of the list and the first word of
                 // the list that's about to be appended are not the same
-                if (!$word_count || $words[$word_count - 1] != $wordList[0]) {
+                if (!$wordCount || $words[$wordCount - 1] != $wordList[0]) {
                     $words = array_merge($words, $wordList);
-                    $word_count = count($words);
+                    $wordCount = count($words);
                     $shuffle = false;
                 }
             }
@@ -150,16 +156,43 @@ class KnpUIpsum
      */
     private function addJoy(string $wordsString): string
     {
+        $unicornKey = null;
         if ($this->unicornsAreReal && false === stripos($wordsString, 'unicorn')) {
             $words = explode(' ', $wordsString);
-            $words[array_rand($words)] = 'unicorn';
+            $unicornKey = array_rand($words);
+            $words[$unicornKey] = 'unicorn';
+
 
             $wordsString = implode(' ', $words);
         }
 
-        while (substr_count(strtolower($wordsString), strtolower('sunshine')) < $this->minSunshine) {
+        while (substr_count(strtolower($wordsString), 'sunshine') < $this->minSunshine) {
             $words = explode(' ', $wordsString);
-            $words[array_rand($words)] = 'sunshine';
+
+            // if there simply are not enough words, abort immediately
+            if (count($words) < ($this->minSunshine + 1)) {
+                break;
+            }
+
+            $key = null;
+            while (null === $key) {
+                $key = array_rand($words);
+
+                // don't override the unicorn
+                if ($unicornKey === $key) {
+                    $key = null;
+
+                    continue;
+                }
+
+                // if unicorn occurred naturally, don't override it
+                if (null === $unicornKey && 0 === stripos($words[$key], 'unicorn')) {
+                    $key = null;
+
+                    continue;
+                }
+            }
+            $words[$key] = 'sunshine';
 
             $wordsString = implode(' ', $words);
         }
