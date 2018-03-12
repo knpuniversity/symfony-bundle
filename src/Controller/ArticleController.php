@@ -19,9 +19,12 @@ class ArticleController extends AbstractController
      */
     private $isDebug;
 
-    public function __construct(bool $isDebug)
+    private $knpUIpsum;
+
+    public function __construct(bool $isDebug, KnpUIpsum $knpUIpsum)
     {
         $this->isDebug = $isDebug;
+        $this->knpUIpsum = $knpUIpsum;
     }
 
     /**
@@ -35,7 +38,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/news/{slug}", name="article_show")
      */
-    public function show($slug, MarkdownHelper $markdownHelper, SlackClient $slack, KnpUIpsum $knpUIpsum)
+    public function show($slug, MarkdownHelper $markdownHelper, SlackClient $slack)
     {
         if ($slug === 'khaaaaaan') {
             $slack->sendMessage('Kahn', 'Ah, Kirk, my old friend...');
@@ -47,7 +50,7 @@ class ArticleController extends AbstractController
             'I like bacon too! Buy some from my site! bakinsomebacon.com',
         ];
 
-        $articleContent = $knpUIpsum->getParagraphs();
+        $articleContent = $this->knpUIpsum->getParagraphs();
 
         $articleContent = $markdownHelper->parse($articleContent);
 
