@@ -1,0 +1,40 @@
+{
+    "steps": [
+        {
+            "id": "start",
+            "name": "start",
+            "description": null
+        },
+        {
+            "id": "namespace-move-into-namespace",
+            "name": "Namespace: Move into namespace",
+            "description": null
+        },
+        {
+            "id": "namespace-delete-me",
+            "name": "Namespace: delete me",
+            "description": null
+        },
+        {
+            "id": "namespace-autoload-namespace",
+            "name": "Namespace: autoload namespace",
+            "description": null
+        },
+        {
+            "id": "namespace-register-service",
+            "name": "Namespace: Register service",
+            "description": null
+        },
+        {
+            "id": "bundle-create-bundle",
+            "name": "Bundle: Create bundle",
+            "description": null
+        },
+        {
+            "id": "bundle-add-empty-extension-class",
+            "name": "Bundle: Add empty extension class",
+            "description": null
+        }
+    ],
+    "sha": "4270d67ef14100e9a42267cbdc5d43fbe1bdb00f"
+}

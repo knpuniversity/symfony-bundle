@@ -1,0 +1,12 @@
+diff --git a/composer.json b/composer.json
+index 0a3bbbf..11d01e3 100644
+--- a/composer.json
++++ b/composer.json
+@@ -36,6 +36,7 @@
+     },
+     "autoload": {
+         "psr-4": {
++            "KnpU\\LoremIpsumBundle\\": "lib/LoremIpsumBundle/src/",
+             "App\\": "src/"
+         }
+     },

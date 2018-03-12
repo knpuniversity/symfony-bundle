@@ -1,0 +1,26 @@
+diff --git a/config/bundles.php b/config/bundles.php
+index de7f774..e94462b 100644
+--- a/config/bundles.php
++++ b/config/bundles.php
+@@ -12,4 +12,5 @@ return [
+     Http\HttplugBundle\HttplugBundle::class => ['all' => true],
+     Nexy\SlackBundle\NexySlackBundle::class => ['all' => true],
+     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
++    KnpU\LoremIpsumBundle\KnpULoremIpsumBundle::class => ['all' => true],
+ ];
+diff --git a/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php b/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
+new file mode 100644
+index 0000000..25d457c
+--- /dev/null
++++ b/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
+@@ -0,0 +1,10 @@
++<?php
++
++namespace KnpU\LoremIpsumBundle;
++
++use Symfony\Component\HttpKernel\Bundle\Bundle;
++
++class KnpULoremIpsumBundle extends Bundle
++{
++
++}

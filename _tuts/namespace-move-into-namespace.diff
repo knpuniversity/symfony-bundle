@@ -1,0 +1,28 @@
+diff --git a/src/Service/KnpUIpsum.php b/lib/LoremIpsumBundle/src/KnpUIpsum.php
+similarity index 99%
+rename from src/Service/KnpUIpsum.php
+rename to lib/LoremIpsumBundle/src/KnpUIpsum.php
+index d7ace6b..f3babed 100644
+--- a/src/Service/KnpUIpsum.php
++++ b/lib/LoremIpsumBundle/src/KnpUIpsum.php
+@@ -1,6 +1,6 @@
+ <?php
+ 
+-namespace App\Service;
++namespace KnpU\LoremIpsumBundle;
+ 
+ /**
+  * Generate random "lorem ipsum" text KnpUniversity style!
+diff --git a/src/Controller/ArticleController.php b/src/Controller/ArticleController.php
+index c5c34d1..b45a6a9 100644
+--- a/src/Controller/ArticleController.php
++++ b/src/Controller/ArticleController.php
+@@ -2,7 +2,7 @@
+ 
+ namespace App\Controller;
+ 
+-use App\Service\KnpUIpsum;
++use KnpU\LoremIpsumBundle\KnpUIpsum;
+ use App\Service\MarkdownHelper;
+ use App\Service\SlackClient;
+ use Psr\Log\LoggerInterface;

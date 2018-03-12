@@ -1,0 +1,10 @@
+diff --git a/config/services.yaml b/config/services.yaml
+index 4754e66..1dece0a 100644
+--- a/config/services.yaml
++++ b/config/services.yaml
+@@ -34,3 +34,5 @@ services:
+ 
+     # add more service definitions when explicit configuration is needed
+     # please note that last definitions always *replace* previous ones
++
++    KnpU\LoremIpsumBundle\KnpUIpsum: ~
