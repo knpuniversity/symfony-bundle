@@ -9,6 +9,16 @@ namespace App\Service;
  */
 class KnpUIpsum
 {
+    private $unicornsAreReal;
+
+    private $minSunshine;
+
+    public function __construct(bool $unicornsAreReal = true, $minSunshine = 3)
+    {
+        $this->unicornsAreReal = $unicornsAreReal;
+        $this->minSunshine = $minSunshine;
+    }
+
     /**
      * Returns several paragraphs of random ipsum text.
      *
@@ -19,7 +29,7 @@ class KnpUIpsum
     {
         $paragraphs = array();
         for ($i = 0; $i < $count; $i++) {
-            $paragraphs[] = $this->getSentences($this->gauss(5.8, 1.93));
+            $paragraphs[] = $this->addJoy($this->getSentences($this->gauss(5.8, 1.93)));
         }
 
         return implode("\n\n", $paragraphs);
@@ -30,7 +40,7 @@ class KnpUIpsum
         $sentences = array();
 
         for ($i = 0; $i < $count; $i++) {
-            $sentences[] = $this->words($this->gauss(24.46, 5.08), true);
+            $sentences[] = $this->words($this->gauss(16, 5.08), true);
         }
 
         $sentences = $this->punctuate($sentences);
@@ -129,6 +139,32 @@ class KnpUIpsum
         }
 
         return $sentences;
+    }
+
+    /**
+     * Guarantee that unicorns and sunshine exist in the text... unless the
+     * person using this class is a grouch and turned that setting off! Boo to you!
+     *
+     * @param string $wordsString
+     * @return string
+     */
+    private function addJoy(string $wordsString): string
+    {
+        if ($this->unicornsAreReal && false === stripos($wordsString, 'unicorn')) {
+            $words = explode(' ', $wordsString);
+            $words[array_rand($words)] = 'unicorn';
+
+            $wordsString = implode(' ', $words);
+        }
+
+        while (substr_count(strtolower($wordsString), strtolower('sunshine')) < $this->minSunshine) {
+            $words = explode(' ', $wordsString);
+            $words[array_rand($words)] = 'sunshine';
+
+            $wordsString = implode(' ', $words);
+        }
+
+        return $wordsString;
     }
 
     private function getWordList(): array
