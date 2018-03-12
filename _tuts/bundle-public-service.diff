@@ -1,0 +1,13 @@
+diff --git a/lib/LoremIpsumBundle/src/Resources/config/services.xml b/lib/LoremIpsumBundle/src/Resources/config/services.xml
+index 3d15d53..fc8b7c5 100644
+--- a/lib/LoremIpsumBundle/src/Resources/config/services.xml
++++ b/lib/LoremIpsumBundle/src/Resources/config/services.xml
+@@ -5,7 +5,7 @@
+         http://symfony.com/schema/dic/services/services-1.0.xsd">
+ 
+     <services>
+-        <service id="knpu_lorem_ipsum.knp_uipsum" class="KnpU\LoremIpsumBundle\KnpUIpsum" />
++        <service id="knpu_lorem_ipsum.knp_uipsum" class="KnpU\LoremIpsumBundle\KnpUIpsum" public="true" />
+ 
+         <service id="KnpU\LoremIpsumBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knp_uipsum" />
+     </services>

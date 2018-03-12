@@ -29,7 +29,27 @@
             "id": "bundle-add-empty-extension-class",
             "name": "Bundle: Add empty extension class",
             "description": null
+        },
+        {
+            "id": "bundle-load-services-xml",
+            "name": "Bundle: Load services.xml",
+            "description": null
+        },
+        {
+            "id": "bundle-use-best-practice-service-id",
+            "name": "Bundle: Use best-practice service id",
+            "description": null
+        },
+        {
+            "id": "bundle-add-autowiring-alias",
+            "name": "Bundle: Add autowiring alias",
+            "description": null
+        },
+        {
+            "id": "bundle-public-service",
+            "name": "Bundle: Public service",
+            "description": null
         }
     ],
-    "sha": "4270d67ef14100e9a42267cbdc5d43fbe1bdb00f"
+    "sha": "43069949ee50b1179de2ed6bbc1d0c401ec0da05"
 }

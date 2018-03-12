@@ -14,7 +14,7 @@ index d7ace6b..f3babed 100644
  /**
   * Generate random "lorem ipsum" text KnpUniversity style!
 diff --git a/src/Controller/ArticleController.php b/src/Controller/ArticleController.php
-index c5c34d1..b45a6a9 100644
+index a2758a7..6c372e1 100644
 --- a/src/Controller/ArticleController.php
 +++ b/src/Controller/ArticleController.php
 @@ -2,7 +2,7 @@

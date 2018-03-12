@@ -1,0 +1,48 @@
+diff --git a/config/services.yaml b/config/services.yaml
+index 1dece0a..4754e66 100644
+--- a/config/services.yaml
++++ b/config/services.yaml
+@@ -34,5 +34,3 @@ services:
+ 
+     # add more service definitions when explicit configuration is needed
+     # please note that last definitions always *replace* previous ones
+-
+-    KnpU\LoremIpsumBundle\KnpUIpsum: ~
+diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+index adadd2c..ed466cd 100644
+--- a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
++++ b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+@@ -2,13 +2,16 @@
+ 
+ namespace KnpU\LoremIpsumBundle\DependencyInjection;
+ 
++use Symfony\Component\Config\FileLocator;
+ use Symfony\Component\DependencyInjection\ContainerBuilder;
++use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+ 
+ class KnpULoremIpsumExtension extends Extension
+ {
+     public function load(array $configs, ContainerBuilder $container)
+     {
+-        var_dump('We\'re alive!');die;
++        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
++        $loader->load('services.xml');
+     }
+ }
+diff --git a/lib/LoremIpsumBundle/src/Resources/config/services.xml b/lib/LoremIpsumBundle/src/Resources/config/services.xml
+new file mode 100644
+index 0000000..5d1cdca
+--- /dev/null
++++ b/lib/LoremIpsumBundle/src/Resources/config/services.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8" ?>
++<container xmlns="http://symfony.com/schema/dic/services"
++    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++    xsi:schemaLocation="http://symfony.com/schema/dic/services
++        http://symfony.com/schema/dic/services/services-1.0.xsd">
++
++    <services>
++        <service id="KnpU\LoremIpsumBundle\KnpUIpsum" />
++    </services>
++</container>
