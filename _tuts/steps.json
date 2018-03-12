@@ -11,11 +11,6 @@
             "description": null
         },
         {
-            "id": "namespace-delete-me",
-            "name": "Namespace: delete me",
-            "description": null
-        },
-        {
             "id": "namespace-autoload-namespace",
             "name": "Namespace: autoload namespace",
             "description": null
