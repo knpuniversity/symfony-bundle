@@ -1,37 +1,26 @@
 diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php b/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
-index 5088519..ee4e677 100644
+index 5088519..b964e30 100644
 --- a/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
 +++ b/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
 @@ -15,6 +15,7 @@ class Configuration implements ConfigurationInterface
              ->children()
                  ->booleanNode('unicorns_are_real')->defaultTrue()->end()
                  ->integerNode('min_sunshine')->defaultValue(3)->end()
-+                ->scalarNode('word_provider')->defaultValue('knpu_lorem_ipsum.knpu_word_provider')->end()
++                ->scalarNode('word_provider')->defaultNull()->end()
              ->end()
          ;
  
 diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
-index 0b4ae46..32c51f5 100644
+index 0b4ae46..4e0954b 100644
 --- a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
 +++ b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
-@@ -18,6 +18,7 @@ class KnpULoremIpsumExtension extends Extension
+@@ -18,6 +18,9 @@ class KnpULoremIpsumExtension extends Extension
          $config = $this->processConfiguration($configuration, $configs);
  
          $definition = $container->getDefinition('knpu_lorem_ipsum.knpu_ipsum');
-+        $definition->setArgument(0, $config['word_provider']);
++        if (null !== $config['word_provider']) {
++            $definition->setArgument(0, $config['word_provider']);
++        }
          $definition->setArgument(1, $config['unicorns_are_real']);
          $definition->setArgument(2, $config['min_sunshine']);
      }
-diff --git a/lib/LoremIpsumBundle/src/Resources/config/services.xml b/lib/LoremIpsumBundle/src/Resources/config/services.xml
-index 473d683..0adf03d 100644
---- a/lib/LoremIpsumBundle/src/Resources/config/services.xml
-+++ b/lib/LoremIpsumBundle/src/Resources/config/services.xml
-@@ -6,7 +6,7 @@
- 
-     <services>
-         <service id="knpu_lorem_ipsum.knpu_ipsum" class="KnpU\LoremIpsumBundle\KnpUIpsum" public="true">
--            <argument type="service" id="knpu_lorem_ipsum.knpu_word_provider" />
-+            <argument /> <!-- argument provider service: passed dynamically -->
-         </service>
- 
-         <service id="knpu_lorem_ipsum.knpu_word_provider" class="KnpU\LoremIpsumBundle\KnpUWordProvider" />
