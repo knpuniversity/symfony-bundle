@@ -1,7 +1,7 @@
-# Stellar Development with Symfony 4
+# Creating a Reusable (& Amazing) Symfony Bundle
 
 Well hi there! This repository holds the code and script
-for the [Stellar Development with Symfony 4](https://knpuniversity.com/screencast/symfony4) course on KnpUniversity.
+for the [Creating a Reusable (& Amazing) Symfony Bundle](https://knpuniversity.com/screencast/symfony-bundle) course on KnpUniversity.
 
 ## Setup
 
@@ -33,20 +33,6 @@ php bin/console server:run
 Now check out the site at `http://localhost:8000`
 
 Have fun!
-
-## Somebody Has To
-
-Somebody has to go polish the stars,
-They're looking a little bit dull.
-Somebody has to go polish the stars,
-For the eagles and starlings and gulls
-Have all been complaining they're tarnished and worn,
-They say they want new ones we cannot afford.
-So please get your rags
-And your polishing jars,
-Somebody has to go polish the stars.
-
-Shel Silverstein
 
 ## Have Ideas, Feedback or an Issue?
 
