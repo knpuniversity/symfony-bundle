@@ -1,0 +1,64 @@
+diff --git a/LoremIpsumBundle/.gitignore b/LoremIpsumBundle/.gitignore
+index 72bd9c9..0124da8 100644
+--- a/LoremIpsumBundle/.gitignore
++++ b/LoremIpsumBundle/.gitignore
+@@ -1,3 +1,4 @@
+ /vendor/
+ composer.lock
+ phpunit.xml
++/tests/cache
+diff --git a/LoremIpsumBundle/tests/FunctionalTest.php b/LoremIpsumBundle/tests/FunctionalTest.php
+index 5acfae1..2e388d9 100644
+--- a/LoremIpsumBundle/tests/FunctionalTest.php
++++ b/LoremIpsumBundle/tests/FunctionalTest.php
+@@ -2,38 +2,36 @@
+ 
+ namespace KnpU\LoremIpsumBundle\Tests;
+ 
++use KnpU\LoremIpsumBundle\KnpUIpsum;
++use KnpU\LoremIpsumBundle\KnpULoremIpsumBundle;
+ use PHPUnit\Framework\TestCase;
+-use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+ use Symfony\Component\Config\Loader\LoaderInterface;
+-use Symfony\Component\DependencyInjection\ContainerBuilder;
+-use Symfony\Component\HttpKernel\Bundle\BundleInterface;
+ use Symfony\Component\HttpKernel\Kernel;
+-use Symfony\Component\Routing\RouteCollectionBuilder;
+ 
+ class FunctionalTest extends TestCase
+ {
+     public function testServiceWiring()
+     {
++        $kernel = new KnpULoremIpsumTestingKernel('test', true);
++        $kernel->boot();
++        $container = $kernel->getContainer();
+ 
++        $ipsum = $container->get('knpu_lorem_ipsum.knpu_ipsum');
++        $this->assertInstanceOf(KnpUIpsum::class, $ipsum);
++        $this->assertInternalType('string', $ipsum->getParagraphs());
+     }
+ }
+ 
+ class KnpULoremIpsumTestingKernel extends Kernel
+ {
+-    use MicroKernelTrait;
+-
+     public function registerBundles()
+     {
+-
++        return [
++            new KnpULoremIpsumBundle(),
++        ];
+     }
+ 
+-    protected function configureRoutes(RouteCollectionBuilder $routes)
++    public function registerContainerConfiguration(LoaderInterface $loader)
+     {
+-
+-    }
+-
+-    protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
+-    {
+-
+     }
+ }

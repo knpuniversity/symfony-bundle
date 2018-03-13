@@ -119,7 +119,82 @@
             "id": "provider-wordproviderinterface",
             "name": "Provider: WordProviderInterface",
             "description": null
+        },
+        {
+            "id": "extract-move-into-root",
+            "name": "Extract: Move into root",
+            "description": null
+        },
+        {
+            "id": "extract-composer-init",
+            "name": "Extract: composer init",
+            "description": null
+        },
+        {
+            "id": "extract-add-php-version",
+            "name": "Extract: Add php version",
+            "description": null
+        },
+        {
+            "id": "extract-move-autoload-rules",
+            "name": "Extract: Move autoload rules",
+            "description": null
+        },
+        {
+            "id": "extract-require-package",
+            "name": "Extract: require package",
+            "description": null
+        },
+        {
+            "id": "tests-fix-existing-test",
+            "name": "Tests: Fix existing test",
+            "description": null
+        },
+        {
+            "id": "tests-move-test-into-bundle",
+            "name": "Tests: Move test into bundle",
+            "description": null
+        },
+        {
+            "id": "tests-update-namespace-autoloading",
+            "name": "Tests: Update namespace & autoloading",
+            "description": null
+        },
+        {
+            "id": "tests-install-phpunit-bridge",
+            "name": "Tests: Install phpunit bridge",
+            "description": null
+        },
+        {
+            "id": "tests-add-phpunit-xml-dist",
+            "name": "Tests: Add phpunit.xml.dist",
+            "description": null
+        },
+        {
+            "id": "tests-add-dependencies",
+            "name": "Tests: Add dependencies",
+            "description": null
+        },
+        {
+            "id": "functional-bootstrap-functionaltest",
+            "name": "Functional: Bootstrap FunctionalTest",
+            "description": null
+        },
+        {
+            "id": "functional-basic-smoke-test",
+            "name": "Functional: Basic smoke test",
+            "description": null
+        },
+        {
+            "id": "functional-test-configuration",
+            "name": "Functional: Test configuration",
+            "description": null
+        },
+        {
+            "id": "functional-fix-cache-problem",
+            "name": "Functional: Fix cache problem",
+            "description": null
         }
     ],
-    "sha": "5df92d20ef01c32f60b9c86712f971165ff2fc8c"
+    "sha": "d1451bd2b62534338e0fe46fe2a2a0aba27d1a4e"
 }

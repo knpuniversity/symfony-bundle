@@ -1,0 +1,34 @@
+diff --git a/LoremIpsumBundle/tests/FunctionalTest.php b/LoremIpsumBundle/tests/FunctionalTest.php
+index 922e076..1a9a838 100644
+--- a/LoremIpsumBundle/tests/FunctionalTest.php
++++ b/LoremIpsumBundle/tests/FunctionalTest.php
+@@ -8,10 +8,17 @@ use KnpU\LoremIpsumBundle\WordProviderInterface;
+ use PHPUnit\Framework\TestCase;
+ use Symfony\Component\Config\Loader\LoaderInterface;
+ use Symfony\Component\DependencyInjection\ContainerBuilder;
++use Symfony\Component\Filesystem\Filesystem;
+ use Symfony\Component\HttpKernel\Kernel;
+ 
+ class FunctionalTest extends TestCase
+ {
++    protected function setUp()
++    {
++        $fs = new Filesystem();
++        $fs->remove(__DIR__.'/cache');
++    }
++
+     public function testServiceWiring()
+     {
+         $kernel = new KnpULoremIpsumTestingKernel();
+@@ -62,6 +69,11 @@ class KnpULoremIpsumTestingKernel extends Kernel
+             $container->loadFromExtension('knpu_lorem_ipsum', $this->knpUIpsumConfig);
+         });
+     }
++
++    public function getCacheDir()
++    {
++        return __DIR__.'/cache';
++    }
+ }
+ 
+ class StubWordList implements WordProviderInterface

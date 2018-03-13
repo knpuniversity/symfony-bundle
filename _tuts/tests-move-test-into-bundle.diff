@@ -1,0 +1,4 @@
+diff --git a/tests/Service/KnpUIpsumTest.php b/LoremIpsumBundle/tests/KnpUIpsumTest.php
+similarity index 100%
+rename from tests/Service/KnpUIpsumTest.php
+rename to LoremIpsumBundle/tests/KnpUIpsumTest.php

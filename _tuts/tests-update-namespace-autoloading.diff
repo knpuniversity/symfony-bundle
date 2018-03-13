@@ -1,0 +1,27 @@
+diff --git a/LoremIpsumBundle/composer.json b/LoremIpsumBundle/composer.json
+index f7dd429..b2738fd 100644
+--- a/LoremIpsumBundle/composer.json
++++ b/LoremIpsumBundle/composer.json
+@@ -16,5 +16,10 @@
+         "psr-4": {
+             "KnpU\\LoremIpsumBundle\\": "src/"
+         }
++    },
++    "autoload-dev": {
++        "psr-4": {
++            "KnpU\\LoremIpsumBundle\\Tests\\": "tests/"
++        }
+     }
+ }
+diff --git a/LoremIpsumBundle/tests/KnpUIpsumTest.php b/LoremIpsumBundle/tests/KnpUIpsumTest.php
+index fb82db7..0fa1f52 100644
+--- a/LoremIpsumBundle/tests/KnpUIpsumTest.php
++++ b/LoremIpsumBundle/tests/KnpUIpsumTest.php
+@@ -1,6 +1,6 @@
+ <?php
+ 
+-namespace App\Tests\Service;
++namespace KnpU\LoremIpsumBundle\Tests;
+ 
+ use KnpU\LoremIpsumBundle\KnpUIpsum;
+ use KnpU\LoremIpsumBundle\KnpUWordProvider;

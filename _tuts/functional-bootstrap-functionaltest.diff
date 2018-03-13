@@ -1,0 +1,45 @@
+diff --git a/LoremIpsumBundle/tests/FunctionalTest.php b/LoremIpsumBundle/tests/FunctionalTest.php
+new file mode 100644
+index 0000000..5acfae1
+--- /dev/null
++++ b/LoremIpsumBundle/tests/FunctionalTest.php
+@@ -0,0 +1,39 @@
++<?php
++
++namespace KnpU\LoremIpsumBundle\Tests;
++
++use PHPUnit\Framework\TestCase;
++use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
++use Symfony\Component\Config\Loader\LoaderInterface;
++use Symfony\Component\DependencyInjection\ContainerBuilder;
++use Symfony\Component\HttpKernel\Bundle\BundleInterface;
++use Symfony\Component\HttpKernel\Kernel;
++use Symfony\Component\Routing\RouteCollectionBuilder;
++
++class FunctionalTest extends TestCase
++{
++    public function testServiceWiring()
++    {
++
++    }
++}
++
++class KnpULoremIpsumTestingKernel extends Kernel
++{
++    use MicroKernelTrait;
++
++    public function registerBundles()
++    {
++
++    }
++
++    protected function configureRoutes(RouteCollectionBuilder $routes)
++    {
++
++    }
++
++    protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
++    {
++
++    }
++}

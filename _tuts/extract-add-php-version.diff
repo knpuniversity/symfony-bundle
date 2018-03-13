@@ -1,0 +1,13 @@
+diff --git a/LoremIpsumBundle/composer.json b/LoremIpsumBundle/composer.json
+index 56c318e..6a4ee92 100644
+--- a/LoremIpsumBundle/composer.json
++++ b/LoremIpsumBundle/composer.json
+@@ -9,5 +9,7 @@
+             "email": "ryan@knpuniversity.com"
+         }
+     ],
+-    "require": {}
++    "require": {
++        "php": "^7.1.3"
++    }
+ }

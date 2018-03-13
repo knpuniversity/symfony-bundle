@@ -1,0 +1,26 @@
+diff --git a/LoremIpsumBundle/.gitignore b/LoremIpsumBundle/.gitignore
+new file mode 100644
+index 0000000..57872d0
+--- /dev/null
++++ b/LoremIpsumBundle/.gitignore
+@@ -0,0 +1 @@
++/vendor/
+diff --git a/LoremIpsumBundle/composer.json b/LoremIpsumBundle/composer.json
+new file mode 100644
+index 0000000..56c318e
+--- /dev/null
++++ b/LoremIpsumBundle/composer.json
+@@ -0,0 +1,13 @@
++{
++    "name": "knpuniversity/lorem-ipsum-bundle",
++    "description": "Happy lorem ipsum",
++    "type": "symfony-bundle",
++    "license": "MIT",
++    "authors": [
++        {
++            "name": "Ryan Weaver",
++            "email": "ryan@knpuniversity.com"
++        }
++    ],
++    "require": {}
++}

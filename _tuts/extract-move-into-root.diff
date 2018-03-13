@@ -1,0 +1,28 @@
+diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php b/LoremIpsumBundle/src/DependencyInjection/Configuration.php
+similarity index 100%
+rename from lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
+rename to LoremIpsumBundle/src/DependencyInjection/Configuration.php
+diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php b/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+similarity index 100%
+rename from lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+rename to LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+diff --git a/lib/LoremIpsumBundle/src/KnpUIpsum.php b/LoremIpsumBundle/src/KnpUIpsum.php
+similarity index 100%
+rename from lib/LoremIpsumBundle/src/KnpUIpsum.php
+rename to LoremIpsumBundle/src/KnpUIpsum.php
+diff --git a/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php b/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
+similarity index 100%
+rename from lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
+rename to LoremIpsumBundle/src/KnpULoremIpsumBundle.php
+diff --git a/lib/LoremIpsumBundle/src/KnpUWordProvider.php b/LoremIpsumBundle/src/KnpUWordProvider.php
+similarity index 100%
+rename from lib/LoremIpsumBundle/src/KnpUWordProvider.php
+rename to LoremIpsumBundle/src/KnpUWordProvider.php
+diff --git a/lib/LoremIpsumBundle/src/Resources/config/services.xml b/LoremIpsumBundle/src/Resources/config/services.xml
+similarity index 100%
+rename from lib/LoremIpsumBundle/src/Resources/config/services.xml
+rename to LoremIpsumBundle/src/Resources/config/services.xml
+diff --git a/lib/LoremIpsumBundle/src/WordProviderInterface.php b/LoremIpsumBundle/src/WordProviderInterface.php
+similarity index 100%
+rename from lib/LoremIpsumBundle/src/WordProviderInterface.php
+rename to LoremIpsumBundle/src/WordProviderInterface.php

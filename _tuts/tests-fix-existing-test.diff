@@ -1,0 +1,40 @@
+diff --git a/tests/Service/KnpUIpsumTest.php b/tests/Service/KnpUIpsumTest.php
+index 4b477e3..fb82db7 100644
+--- a/tests/Service/KnpUIpsumTest.php
++++ b/tests/Service/KnpUIpsumTest.php
+@@ -2,14 +2,15 @@
+ 
+ namespace App\Tests\Service;
+ 
+-use App\Service\KnpUIpsum;
++use KnpU\LoremIpsumBundle\KnpUIpsum;
++use KnpU\LoremIpsumBundle\KnpUWordProvider;
+ use PHPUnit\Framework\TestCase;
+ 
+ class KnpUIpsumTest extends TestCase
+ {
+     public function testGetWords()
+     {
+-        $ipsum = new KnpUIpsum();
++        $ipsum = new KnpUIpsum(new KnpUWordProvider());
+ 
+         $words = $ipsum->getWords(1);
+         $this->assertInternalType('string', $words);
+@@ -24,7 +25,7 @@ class KnpUIpsumTest extends TestCase
+ 
+     public function testGetSentences()
+     {
+-        $ipsum = new KnpUIpsum();
++        $ipsum = new KnpUIpsum(new KnpUWordProvider());
+ 
+         $text = $ipsum->getSentences(3);
+         $this->assertEquals(3, substr_count($text, '.'));
+@@ -41,7 +42,7 @@ class KnpUIpsumTest extends TestCase
+         // weird: using a loop because the results are random, and so
+         // they may pass several times by luck
+         for ($i = 0; $i < 100; $i++) {
+-            $ipsum = new KnpUIpsum();
++            $ipsum = new KnpUIpsum(new KnpUWordProvider());
+             $text = $ipsum->getParagraphs(3);
+             $paragraphs = explode("\n\n", $text);
+             $this->assertCount(3, $paragraphs);

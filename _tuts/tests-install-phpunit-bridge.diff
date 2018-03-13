@@ -1,0 +1,21 @@
+diff --git a/LoremIpsumBundle/.gitignore b/LoremIpsumBundle/.gitignore
+index 57872d0..3a9875b 100644
+--- a/LoremIpsumBundle/.gitignore
++++ b/LoremIpsumBundle/.gitignore
+@@ -1 +1,2 @@
+ /vendor/
++composer.lock
+diff --git a/LoremIpsumBundle/composer.json b/LoremIpsumBundle/composer.json
+index b2738fd..85cb4b2 100644
+--- a/LoremIpsumBundle/composer.json
++++ b/LoremIpsumBundle/composer.json
+@@ -12,6 +12,9 @@
+     "require": {
+         "php": "^7.1.3"
+     },
++    "require-dev": {
++        "symfony/phpunit-bridge": "^4.0"
++    },
+     "autoload": {
+         "psr-4": {
+             "KnpU\\LoremIpsumBundle\\": "src/"
