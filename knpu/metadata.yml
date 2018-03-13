@@ -1,8 +1,8 @@
 chapters:
     - bundle-directory
     - bundle-services
-    - service-aliases
-    - service-configuration
+    - config-extension-alias
+    - bundle-configuration
     - interface-alias
     - extracting-bundle
     - testing
