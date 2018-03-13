@@ -21,7 +21,7 @@ index 3562dbf..b1ca039 100644
 +    }
  }
 diff --git a/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php b/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
-index 25d457c..352c3c8 100644
+index 25d457c..e98a59f 100644
 --- a/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
 +++ b/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
 @@ -2,9 +2,20 @@
@@ -39,7 +39,7 @@ index 25d457c..352c3c8 100644
 +    public function getContainerExtension()
 +    {
 +        if (null === $this->extension) {
-+            return new KnpULoremIpsumExtension();
++            $this->extension = new KnpULoremIpsumExtension();
 +        }
  
 +        return $this->extension;

@@ -12,7 +12,7 @@ index 5d94be5..57f9ce3 100644
          $definition->setArgument(1, $config['unicorns_are_real']);
          $definition->setArgument(2, $config['min_sunshine']);
 diff --git a/lib/LoremIpsumBundle/src/Resources/config/services.xml b/lib/LoremIpsumBundle/src/Resources/config/services.xml
-index 473d683..3f2d21c 100644
+index c8f047f..b1eeba1 100644
 --- a/lib/LoremIpsumBundle/src/Resources/config/services.xml
 +++ b/lib/LoremIpsumBundle/src/Resources/config/services.xml
 @@ -6,11 +6,12 @@
@@ -25,7 +25,7 @@ index 473d683..3f2d21c 100644
  
          <service id="knpu_lorem_ipsum.knpu_word_provider" class="KnpU\LoremIpsumBundle\KnpUWordProvider" />
  
-+        <service id="knpu_lorem_ipsum.word_provider" alias="knpu_lorem_ipsum.knpu_word_provider" />
-         <service id="KnpU\LoremIpsumBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum" />
++        <service id="knpu_lorem_ipsum.word_provider" alias="knpu_lorem_ipsum.knpu_word_provider" public="false" />
+         <service id="KnpU\LoremIpsumBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum" public="false" />
      </services>
  </container>

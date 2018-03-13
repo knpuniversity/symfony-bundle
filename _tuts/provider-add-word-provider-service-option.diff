@@ -1,11 +1,11 @@
 diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php b/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
-index 5088519..b964e30 100644
+index f1fc321..22880c3 100644
 --- a/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
 +++ b/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
 @@ -15,6 +15,7 @@ class Configuration implements ConfigurationInterface
              ->children()
-                 ->booleanNode('unicorns_are_real')->defaultTrue()->end()
-                 ->integerNode('min_sunshine')->defaultValue(3)->end()
+                 ->booleanNode('unicorns_are_real')->defaultTrue()->info('Whether or not you believe in unicorns')->end()
+                 ->integerNode('min_sunshine')->defaultValue(3)->info('How much do you like sunshine?')->end()
 +                ->scalarNode('word_provider')->defaultNull()->end()
              ->end()
          ;

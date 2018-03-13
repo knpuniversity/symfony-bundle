@@ -91,6 +91,11 @@
             "description": null
         },
         {
+            "id": "configuration-add-info-to-nodes",
+            "name": "Configuration: add info to nodes",
+            "description": null
+        },
+        {
             "id": "provider-create-separate-provider-class",
             "name": "Provider: Create separate provider class",
             "description": null
@@ -196,5 +201,5 @@
             "description": null
         }
     ],
-    "sha": "d1451bd2b62534338e0fe46fe2a2a0aba27d1a4e"
+    "sha": "75d61eb1c059f43bba1638514a40f43e5868578e"
 }

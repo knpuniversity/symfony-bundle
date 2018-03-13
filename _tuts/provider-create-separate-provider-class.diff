@@ -325,7 +325,7 @@ index 0000000..7d5176a
 +}
 \ No newline at end of file
 diff --git a/lib/LoremIpsumBundle/src/Resources/config/services.xml b/lib/LoremIpsumBundle/src/Resources/config/services.xml
-index 551f997..473d683 100644
+index 5ce3675..c8f047f 100644
 --- a/lib/LoremIpsumBundle/src/Resources/config/services.xml
 +++ b/lib/LoremIpsumBundle/src/Resources/config/services.xml
 @@ -5,7 +5,11 @@
@@ -339,5 +339,5 @@ index 551f997..473d683 100644
 +
 +        <service id="knpu_lorem_ipsum.knpu_word_provider" class="KnpU\LoremIpsumBundle\KnpUWordProvider" />
  
-         <service id="KnpU\LoremIpsumBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum" />
+         <service id="KnpU\LoremIpsumBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum" public="false" />
      </services>

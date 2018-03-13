@@ -1,0 +1,15 @@
+diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php b/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
+index 5088519..f1fc321 100644
+--- a/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
++++ b/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
+@@ -13,8 +13,8 @@ class Configuration implements ConfigurationInterface
+         $rootNode = $treeBuilder->root('knpu_lorem_ipsum');
+         $rootNode
+             ->children()
+-                ->booleanNode('unicorns_are_real')->defaultTrue()->end()
+-                ->integerNode('min_sunshine')->defaultValue(3)->end()
++                ->booleanNode('unicorns_are_real')->defaultTrue()->info('Whether or not you believe in unicorns')->end()
++                ->integerNode('min_sunshine')->defaultValue(3)->info('How much do you like sunshine?')->end()
+             ->end()
+         ;
+ 
