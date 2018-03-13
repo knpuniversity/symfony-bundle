@@ -1,0 +1,14 @@
+chapters:
+    - bundle-directory
+    - bundle-services
+    - service-aliases
+    - service-configuration
+    - interface-alias
+    - extracting-bundle
+    - testing
+    - routes-controllers
+    - events
+    - tagging-system
+    - packagist
+    - releases
+    - travisci
