@@ -1,0 +1,8 @@
+diff --git a/config/packages/knpu_lorem_ipsum.yaml b/config/packages/knpu_lorem_ipsum.yaml
+new file mode 100644
+index 0000000..e990667
+--- /dev/null
++++ b/config/packages/knpu_lorem_ipsum.yaml
+@@ -0,0 +1,2 @@
++foo:
++    bar: true

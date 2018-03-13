@@ -1,0 +1,47 @@
+diff --git a/config/packages/knpu_lorem_ipsum.yaml b/config/packages/knpu_lorem_ipsum.yaml
+index c91ec75..01d9d63 100644
+--- a/config/packages/knpu_lorem_ipsum.yaml
++++ b/config/packages/knpu_lorem_ipsum.yaml
+@@ -1,2 +1,2 @@
+-knp_u_lorem_ipsum:
++knpu_lorem_ipsum:
+     bar: true
+diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+index 3562dbf..b1ca039 100644
+--- a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
++++ b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+@@ -15,4 +15,9 @@ class KnpULoremIpsumExtension extends Extension
+         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+         $loader->load('services.xml');
+     }
++
++    public function getAlias()
++    {
++        return 'knpu_lorem_ipsum';
++    }
+ }
+diff --git a/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php b/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
+index 25d457c..352c3c8 100644
+--- a/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
++++ b/lib/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
+@@ -2,9 +2,20 @@
+ 
+ namespace KnpU\LoremIpsumBundle;
+ 
++use KnpU\LoremIpsumBundle\DependencyInjection\KnpULoremIpsumExtension;
+ use Symfony\Component\HttpKernel\Bundle\Bundle;
+ 
+ class KnpULoremIpsumBundle extends Bundle
+ {
++    /**
++     * Overridden to allow for the custom extension alias.
++     */
++    public function getContainerExtension()
++    {
++        if (null === $this->extension) {
++            return new KnpULoremIpsumExtension();
++        }
+ 
++        return $this->extension;
++    }
+ }

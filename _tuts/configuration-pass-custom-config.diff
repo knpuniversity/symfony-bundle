@@ -1,0 +1,9 @@
+diff --git a/config/packages/knpu_lorem_ipsum.yaml b/config/packages/knpu_lorem_ipsum.yaml
+index 21d7127..5047d5c 100644
+--- a/config/packages/knpu_lorem_ipsum.yaml
++++ b/config/packages/knpu_lorem_ipsum.yaml
+@@ -1,2 +1,2 @@
+-#knpu_lorem_ipsum:
+-#    bar: true
++knpu_lorem_ipsum:
++    min_sunshine: 5

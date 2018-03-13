@@ -1,0 +1,20 @@
+diff --git a/config/packages/knpu_lorem_ipsum.yaml b/config/packages/knpu_lorem_ipsum.yaml
+index e990667..c91ec75 100644
+--- a/config/packages/knpu_lorem_ipsum.yaml
++++ b/config/packages/knpu_lorem_ipsum.yaml
+@@ -1,2 +1,2 @@
+-foo:
++knp_u_lorem_ipsum:
+     bar: true
+diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+index ed466cd..3562dbf 100644
+--- a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
++++ b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+@@ -11,6 +11,7 @@ class KnpULoremIpsumExtension extends Extension
+ {
+     public function load(array $configs, ContainerBuilder $container)
+     {
++        var_dump($configs);die;
+         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+         $loader->load('services.xml');
+     }

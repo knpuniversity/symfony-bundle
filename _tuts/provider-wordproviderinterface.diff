@@ -1,0 +1,45 @@
+diff --git a/lib/LoremIpsumBundle/src/KnpUIpsum.php b/lib/LoremIpsumBundle/src/KnpUIpsum.php
+index 5e48605..60e59dc 100644
+--- a/lib/LoremIpsumBundle/src/KnpUIpsum.php
++++ b/lib/LoremIpsumBundle/src/KnpUIpsum.php
+@@ -15,7 +15,7 @@ class KnpUIpsum
+ 
+     private $minSunshine;
+ 
+-    public function __construct(KnpUWordProvider $wordProvider, bool $unicornsAreReal = true, $minSunshine = 3)
++    public function __construct(WordProviderInterface $wordProvider, bool $unicornsAreReal = true, $minSunshine = 3)
+     {
+         $this->wordProvider = $wordProvider;
+         $this->unicornsAreReal = $unicornsAreReal;
+diff --git a/lib/LoremIpsumBundle/src/KnpUWordProvider.php b/lib/LoremIpsumBundle/src/KnpUWordProvider.php
+index 7d5176a..846def7 100644
+--- a/lib/LoremIpsumBundle/src/KnpUWordProvider.php
++++ b/lib/LoremIpsumBundle/src/KnpUWordProvider.php
+@@ -2,7 +2,7 @@
+ 
+ namespace KnpU\LoremIpsumBundle;
+ 
+-class KnpUWordProvider
++class KnpUWordProvider implements WordProviderInterface
+ {
+     public function getWordList(): array
+     {
+diff --git a/lib/LoremIpsumBundle/src/WordProviderInterface.php b/lib/LoremIpsumBundle/src/WordProviderInterface.php
+new file mode 100644
+index 0000000..2297b2d
+--- /dev/null
++++ b/lib/LoremIpsumBundle/src/WordProviderInterface.php
+@@ -0,0 +1,13 @@
++<?php
++
++namespace KnpU\LoremIpsumBundle;
++
++interface WordProviderInterface
++{
++    /**
++     * Return an array of words to use for the fake text.
++     *
++     * @return array
++     */
++    public function getWordList(): array;
++}

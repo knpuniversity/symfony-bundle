@@ -1,0 +1,16 @@
+diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+index 5e1ccd2..107ea82 100644
+--- a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
++++ b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+@@ -16,7 +16,10 @@ class KnpULoremIpsumExtension extends Extension
+ 
+         $configuration = $this->getConfiguration($configs, $container);
+         $config = $this->processConfiguration($configuration, $configs);
+-        var_dump($config);die;
++
++        $definition = $container->getDefinition('knpu_lorem_ipsum.knpu_ipsum');
++        $definition->setArgument(0, $config['unicorns_are_real']);
++        $definition->setArgument(1, $config['min_sunshine']);
+     }
+ 
+     public function getAlias()

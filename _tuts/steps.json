@@ -49,7 +49,72 @@
             "id": "bundle-public-service",
             "name": "Bundle: Public service",
             "description": null
+        },
+        {
+            "id": "configuration-add-knpu-lorem-ipsum-yaml",
+            "name": "Configuration: add knpu_lorem_ipsum.yaml",
+            "description": null
+        },
+        {
+            "id": "configuration-pass-dump-config",
+            "name": "Configuration: Pass & dump config",
+            "description": null
+        },
+        {
+            "id": "configuration-custom-alias",
+            "name": "Configuration: Custom alias",
+            "description": null
+        },
+        {
+            "id": "configuration-empty-configuration-class",
+            "name": "Configuration: Empty Configuration class",
+            "description": null
+        },
+        {
+            "id": "configuration-fill-in-use",
+            "name": "Configuration: Fill in & use",
+            "description": null
+        },
+        {
+            "id": "configuration-pass-no-configuration",
+            "name": "Configuration: Pass no configuration",
+            "description": null
+        },
+        {
+            "id": "configuration-pass-custom-config",
+            "name": "Configuration: Pass custom config",
+            "description": null
+        },
+        {
+            "id": "configuration-update-definition",
+            "name": "Configuration: Update definition",
+            "description": null
+        },
+        {
+            "id": "provider-create-separate-provider-class",
+            "name": "Provider: Create separate provider class",
+            "description": null
+        },
+        {
+            "id": "provider-add-word-provider-service-option",
+            "name": "Provider: Add word provider service option",
+            "description": null
+        },
+        {
+            "id": "provider-wrap-in-reference",
+            "name": "Provider: Wrap in Reference()",
+            "description": null
+        },
+        {
+            "id": "provider-create-custom-provider",
+            "name": "Provider: Create custom provider",
+            "description": null
+        },
+        {
+            "id": "provider-wordproviderinterface",
+            "name": "Provider: WordProviderInterface",
+            "description": null
         }
     ],
-    "sha": "43069949ee50b1179de2ed6bbc1d0c401ec0da05"
+    "sha": "e91e3f39f3ccf4478d9085b19f5c752786e3c905"
 }

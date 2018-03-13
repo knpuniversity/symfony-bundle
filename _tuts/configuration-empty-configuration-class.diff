@@ -1,0 +1,19 @@
+diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php b/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
+new file mode 100644
+index 0000000..b2a8451
+--- /dev/null
++++ b/lib/LoremIpsumBundle/src/DependencyInjection/Configuration.php
+@@ -0,0 +1,12 @@
++<?php
++
++namespace KnpU\LoremIpsumBundle\DependencyInjection;
++
++use Symfony\Component\Config\Definition\ConfigurationInterface;
++
++class Configuration implements ConfigurationInterface
++{
++    public function getConfigTreeBuilder()
++    {
++    }
++}
+\ No newline at end of file

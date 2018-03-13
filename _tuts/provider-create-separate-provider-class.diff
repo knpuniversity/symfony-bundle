@@ -1,0 +1,343 @@
+diff --git a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+index 107ea82..0b4ae46 100644
+--- a/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
++++ b/lib/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+@@ -18,8 +18,8 @@ class KnpULoremIpsumExtension extends Extension
+         $config = $this->processConfiguration($configuration, $configs);
+ 
+         $definition = $container->getDefinition('knpu_lorem_ipsum.knpu_ipsum');
+-        $definition->setArgument(0, $config['unicorns_are_real']);
+-        $definition->setArgument(1, $config['min_sunshine']);
++        $definition->setArgument(1, $config['unicorns_are_real']);
++        $definition->setArgument(2, $config['min_sunshine']);
+     }
+ 
+     public function getAlias()
+diff --git a/lib/LoremIpsumBundle/src/KnpUIpsum.php b/lib/LoremIpsumBundle/src/KnpUIpsum.php
+index f3babed..5e48605 100644
+--- a/lib/LoremIpsumBundle/src/KnpUIpsum.php
++++ b/lib/LoremIpsumBundle/src/KnpUIpsum.php
+@@ -9,12 +9,15 @@ namespace KnpU\LoremIpsumBundle;
+  */
+ class KnpUIpsum
+ {
++    private $wordProvider;
++
+     private $unicornsAreReal;
+ 
+     private $minSunshine;
+ 
+-    public function __construct(bool $unicornsAreReal = true, $minSunshine = 3)
++    public function __construct(KnpUWordProvider $wordProvider, bool $unicornsAreReal = true, $minSunshine = 3)
+     {
++        $this->wordProvider = $wordProvider;
+         $this->unicornsAreReal = $unicornsAreReal;
+         $this->minSunshine = $minSunshine;
+     }
+@@ -202,138 +205,6 @@ class KnpUIpsum
+ 
+     private function getWordList(): array
+     {
+-        return [
+-            'adorable',
+-            'active',
+-            'admire',
+-            'adventurous',
+-            'agreeable',
+-            'amazing',
+-            'angelic',
+-            'awesome',
+-            'beaming',
+-            'beautiful',
+-            'believe',
+-            'bliss',
+-            'brave',
+-            'brilliant',
+-            'bubbly',
+-            'bingo',
+-            'champion',
+-            'charming',
+-            'cheery',
+-            'congratulations',
+-            'cool',
+-            'courageous',
+-            'creative',
+-            'cute',
+-            'dazzling',
+-            'delightful',
+-            'divine',
+-            'ecstatic',
+-            'effervescent',
+-            'electrifying',
+-            'enchanting',
+-            'energetic',
+-            'engaging',
+-            'excellent',
+-            'exciting',
+-            'exquisite',
+-            'fabulous',
+-            'fantastic',
+-            'flourishing',
+-            'fortunate',
+-            'free',
+-            'fresh',
+-            'friendly',
+-            'funny',
+-            'generous',
+-            'genius',
+-            'genuine',
+-            'giving',
+-            'glamorous',
+-            'glowing',
+-            'good',
+-            'gorgeous',
+-            'graceful',
+-            'great',
+-            'grin',
+-            'handsome',
+-            'happy',
+-            'harmonious',
+-            'healing',
+-            'healthy',
+-            'hearty',
+-            'heavenly',
+-            'honest',
+-            'honorable',
+-            'hug',
+-            'imaginative',
+-            'impressive',
+-            'independent',
+-            'innovative',
+-            'inventive',
+-            'jovial',
+-            'joy',
+-            'jubilant',
+-            'kind',
+-            'laugh',
+-            'legendary',
+-            'light',
+-            'lively',
+-            'lovely',
+-            'lucky',
+-            'luminous',
+-            'marvelous',
+-            'meaningful',
+-            'miraculous',
+-            'motivating',
+-            'natural',
+-            'nice',
+-            'nurturing',
+-            'open',
+-            'optimistic',
+-            'paradise',
+-            'perfect',
+-            'phenomenal',
+-            'plentiful',
+-            'pleasant',
+-            'poised',
+-            'polished',
+-            'popular',
+-            'positive',
+-            'pretty',
+-            'principled',
+-            'proud',
+-            'quality',
+-            'quintessential',
+-            'quick',
+-
+-            'sunshine',
+-            'rainbows',
+-            'unicorns',
+-            'puns',
+-            'butterflies',
+-            'cupcakes',
+-            'sprinkles',
+-            'glitter',
+-            'friend',
+-            'high-five',
+-            'friendship',
+-            'compliments',
+-            'sunsets',
+-            'cookies',
+-            'flowers',
+-            'bikes',
+-            'kittens',
+-            'puppies',
+-            'macaroni',
+-            'freckles',
+-            'baguettes',
+-            'presents',
+-            'fireworks',
+-            'chocholate',
+-            'marshmallow',
+-        ];
++        return $this->wordProvider->getWordList();
+     }
+ }
+diff --git a/lib/LoremIpsumBundle/src/KnpUWordProvider.php b/lib/LoremIpsumBundle/src/KnpUWordProvider.php
+new file mode 100644
+index 0000000..7d5176a
+--- /dev/null
++++ b/lib/LoremIpsumBundle/src/KnpUWordProvider.php
+@@ -0,0 +1,143 @@
++<?php
++
++namespace KnpU\LoremIpsumBundle;
++
++class KnpUWordProvider
++{
++    public function getWordList(): array
++    {
++        return [
++            'adorable',
++            'active',
++            'admire',
++            'adventurous',
++            'agreeable',
++            'amazing',
++            'angelic',
++            'awesome',
++            'beaming',
++            'beautiful',
++            'believe',
++            'bliss',
++            'brave',
++            'brilliant',
++            'bubbly',
++            'bingo',
++            'champion',
++            'charming',
++            'cheery',
++            'congratulations',
++            'cool',
++            'courageous',
++            'creative',
++            'cute',
++            'dazzling',
++            'delightful',
++            'divine',
++            'ecstatic',
++            'effervescent',
++            'electrifying',
++            'enchanting',
++            'energetic',
++            'engaging',
++            'excellent',
++            'exciting',
++            'exquisite',
++            'fabulous',
++            'fantastic',
++            'flourishing',
++            'fortunate',
++            'free',
++            'fresh',
++            'friendly',
++            'funny',
++            'generous',
++            'genius',
++            'genuine',
++            'giving',
++            'glamorous',
++            'glowing',
++            'good',
++            'gorgeous',
++            'graceful',
++            'great',
++            'grin',
++            'handsome',
++            'happy',
++            'harmonious',
++            'healing',
++            'healthy',
++            'hearty',
++            'heavenly',
++            'honest',
++            'honorable',
++            'hug',
++            'imaginative',
++            'impressive',
++            'independent',
++            'innovative',
++            'inventive',
++            'jovial',
++            'joy',
++            'jubilant',
++            'kind',
++            'laugh',
++            'legendary',
++            'light',
++            'lively',
++            'lovely',
++            'lucky',
++            'luminous',
++            'marvelous',
++            'meaningful',
++            'miraculous',
++            'motivating',
++            'natural',
++            'nice',
++            'nurturing',
++            'open',
++            'optimistic',
++            'paradise',
++            'perfect',
++            'phenomenal',
++            'plentiful',
++            'pleasant',
++            'poised',
++            'polished',
++            'popular',
++            'positive',
++            'pretty',
++            'principled',
++            'proud',
++            'quality',
++            'quintessential',
++            'quick',
++
++            'sunshine',
++            'rainbows',
++            'unicorns',
++            'puns',
++            'butterflies',
++            'cupcakes',
++            'sprinkles',
++            'glitter',
++            'friend',
++            'high-five',
++            'friendship',
++            'compliments',
++            'sunsets',
++            'cookies',
++            'flowers',
++            'bikes',
++            'kittens',
++            'puppies',
++            'macaroni',
++            'freckles',
++            'baguettes',
++            'presents',
++            'fireworks',
++            'chocholate',
++            'marshmallow',
++        ];
++    }
++}
+\ No newline at end of file
+diff --git a/lib/LoremIpsumBundle/src/Resources/config/services.xml b/lib/LoremIpsumBundle/src/Resources/config/services.xml
+index 551f997..473d683 100644
+--- a/lib/LoremIpsumBundle/src/Resources/config/services.xml
++++ b/lib/LoremIpsumBundle/src/Resources/config/services.xml
+@@ -5,7 +5,11 @@
+         http://symfony.com/schema/dic/services/services-1.0.xsd">
+ 
+     <services>
+-        <service id="knpu_lorem_ipsum.knpu_ipsum" class="KnpU\LoremIpsumBundle\KnpUIpsum" public="true" />
++        <service id="knpu_lorem_ipsum.knpu_ipsum" class="KnpU\LoremIpsumBundle\KnpUIpsum" public="true">
++            <argument type="service" id="knpu_lorem_ipsum.knpu_word_provider" />
++        </service>
++
++        <service id="knpu_lorem_ipsum.knpu_word_provider" class="KnpU\LoremIpsumBundle\KnpUWordProvider" />
+ 
+         <service id="KnpU\LoremIpsumBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum" />
+     </services>
