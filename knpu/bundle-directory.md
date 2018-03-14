@@ -36,6 +36,8 @@ Yes! This is our *new* creation: it returns "lorem ipsum" dummy text, but with
 a *little* KnpUniversity flare: the classic latin is replaced with rainbows, unicorns,
 sunshine and more of our favorite things.
 
+[[[ code('d8e0cedd2e') ]]]
+
 And, you know what? I think we *all* deserve more cupcakes, kittens & baguettes
 in our life. So I want to share this functionality with the world, by creating the
 KnpULoremIpsumBundle! Yep, we're going to extract this class into its own bundle,
@@ -43,6 +45,8 @@ handle configuration, add tests, and do a bunch of other cool stuff.
 
 Right now, we're using this code inside of `ArticleController`: it's being passed
 to the constructor. Below, we use that to generate the content.
+
+[[[ code('e2acaafad8') ]]]
 
 ## Isolating into a new Bundle Directory
 
@@ -72,11 +76,15 @@ Oh, but this namespace will *not* work anymore. We need a namespace that's *cust
 to our bundle. It could be anything, but usually it has a vendor part - like
 `KnpU` and then the name of the library or bundle - `LoremIpsumBundle`.
 
+[[[ code('3bf3f18617') ]]]
+
 And, that's it! If we had decided to put `KnpUIpsum` into a sub-directory, like `Service`,
 then we would of course also add `Service` to the end of the namespace like normal.
 
 Next, back in `ArticleController`, go up to the top, remove the use statement, and
 re-type it to get the new one.
+
+[[[ code('0f4c53c768') ]]]
 
 ## Handling Autoloading
 
@@ -90,6 +98,8 @@ Of course! After creating the new `lib/` directory, we need to tell Composer's
 autoloader to look for the new classes there. Open `composer.json`, find the
 `autoload` section, and add a new entry: the `KnpU\\LoremIpsumBundle\\` namespace
 will live in `lib/LoremIpsumBundle/src/`.
+
+[[[ code('f1009bd636') ]]]
 
 Then, open a new terminal tab. To make the autoload changes take effect, run:
 
@@ -113,6 +123,8 @@ rely on auto-registration or autowiring. Instead, as a best-practice, you should
 configure everything *explicitly* to avoid any surprises.
 
 To do that, at the bottom of this file, add `KnpU\LoremIpsumBundle\KnpUIpsum: ~`.
+
+[[[ code('1c16809db1') ]]]
 
 This adds a new service for that class. And because we don't need to pass any
 options or arguments, we can just set this to `~`. The class *does* have constructor
