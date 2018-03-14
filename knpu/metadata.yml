@@ -1,6 +1,7 @@
 chapters:
     - bundle-directory
     - bundle-services
+    - autowiring-public-private
     - config-extension-alias
     - bundle-configuration
     - interface-alias
