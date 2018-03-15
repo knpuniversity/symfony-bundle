@@ -28,10 +28,14 @@ name.
 Make this extend `Bundle` and... that's it! You almost *never* need to have any
 logic in here.
 
+[[[ code('b65f59a52f') ]]]
+
 To enable this in our app, open `bundles.php` and configure it for all environments.
 I'll remove the `use` statement for consistency. Normally, this happens automatically
 when we install a bundle... but since we just added the bundle manually, we gotta
 do it by hand.
+
+[[[ code('89716ff912') ]]]
 
 And, congratulations! We now have a bundle!
 
@@ -47,6 +51,8 @@ So, `KnpULoremIpsumExtension`. Make this extend `Extension` from `HttpKernel`.
 This forces us to implement *one* method. I'll go to the Code -> Generate menu,
 or Cmd+N on a Mac, choose "Implement Methods" and select the one we need. Inside,
 just `var_dump` that we're alive and... die!
+
+[[[ code('b48df5fc7c') ]]]
 
 *Now* move over and refresh. Yes! It hits our new code!
 
@@ -79,12 +85,16 @@ do is configure a single service whose id is the class of the service. So, use
 `KnpU\LoremIpsumBundle\KnpUIpsum`. We're not passing any arguments, so we can use
 the short XML syntax for now.
 
+[[[ code('ab202ddb17') ]]]
+
 But this file isn't processed automatically. Go to the extension class and remove
 the `var_dump()`. The code to load the config file looks a little funny:
 `$loader = new XmlFileLoader()` from the DependencyInjection component. Pass
 this a `new FileLocator` - the one from the `Config` component - with the path
 to that directory: `../Resources/config`. Below that, add
 `$loader->load('services.xml')`.
+
+[[[ code('e6188f8758') ]]]
 
 Voilà! Refresh the page. It works! When the container builds, the `load()`
 method is called and our bundle adds its service.
