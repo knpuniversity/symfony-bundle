@@ -48,15 +48,7 @@ This forces us to implement *one* method. I'll go to the Code -> Generate menu,
 or Cmd+N on a Mac, choose "Implement Methods" and select the one we need. Inside,
 just `var_dump` that we're alive and... die!
 
-Phew! Now, find your terminal & clear out the cache directory:
-
-```terminal-silent
-rm -rf var/cache/*
-```
-
-We shouldn't need to do this, but due to a quirk... um, a small bug... which was
-fixed about 2 hours after recording this tutorial... we need to do this, just this
-*one* time. Anyways, *now* move over and refresh. Yes! It hits our new code!
+*Now* move over and refresh. Yes! It hits our new code!
 
 This is *really* important. Whenever Symfony builds the container, it loops over
 all the bundles and, inside of each, looks for a `DependencyInection` directory
