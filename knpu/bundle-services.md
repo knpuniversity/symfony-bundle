@@ -51,7 +51,7 @@ just `var_dump` that we're alive and... die!
 *Now* move over and refresh. Yes! It hits our new code!
 
 This is *really* important. Whenever Symfony builds the container, it loops over
-all the bundles and, inside of each, looks for a `DependencyInection` directory
+all the bundles and, inside of each, looks for a `DependencyInjection` directory
 and then inside of that, a class with the same name of the bundle, but ending in
 `Extension`. Woh. *If* that class exists, it instantiates it and calls `load()`.
 This is *our* big chance to *add* any services we want! We can go *crazy*!
