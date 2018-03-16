@@ -10,6 +10,8 @@ for simplicity: and that's what we've done here. But, when you create a re-usabl
 bundle, the best practice is to use *snake-case* service id's. Change the key to
 `class` and add `id="knpu_lorem_ipsum.knpu_ipsum"`.
 
+[[[ code('32c7db3eda') ]]]
+
 *Why* is this the best practice? Well, the user *could* in theory change the class
 of this service to one of their *own* classes. And, it would be pretty weird to have
 a service called `KnpU\LoremIpsumBundle\KnpUIpsum`... when that's *not* actually
@@ -34,6 +36,8 @@ things internally.
 For each "important" service, define an alias: `<service id="" ...>` and paste in
 the class name. Then, `alias=""` and type the first service's id:
 `knpu_lorem_ipsum.knpu_ipsum`.
+
+[[[ code('b83abd4cbc') ]]]
 
 To see what this did, move over to your terminal and run:
 
@@ -60,9 +64,13 @@ And this is *really* the way people should code going forward: we really should
 *not* need services to be public. But, since some people *still* do fetch services
 directly, you *may* want to make your important services public. Let's do this: `public="true"`.
 
+[[[ code('c05d81bfe1') ]]]
+
 And even though services are private by default, you should also add `public="false"`
 to the others. This will make your services *also* behave the same on Symfony 3,
 where they are *public* by default.
+
+[[[ code('17c3537a96') ]]]
 
 This makes no difference in our app - it all still works.
 
