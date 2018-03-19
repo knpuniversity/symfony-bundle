@@ -25,7 +25,7 @@ time to create our own!
 Inside the `DependencyInjection` directory, create a new class called `Configuration`.
 Make this implement `ConfigurationInterface`: the one from the `Config` component.
 We'll need to implement one method: go to the Code -> Generate menu, or Cmd+N on
-a Mac, select `implement` methods and choose `getConfigBuilder()`.
+a Mac, select "Implement Methods" and choose `getConfigBuilder()`.
 
 This is one of the *strangest* classes you'll ever see. By using PHP code, we're
 going to define the entire *tree* of valid config that can be passed to our bundle.
