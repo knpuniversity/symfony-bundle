@@ -8,24 +8,19 @@ index 72bd9c9..0124da8 100644
  phpunit.xml
 +/tests/cache
 diff --git a/LoremIpsumBundle/tests/FunctionalTest.php b/LoremIpsumBundle/tests/FunctionalTest.php
-index 5acfae1..2e388d9 100644
+index a2c5792..2e388d9 100644
 --- a/LoremIpsumBundle/tests/FunctionalTest.php
 +++ b/LoremIpsumBundle/tests/FunctionalTest.php
-@@ -2,38 +2,36 @@
+@@ -2,6 +2,8 @@
  
  namespace KnpU\LoremIpsumBundle\Tests;
  
 +use KnpU\LoremIpsumBundle\KnpUIpsum;
 +use KnpU\LoremIpsumBundle\KnpULoremIpsumBundle;
  use PHPUnit\Framework\TestCase;
--use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
  use Symfony\Component\Config\Loader\LoaderInterface;
--use Symfony\Component\DependencyInjection\ContainerBuilder;
--use Symfony\Component\HttpKernel\Bundle\BundleInterface;
  use Symfony\Component\HttpKernel\Kernel;
--use Symfony\Component\Routing\RouteCollectionBuilder;
- 
- class FunctionalTest extends TestCase
+@@ -10,7 +12,13 @@ class FunctionalTest extends TestCase
  {
      public function testServiceWiring()
      {
@@ -39,26 +34,13 @@ index 5acfae1..2e388d9 100644
      }
  }
  
- class KnpULoremIpsumTestingKernel extends Kernel
+@@ -18,6 +26,9 @@ class KnpULoremIpsumTestingKernel extends Kernel
  {
--    use MicroKernelTrait;
--
      public function registerBundles()
      {
--
 +        return [
 +            new KnpULoremIpsumBundle(),
 +        ];
      }
  
--    protected function configureRoutes(RouteCollectionBuilder $routes)
-+    public function registerContainerConfiguration(LoaderInterface $loader)
-     {
--
--    }
--
--    protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
--    {
--
-     }
- }
+     public function registerContainerConfiguration(LoaderInterface $loader)

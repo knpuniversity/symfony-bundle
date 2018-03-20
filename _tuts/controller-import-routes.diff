@@ -1,0 +1,13 @@
+diff --git a/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+index eed90ef..2a8c02c 100644
+--- a/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
++++ b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+@@ -36,7 +36,7 @@ class KnpULoremIpsumControllerKernel extends Kernel
+ 
+     protected function configureRoutes(RouteCollectionBuilder $routes)
+     {
+-
++        $routes->import(__DIR__.'/../../src/Resources/config/routes.xml', '/api');
+     }
+ 
+     protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)

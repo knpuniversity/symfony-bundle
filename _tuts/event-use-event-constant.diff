@@ -1,0 +1,42 @@
+diff --git a/LoremIpsumBundle/src/Controller/IpsumApiController.php b/LoremIpsumBundle/src/Controller/IpsumApiController.php
+index ecd728a..cdb750e 100644
+--- a/LoremIpsumBundle/src/Controller/IpsumApiController.php
++++ b/LoremIpsumBundle/src/Controller/IpsumApiController.php
+@@ -3,6 +3,7 @@
+ namespace KnpU\LoremIpsumBundle\Controller;
+ 
+ use KnpU\LoremIpsumBundle\Event\FilterApiResponseEvent;
++use KnpU\LoremIpsumBundle\Event\KnpULoremIpsumEvents;
+ use KnpU\LoremIpsumBundle\KnpUIpsum;
+ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+@@ -28,7 +29,7 @@ class IpsumApiController extends AbstractController
+ 
+         $event = new FilterApiResponseEvent($data);
+         if ($this->eventDispatcher) {
+-            $this->eventDispatcher->dispatch('knpu_lorem_ipsum.filter_api', $event);
++            $this->eventDispatcher->dispatch(KnpULoremIpsumEvents::FILTER_API, $event);
+         }
+ 
+         return $this->json($event->getData());
+diff --git a/LoremIpsumBundle/src/Event/KnpULoremIpsumEvents.php b/LoremIpsumBundle/src/Event/KnpULoremIpsumEvents.php
+new file mode 100644
+index 0000000..4e774b4
+--- /dev/null
++++ b/LoremIpsumBundle/src/Event/KnpULoremIpsumEvents.php
+@@ -0,0 +1,15 @@
++<?php
++
++namespace KnpU\LoremIpsumBundle\Event;
++
++final class KnpULoremIpsumEvents
++{
++    /**
++     * Called directly before the Lorem Ipsum API data is returned.
++     *
++     * Listeners have the opportunity to change that data.
++     *
++     * @Event("KnpU\LoremIpsumBundle\Event\FilterApiResponseEvent")
++     */
++    const FILTER_API = 'knpu_lorem_ipsum.filter_api';
++}

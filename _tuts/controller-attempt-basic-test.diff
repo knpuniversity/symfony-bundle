@@ -1,0 +1,25 @@
+diff --git a/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+index 2a8c02c..6f04b78 100644
+--- a/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
++++ b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+@@ -4,6 +4,7 @@ namespace KnpU\LoremIpsumBundle\Tests\Controller;
+ 
+ use KnpU\LoremIpsumBundle\KnpULoremIpsumBundle;
+ use PHPUnit\Framework\TestCase;
++use Symfony\Bundle\FrameworkBundle\Client;
+ use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+ use Symfony\Component\Config\Loader\LoaderInterface;
+ use Symfony\Component\DependencyInjection\ContainerBuilder;
+@@ -14,7 +15,12 @@ class IpsumApiControllerTest extends TestCase
+ {
+     public function testIndex()
+     {
++        $kernel = new KnpULoremIpsumControllerKernel();
++        $client = new Client($kernel);
++        $client->request('GET', '/api/');
+ 
++        var_dump($client->getResponse()->getContent());
++        $this->assertSame(200, $client->getResponse()->getStatusCode());
+     }
+ }
+ 

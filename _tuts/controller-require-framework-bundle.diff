@@ -1,0 +1,14 @@
+diff --git a/LoremIpsumBundle/composer.json b/LoremIpsumBundle/composer.json
+index 8b6776e..76b21d0 100644
+--- a/LoremIpsumBundle/composer.json
++++ b/LoremIpsumBundle/composer.json
+@@ -16,7 +16,8 @@
+         "symfony/http-kernel": "^4.0"
+     },
+     "require-dev": {
+-        "symfony/phpunit-bridge": "^4.0"
++        "symfony/phpunit-bridge": "^4.0",
++        "symfony/framework-bundle": "^4.0"
+     },
+     "autoload": {
+         "psr-4": {

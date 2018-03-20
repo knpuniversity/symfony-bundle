@@ -1,0 +1,62 @@
+diff --git a/LoremIpsumBundle/src/Controller/IpsumApiController.php b/LoremIpsumBundle/src/Controller/IpsumApiController.php
+new file mode 100644
+index 0000000..ef39232
+--- /dev/null
++++ b/LoremIpsumBundle/src/Controller/IpsumApiController.php
+@@ -0,0 +1,24 @@
++<?php
++
++namespace KnpU\LoremIpsumBundle\Controller;
++
++use KnpU\LoremIpsumBundle\KnpUIpsum;
++use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
++
++class IpsumApiController extends AbstractController
++{
++    private $knpUIpsum;
++
++    public function __construct(KnpUIpsum $knpUIpsum)
++    {
++        $this->knpUIpsum = $knpUIpsum;
++    }
++
++    public function index()
++    {
++        return $this->json([
++            'paragraphs' => $this->knpUIpsum->getParagraphs(),
++            'sentences' => $this->knpUIpsum->getSentences(),
++        ]);
++    }
++}
+diff --git a/LoremIpsumBundle/src/Resources/config/routes.xml b/LoremIpsumBundle/src/Resources/config/routes.xml
+new file mode 100644
+index 0000000..4e1c689
+--- /dev/null
++++ b/LoremIpsumBundle/src/Resources/config/routes.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8" ?>
++<routes xmlns="http://symfony.com/schema/routing"
++    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++    xsi:schemaLocation="http://symfony.com/schema/routing
++        http://symfony.com/schema/routing/routing-1.0.xsd">
++
++    <route id="knpu_lorem_ipsum_api" controller="knpu_lorem_ipsum.controller.ipsum_api_controller:index" path="/" >
++        <!-- settings -->
++    </route>
++</routes>
+\ No newline at end of file
+diff --git a/LoremIpsumBundle/src/Resources/config/services.xml b/LoremIpsumBundle/src/Resources/config/services.xml
+index b1eeba1..db5fdac 100644
+--- a/LoremIpsumBundle/src/Resources/config/services.xml
++++ b/LoremIpsumBundle/src/Resources/config/services.xml
+@@ -11,6 +11,10 @@
+ 
+         <service id="knpu_lorem_ipsum.knpu_word_provider" class="KnpU\LoremIpsumBundle\KnpUWordProvider" />
+ 
++        <service id="knpu_lorem_ipsum.controller.ipsum_api_controller" class="KnpU\LoremIpsumBundle\Controller\IpsumApiController">
++            <argument type="service" id="knpu_lorem_ipsum.knpu_ipsum" />
++        </service>
++
+         <service id="knpu_lorem_ipsum.word_provider" alias="knpu_lorem_ipsum.knpu_word_provider" public="false" />
+         <service id="KnpU\LoremIpsumBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum" public="false" />
+     </services>

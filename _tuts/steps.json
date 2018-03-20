@@ -199,7 +199,127 @@
             "id": "functional-fix-cache-problem",
             "name": "Functional: Fix cache problem",
             "description": null
+        },
+        {
+            "id": "controller-add-route-controller",
+            "name": "Controller: Add route + controller",
+            "description": null
+        },
+        {
+            "id": "controller-import-routes-from-app",
+            "name": "Controller: Import routes from app",
+            "description": null
+        },
+        {
+            "id": "controller-make-controller-service-public",
+            "name": "Controller: Make controller service public",
+            "description": null
+        },
+        {
+            "id": "controller-setup-functional-test",
+            "name": "Controller: Setup functional test",
+            "description": null
+        },
+        {
+            "id": "controller-copy-in-test-kernel",
+            "name": "Controller: Copy in test kernel",
+            "description": null
+        },
+        {
+            "id": "controller-require-framework-bundle",
+            "name": "Controller: require framework bundle",
+            "description": null
+        },
+        {
+            "id": "controller-use-microkerneltrait",
+            "name": "Controller: Use MicroKernelTrait",
+            "description": null
+        },
+        {
+            "id": "controller-import-routes",
+            "name": "Controller: Import routes",
+            "description": null
+        },
+        {
+            "id": "controller-attempt-basic-test",
+            "name": "Controller: Attempt basic test",
+            "description": null
+        },
+        {
+            "id": "controller-require-browser-kit",
+            "name": "Controller: Require browser-kit",
+            "description": null
+        },
+        {
+            "id": "controller-enable-frameworkbundle",
+            "name": "Controller: Enable FrameworkBundle",
+            "description": null
+        },
+        {
+            "id": "event-create-event-class",
+            "name": "Event: Create event class",
+            "description": null
+        },
+        {
+            "id": "event-dispatch-event",
+            "name": "Event: Dispatch event",
+            "description": null
+        },
+        {
+            "id": "event-make-eventdispatcher-optional",
+            "name": "Event: Make EventDispatcher optional",
+            "description": null
+        },
+        {
+            "id": "event-use-event-constant",
+            "name": "Event: Use event constant",
+            "description": null
+        },
+        {
+            "id": "event-add-subscriber",
+            "name": "Event: Add subscriber",
+            "description": null
+        },
+        {
+            "id": "tags-allow-array-of-word-providers",
+            "name": "Tags: Allow array of word providers",
+            "description": null
+        },
+        {
+            "id": "tags-tag-service-only",
+            "name": "Tags: Tag service, only",
+            "description": null
+        },
+        {
+            "id": "tags-create-empty-compiler-pass",
+            "name": "Tags: Create empty compiler pass",
+            "description": null
+        },
+        {
+            "id": "tags-dump-matched-services",
+            "name": "Tags: Dump matched services",
+            "description": null
+        },
+        {
+            "id": "tags-finish-compiler-pass",
+            "name": "Tags: Finish compiler pass",
+            "description": null
+        },
+        {
+            "id": "tags-remove-old-config-system",
+            "name": "Tags: Remove old config system",
+            "description": null
+        },
+        {
+            "id": "tags-tag-our-app-service",
+            "name": "Tags: Tag our app service",
+            "description": null
+        },
+        {
+            "id": "tags-add-autoconfigure",
+            "name": "Tags: Add autoconfigure",
+            "description": null
         }
     ],
-    "sha": "75d61eb1c059f43bba1638514a40f43e5868578e"
+    "sha": "eac78166238fd1a2bdf74189f06977597a6bf96f"
 }

@@ -1,0 +1,53 @@
+diff --git a/LoremIpsumBundle/src/Controller/IpsumApiController.php b/LoremIpsumBundle/src/Controller/IpsumApiController.php
+index ef39232..5c75d32 100644
+--- a/LoremIpsumBundle/src/Controller/IpsumApiController.php
++++ b/LoremIpsumBundle/src/Controller/IpsumApiController.php
+@@ -2,23 +2,33 @@
+ 
+ namespace KnpU\LoremIpsumBundle\Controller;
+ 
++use KnpU\LoremIpsumBundle\Event\FilterApiResponseEvent;
+ use KnpU\LoremIpsumBundle\KnpUIpsum;
+ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
++use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+ 
+ class IpsumApiController extends AbstractController
+ {
+     private $knpUIpsum;
+ 
+-    public function __construct(KnpUIpsum $knpUIpsum)
++    private $eventDispatcher;
++
++    public function __construct(KnpUIpsum $knpUIpsum, EventDispatcherInterface $eventDispatcher)
+     {
+         $this->knpUIpsum = $knpUIpsum;
++        $this->eventDispatcher = $eventDispatcher;
+     }
+ 
+     public function index()
+     {
+-        return $this->json([
++        $data = [
+             'paragraphs' => $this->knpUIpsum->getParagraphs(),
+             'sentences' => $this->knpUIpsum->getSentences(),
+-        ]);
++        ];
++
++        $event = new FilterApiResponseEvent($data);
++        $this->eventDispatcher->dispatch('knpu_lorem_ipsum.filter_api', $event);
++
++        return $this->json($event->getData());
+     }
+ }
+diff --git a/LoremIpsumBundle/src/Resources/config/services.xml b/LoremIpsumBundle/src/Resources/config/services.xml
+index 4f4e69a..8cbaa4d 100644
+--- a/LoremIpsumBundle/src/Resources/config/services.xml
++++ b/LoremIpsumBundle/src/Resources/config/services.xml
+@@ -13,6 +13,7 @@
+ 
+         <service id="knpu_lorem_ipsum.controller.ipsum_api_controller" class="KnpU\LoremIpsumBundle\Controller\IpsumApiController" public="true">
+             <argument type="service" id="knpu_lorem_ipsum.knpu_ipsum" />
++            <argument type="service" id="event_dispatcher" />
+         </service>
+ 
+         <service id="knpu_lorem_ipsum.word_provider" alias="knpu_lorem_ipsum.knpu_word_provider" public="false" />

@@ -1,0 +1,39 @@
+diff --git a/LoremIpsumBundle/src/DependencyInjection/Compiler/WordProviderCompilerPass.php b/LoremIpsumBundle/src/DependencyInjection/Compiler/WordProviderCompilerPass.php
+index 77b4464..7f2cf7d 100644
+--- a/LoremIpsumBundle/src/DependencyInjection/Compiler/WordProviderCompilerPass.php
++++ b/LoremIpsumBundle/src/DependencyInjection/Compiler/WordProviderCompilerPass.php
+@@ -9,6 +9,9 @@ class WordProviderCompilerPass implements CompilerPassInterface
+ {
+     public function process(ContainerBuilder $container)
+     {
+-        
++        foreach ($container->findTaggedServiceIds('knpu_ipsum_word_provider') as $id => $tags) {
++            var_dump($id);
++        }
++        die;
+     }
+ }
+\ No newline at end of file
+diff --git a/LoremIpsumBundle/src/KnpULoremIpsumBundle.php b/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
+index e98a59f..fa854dd 100644
+--- a/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
++++ b/LoremIpsumBundle/src/KnpULoremIpsumBundle.php
+@@ -2,11 +2,18 @@
+ 
+ namespace KnpU\LoremIpsumBundle;
+ 
++use KnpU\LoremIpsumBundle\DependencyInjection\Compiler\WordProviderCompilerPass;
+ use KnpU\LoremIpsumBundle\DependencyInjection\KnpULoremIpsumExtension;
++use Symfony\Component\DependencyInjection\ContainerBuilder;
+ use Symfony\Component\HttpKernel\Bundle\Bundle;
+ 
+ class KnpULoremIpsumBundle extends Bundle
+ {
++    public function build(ContainerBuilder $container)
++    {
++        $container->addCompilerPass(new WordProviderCompilerPass());
++    }
++
+     /**
+      * Overridden to allow for the custom extension alias.
+      */

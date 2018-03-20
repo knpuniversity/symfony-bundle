@@ -1,0 +1,30 @@
+diff --git a/src/EventSubscriber/AddMessageToIpsumApiSubscriber.php b/src/EventSubscriber/AddMessageToIpsumApiSubscriber.php
+new file mode 100644
+index 0000000..a8fc69c
+--- /dev/null
++++ b/src/EventSubscriber/AddMessageToIpsumApiSubscriber.php
+@@ -0,0 +1,24 @@
++<?php
++
++namespace App\EventSubscriber;
++
++use KnpU\LoremIpsumBundle\Event\FilterApiResponseEvent;
++use KnpU\LoremIpsumBundle\Event\KnpULoremIpsumEvents;
++use Symfony\Component\EventDispatcher\EventSubscriberInterface;
++
++class AddMessageToIpsumApiSubscriber implements EventSubscriberInterface
++{
++    public static function getSubscribedEvents()
++    {
++        return [
++            KnpULoremIpsumEvents::FILTER_API => 'onFilterApi',
++        ];
++    }
++
++    public function onFilterApi(FilterApiResponseEvent $event)
++    {
++        $data = $event->getData();
++        $data['message'] = 'Have a magical day!';
++        $event->setData($data);
++    }
++}

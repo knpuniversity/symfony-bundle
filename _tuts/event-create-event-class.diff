@@ -1,0 +1,31 @@
+diff --git a/LoremIpsumBundle/src/Event/FilterApiResponseEvent.php b/LoremIpsumBundle/src/Event/FilterApiResponseEvent.php
+new file mode 100644
+index 0000000..36d3eda
+--- /dev/null
++++ b/LoremIpsumBundle/src/Event/FilterApiResponseEvent.php
+@@ -0,0 +1,25 @@
++<?php
++
++namespace KnpU\LoremIpsumBundle\Event;
++
++use Symfony\Component\EventDispatcher\Event;
++
++class FilterApiResponseEvent extends Event
++{
++    private $data;
++
++    public function __construct(array $data)
++    {
++        $this->data = $data;
++    }
++
++    public function getData(): array
++    {
++        return $this->data;
++    }
++
++    public function setData(array $data)
++    {
++        $this->data = $data;
++    }
++}

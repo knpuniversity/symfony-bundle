@@ -1,0 +1,33 @@
+diff --git a/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php b/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+index e922e25..d09ea05 100644
+--- a/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
++++ b/LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php
+@@ -2,6 +2,7 @@
+ 
+ namespace KnpU\LoremIpsumBundle\DependencyInjection;
+ 
++use KnpU\LoremIpsumBundle\WordProviderInterface;
+ use Symfony\Component\Config\FileLocator;
+ use Symfony\Component\DependencyInjection\ContainerBuilder;
+ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+@@ -21,6 +22,9 @@ class KnpULoremIpsumExtension extends Extension
+         $definition = $container->getDefinition('knpu_lorem_ipsum.knpu_ipsum');
+         $definition->setArgument(1, $config['unicorns_are_real']);
+         $definition->setArgument(2, $config['min_sunshine']);
++
++        $container->registerForAutoconfiguration(WordProviderInterface::class)
++            ->addTag('knpu_ipsum_word_provider');
+     }
+ 
+     public function getAlias()
+diff --git a/config/services.yaml b/config/services.yaml
+index 90a5927..4754e66 100644
+--- a/config/services.yaml
++++ b/config/services.yaml
+@@ -34,6 +34,3 @@ services:
+ 
+     # add more service definitions when explicit configuration is needed
+     # please note that last definitions always *replace* previous ones
+-
+-    App\Service\CustomWordProvider:
+-        tags: ['knpu_ipsum_word_provider']

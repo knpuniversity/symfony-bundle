@@ -1,0 +1,21 @@
+diff --git a/LoremIpsumBundle/src/DependencyInjection/Compiler/WordProviderCompilerPass.php b/LoremIpsumBundle/src/DependencyInjection/Compiler/WordProviderCompilerPass.php
+new file mode 100644
+index 0000000..77b4464
+--- /dev/null
++++ b/LoremIpsumBundle/src/DependencyInjection/Compiler/WordProviderCompilerPass.php
+@@ -0,0 +1,14 @@
++<?php
++
++namespace KnpU\LoremIpsumBundle\DependencyInjection\Compiler;
++
++use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
++use Symfony\Component\DependencyInjection\ContainerBuilder;
++
++class WordProviderCompilerPass implements CompilerPassInterface
++{
++    public function process(ContainerBuilder $container)
++    {
++        
++    }
++}
+\ No newline at end of file

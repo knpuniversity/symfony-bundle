@@ -1,0 +1,64 @@
+diff --git a/LoremIpsumBundle/src/KnpUIpsum.php b/LoremIpsumBundle/src/KnpUIpsum.php
+index 60e59dc..9897902 100644
+--- a/LoremIpsumBundle/src/KnpUIpsum.php
++++ b/LoremIpsumBundle/src/KnpUIpsum.php
+@@ -9,15 +9,20 @@ namespace KnpU\LoremIpsumBundle;
+  */
+ class KnpUIpsum
+ {
+-    private $wordProvider;
++    /**
++     * @var WordProviderInterface[]
++     */
++    private $wordProviders;
+ 
+     private $unicornsAreReal;
+ 
+     private $minSunshine;
+ 
+-    public function __construct(WordProviderInterface $wordProvider, bool $unicornsAreReal = true, $minSunshine = 3)
++    private $wordList;
++
++    public function __construct(array $wordProviders, bool $unicornsAreReal = true, $minSunshine = 3)
+     {
+-        $this->wordProvider = $wordProvider;
++        $this->wordProviders = $wordProviders;
+         $this->unicornsAreReal = $unicornsAreReal;
+         $this->minSunshine = $minSunshine;
+     }
+@@ -205,6 +210,19 @@ class KnpUIpsum
+ 
+     private function getWordList(): array
+     {
+-        return $this->wordProvider->getWordList();
++        if (null === $this->wordList) {
++            $words = [];
++            foreach ($this->wordProviders as $wordProvider) {
++                $words = array_merge($words, $wordProvider->getWordList());
++            }
++
++            if (count($words) <= 1) {
++                throw new \Exception('Word list must contain at least 2 words, yo!');
++            }
++
++            $this->wordList = $words;
++        }
++
++        return $this->wordList;
+     }
+ }
+diff --git a/LoremIpsumBundle/src/Resources/config/services.xml b/LoremIpsumBundle/src/Resources/config/services.xml
+index e09f115..05fefa8 100644
+--- a/LoremIpsumBundle/src/Resources/config/services.xml
++++ b/LoremIpsumBundle/src/Resources/config/services.xml
+@@ -6,7 +6,9 @@
+ 
+     <services>
+         <service id="knpu_lorem_ipsum.knpu_ipsum" class="KnpU\LoremIpsumBundle\KnpUIpsum" public="true">
+-            <argument type="service" id="knpu_lorem_ipsum.word_provider" />
++            <argument type="collection">
++                <argument type="service" id="knpu_lorem_ipsum.word_provider" />
++            </argument>
+         </service>
+ 
+         <service id="knpu_lorem_ipsum.knpu_word_provider" class="KnpU\LoremIpsumBundle\KnpUWordProvider" />

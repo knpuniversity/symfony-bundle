@@ -1,0 +1,34 @@
+diff --git a/config/services.yaml b/config/services.yaml
+index 4754e66..90a5927 100644
+--- a/config/services.yaml
++++ b/config/services.yaml
+@@ -34,3 +34,6 @@ services:
+ 
+     # add more service definitions when explicit configuration is needed
+     # please note that last definitions always *replace* previous ones
++
++    App\Service\CustomWordProvider:
++        tags: ['knpu_ipsum_word_provider']
+diff --git a/src/Service/CustomWordProvider.php b/src/Service/CustomWordProvider.php
+index faf1283..9f4c501 100644
+--- a/src/Service/CustomWordProvider.php
++++ b/src/Service/CustomWordProvider.php
+@@ -2,15 +2,12 @@
+ 
+ namespace App\Service;
+ 
+-use KnpU\LoremIpsumBundle\KnpUWordProvider;
++use KnpU\LoremIpsumBundle\WordProviderInterface;
+ 
+-class CustomWordProvider extends KnpUWordProvider
++class CustomWordProvider implements WordProviderInterface
+ {
+     public function getWordList(): array
+     {
+-        $words = parent::getWordList();
+-        $words[] = 'beach';
+-
+-        return $words;
++        return ['beach'];
+     }
+ }

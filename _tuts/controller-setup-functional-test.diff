@@ -1,0 +1,23 @@
+diff --git a/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+new file mode 100644
+index 0000000..c543a23
+--- /dev/null
++++ b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+@@ -0,0 +1,17 @@
++<?php
++
++namespace KnpU\LoremIpsumBundle\Tests\Controller;
++
++use KnpU\LoremIpsumBundle\KnpULoremIpsumBundle;
++use PHPUnit\Framework\TestCase;
++use Symfony\Component\Config\Loader\LoaderInterface;
++use Symfony\Component\DependencyInjection\ContainerBuilder;
++use Symfony\Component\HttpKernel\Kernel;
++
++class IpsumApiControllerTest extends TestCase
++{
++    public function testIndex()
++    {
++
++    }
++}

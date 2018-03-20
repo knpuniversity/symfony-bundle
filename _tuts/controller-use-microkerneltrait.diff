@@ -1,0 +1,43 @@
+diff --git a/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+index 056b846..eed90ef 100644
+--- a/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
++++ b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+@@ -4,9 +4,11 @@ namespace KnpU\LoremIpsumBundle\Tests\Controller;
+ 
+ use KnpU\LoremIpsumBundle\KnpULoremIpsumBundle;
+ use PHPUnit\Framework\TestCase;
++use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+ use Symfony\Component\Config\Loader\LoaderInterface;
+ use Symfony\Component\DependencyInjection\ContainerBuilder;
+ use Symfony\Component\HttpKernel\Kernel;
++use Symfony\Component\Routing\RouteCollectionBuilder;
+ 
+ class IpsumApiControllerTest extends TestCase
+ {
+@@ -18,6 +20,8 @@ class IpsumApiControllerTest extends TestCase
+ 
+ class KnpULoremIpsumControllerKernel extends Kernel
+ {
++    use MicroKernelTrait;
++
+     public function __construct()
+     {
+         parent::__construct('test', true);
+@@ -30,10 +34,14 @@ class KnpULoremIpsumControllerKernel extends Kernel
+         ];
+     }
+ 
+-    public function registerContainerConfiguration(LoaderInterface $loader)
++    protected function configureRoutes(RouteCollectionBuilder $routes)
++    {
++
++    }
++
++    protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
+     {
+-        $loader->load(function(ContainerBuilder $container) {
+-        });
++
+     }
+ 
+     public function getCacheDir()

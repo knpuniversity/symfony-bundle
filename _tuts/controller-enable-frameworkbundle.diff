@@ -1,0 +1,39 @@
+diff --git a/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+index 6f04b78..6a9de71 100644
+--- a/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
++++ b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+@@ -5,6 +5,7 @@ namespace KnpU\LoremIpsumBundle\Tests\Controller;
+ use KnpU\LoremIpsumBundle\KnpULoremIpsumBundle;
+ use PHPUnit\Framework\TestCase;
+ use Symfony\Bundle\FrameworkBundle\Client;
++use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
+ use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+ use Symfony\Component\Config\Loader\LoaderInterface;
+ use Symfony\Component\DependencyInjection\ContainerBuilder;
+@@ -19,7 +20,6 @@ class IpsumApiControllerTest extends TestCase
+         $client = new Client($kernel);
+         $client->request('GET', '/api/');
+ 
+-        var_dump($client->getResponse()->getContent());
+         $this->assertSame(200, $client->getResponse()->getStatusCode());
+     }
+ }
+@@ -37,6 +37,7 @@ class KnpULoremIpsumControllerKernel extends Kernel
+     {
+         return [
+             new KnpULoremIpsumBundle(),
++            new FrameworkBundle(),
+         ];
+     }
+ 
+@@ -47,7 +48,9 @@ class KnpULoremIpsumControllerKernel extends Kernel
+ 
+     protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
+     {
+-
++        $c->loadFromExtension('framework', [
++            'secret' => 'F00',
++        ]);
+     }
+ 
+     public function getCacheDir()

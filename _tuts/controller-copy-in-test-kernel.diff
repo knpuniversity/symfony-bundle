@@ -1,0 +1,35 @@
+diff --git a/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+index c543a23..056b846 100644
+--- a/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
++++ b/LoremIpsumBundle/tests/Controller/IpsumApiControllerTest.php
+@@ -15,3 +15,29 @@ class IpsumApiControllerTest extends TestCase
+ 
+     }
+ }
++
++class KnpULoremIpsumControllerKernel extends Kernel
++{
++    public function __construct()
++    {
++        parent::__construct('test', true);
++    }
++
++    public function registerBundles()
++    {
++        return [
++            new KnpULoremIpsumBundle(),
++        ];
++    }
++
++    public function registerContainerConfiguration(LoaderInterface $loader)
++    {
++        $loader->load(function(ContainerBuilder $container) {
++        });
++    }
++
++    public function getCacheDir()
++    {
++        return __DIR__.'/../cache/'.spl_object_hash($this);
++    }
++}
+\ No newline at end of file
