@@ -25,6 +25,8 @@ when registering its services.
 Create a new file: `knpu_lorem_ipsum.yaml` - but, we could call this anything.
 And just to see what will happen, add some fake config: `foo:`, then `bar: true`.
 
+[[[ code('3b1740f3bf') ]]]
+
 Find your browser and refresh! Error! Check out the language carefully. It says
 that there is no *extension* able to load the configuration for "foo". We *know*
 that word extension: we just created our *own* extension: `KnpULoremIpsumExtension`.
@@ -40,8 +42,13 @@ hairy, ugly exception.
 
 But check this out: go back to the list of valid keys. Thanks to our
 `KnpULoremIpsumExtension` class, there's one called `knp_u_lorem_ipsum`! Change
-the root key to use *that* instead. Next, open our extension class,
-`var_dump($configs)` and die.
+the root key to use *that* instead.
+
+[[[ code('b2aab96ed1') ]]]
+
+Next, open our extension class, `var_dump($configs)` and die.
+
+[[[ code('0464f93158') ]]]
 
 Try it out! No error! And cool! That `bar: true` value is passed to the
 `load` method! We're one step closer to *using* that config to tweak our service.
