@@ -5,6 +5,7 @@ chapters:
     - config-extension
     - custom-extension-alias
     - bundle-configuration
+    - override-service
     - interface-alias
     - extracting-bundle
     - testing
