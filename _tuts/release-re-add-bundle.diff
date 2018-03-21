@@ -1,0 +1,101 @@
+diff --git a/composer.json b/composer.json
+index 0a3bbbf..e8206a1 100644
+--- a/composer.json
++++ b/composer.json
+@@ -15,7 +15,8 @@
+         "symfony/lts": "^4@dev",
+         "symfony/twig-bundle": "^4.0",
+         "symfony/web-server-bundle": "^4.0",
+-        "symfony/yaml": "^4.0"
++        "symfony/yaml": "^4.0",
++        "weaverryan_test/lorem-ipsum-bundle": "^1.0"
+     },
+     "require-dev": {
+         "easycorp/easy-log-handler": "^1.0.2",
+diff --git a/composer.lock b/composer.lock
+index 5f47a2f..8593177 100644
+--- a/composer.lock
++++ b/composer.lock
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+         "This file is @generated automatically"
+     ],
+-    "content-hash": "f6eba8daead9e87802e7a1b3f56dc68f",
++    "content-hash": "fb9f091550dd6e57793c696e2ab771de",
+     "packages": [
+         {
+             "name": "clue/stream-filter",
+@@ -3417,6 +3417,50 @@
+                 "templating"
+             ],
+             "time": "2018-03-03T16:23:01+00:00"
++        },
++        {
++            "name": "weaverryan_test/lorem-ipsum-bundle",
++            "version": "v1.0.0",
++            "source": {
++                "type": "git",
++                "url": "https://github.com/weaverryan/lorem-ipsum-bundle.git",
++                "reference": "36a1c475b33cd137917f2736c4748455e6fdfd46"
++            },
++            "dist": {
++                "type": "zip",
++                "url": "https://api.github.com/repos/weaverryan/lorem-ipsum-bundle/zipball/36a1c475b33cd137917f2736c4748455e6fdfd46",
++                "reference": "36a1c475b33cd137917f2736c4748455e6fdfd46",
++                "shasum": ""
++            },
++            "require": {
++                "php": "^7.1.3",
++                "symfony/config": "^3.4 || ^4.0",
++                "symfony/dependency-injection": "^3.4 || ^4.0",
++                "symfony/http-kernel": "^3.4 || ^4.0"
++            },
++            "require-dev": {
++                "symfony/browser-kit": "^3.4 || ^4.0",
++                "symfony/framework-bundle": "^3.4 || ^4.0",
++                "symfony/phpunit-bridge": "^3.4 || ^4.0"
++            },
++            "type": "symfony-bundle",
++            "autoload": {
++                "psr-4": {
++                    "KnpU\\LoremIpsumBundle\\": "src/"
++                }
++            },
++            "notification-url": "https://packagist.org/downloads/",
++            "license": [
++                "MIT"
++            ],
++            "authors": [
++                {
++                    "name": "Ryan Weaver",
++                    "email": "ryan@knpuniversity.com"
++                }
++            ],
++            "description": "Happy lorem ipsum",
++            "time": "2018-03-21T14:24:42+00:00"
+         }
+     ],
+     "packages-dev": [
+diff --git a/config/bundles.php b/config/bundles.php
+index de7f774..e94462b 100644
+--- a/config/bundles.php
++++ b/config/bundles.php
+@@ -12,4 +12,5 @@ return [
+     Http\HttplugBundle\HttplugBundle::class => ['all' => true],
+     Nexy\SlackBundle\NexySlackBundle::class => ['all' => true],
+     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
++    KnpU\LoremIpsumBundle\KnpULoremIpsumBundle::class => ['all' => true],
+ ];
+diff --git a/symfony.lock b/symfony.lock
+index 6f93581..16d22dd 100644
+--- a/symfony.lock
++++ b/symfony.lock
+@@ -304,5 +304,8 @@
+     },
+     "twig/twig": {
+         "version": "v2.4.4"
++    },
++    "weaverryan_test/lorem-ipsum-bundle": {
++        "version": "v1.0.0"
+     }
+ }

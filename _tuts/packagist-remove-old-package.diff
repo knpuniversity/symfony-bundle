@@ -1,0 +1,106 @@
+diff --git a/composer.json b/composer.json
+index 7095d35..0a3bbbf 100644
+--- a/composer.json
++++ b/composer.json
+@@ -5,7 +5,6 @@
+         "php": "^7.1.3",
+         "ext-iconv": "*",
+         "knplabs/knp-markdown-bundle": "^1.7",
+-        "knpuniversity/lorem-ipsum-bundle": "*@dev",
+         "nexylan/slack-bundle": "^2.0",
+         "php-http/guzzle6-adapter": "^1.1",
+         "sensio/framework-extra-bundle": "^5.1",
+@@ -72,11 +71,5 @@
+             "id": "01C1TW989CK77ZA7B2H4HC9WAG",
+             "allow-contrib": false
+         }
+-    },
+-    "repositories": [
+-        {
+-            "type": "path",
+-            "url": "LoremIpsumBundle"
+-        }
+-    ]
++    }
+ }
+diff --git a/composer.lock b/composer.lock
+index 94b764e..5f47a2f 100644
+--- a/composer.lock
++++ b/composer.lock
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+         "This file is @generated automatically"
+     ],
+-    "content-hash": "d21dde090ac191333a773ab5dfbd93ba",
++    "content-hash": "f6eba8daead9e87802e7a1b3f56dc68f",
+     "packages": [
+         {
+             "name": "clue/stream-filter",
+@@ -705,35 +705,6 @@
+             ],
+             "time": "2018-01-23T15:34:53+00:00"
+         },
+-        {
+-            "name": "knpuniversity/lorem-ipsum-bundle",
+-            "version": "dev-_tuts/master/extract-move-autoload-rules",
+-            "dist": {
+-                "type": "path",
+-                "url": "LoremIpsumBundle",
+-                "reference": "f6fe5faffdaaeee680f3bb742c795fe6a489b8ff",
+-                "shasum": null
+-            },
+-            "require": {
+-                "php": "^7.1.3"
+-            },
+-            "type": "symfony-bundle",
+-            "autoload": {
+-                "psr-4": {
+-                    "KnpU\\LoremIpsumBundle\\": "src/"
+-                }
+-            },
+-            "license": [
+-                "MIT"
+-            ],
+-            "authors": [
+-                {
+-                    "name": "Ryan Weaver",
+-                    "email": "ryan@knpuniversity.com"
+-                }
+-            ],
+-            "description": "Happy lorem ipsum"
+-        },
+         {
+             "name": "michelf/php-markdown",
+             "version": "1.8.0",
+@@ -4277,7 +4248,6 @@
+     "aliases": [],
+     "minimum-stability": "stable",
+     "stability-flags": {
+-        "knpuniversity/lorem-ipsum-bundle": 20,
+         "symfony/lts": 20
+     },
+     "prefer-stable": false,
+diff --git a/config/bundles.php b/config/bundles.php
+index e94462b..de7f774 100644
+--- a/config/bundles.php
++++ b/config/bundles.php
+@@ -12,5 +12,4 @@ return [
+     Http\HttplugBundle\HttplugBundle::class => ['all' => true],
+     Nexy\SlackBundle\NexySlackBundle::class => ['all' => true],
+     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
+-    KnpU\LoremIpsumBundle\KnpULoremIpsumBundle::class => ['all' => true],
+ ];
+diff --git a/symfony.lock b/symfony.lock
+index fb50c7f..6f93581 100644
+--- a/symfony.lock
++++ b/symfony.lock
+@@ -50,9 +50,6 @@
+     "knplabs/knp-markdown-bundle": {
+         "version": "1.6.0"
+     },
+-    "knpuniversity/lorem-ipsum-bundle": {
+-        "version": "dev-_tuts/master/extract-move-autoload-rules"
+-    },
+     "michelf/php-markdown": {
+         "version": "1.8.0"
+     },

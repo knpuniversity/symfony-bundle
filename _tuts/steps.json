@@ -319,7 +319,57 @@
             "id": "tags-add-autoconfigure",
             "name": "Tags: Add autoconfigure",
             "description": null
+        },
+        {
+            "id": "packagist-add-license",
+            "name": "Packagist: add license",
+            "description": null
+        },
+        {
+            "id": "packagist-remove-old-package",
+            "name": "Packagist: Remove old package",
+            "description": null
+        },
+        {
+            "id": "packagist-require-new-package",
+            "name": "Packagist: Require new package",
+            "description": null
+        },
+        {
+            "id": "packagist-add-readme",
+            "name": "Packagist: Add README",
+            "description": null
+        },
+        {
+            "id": "travis-fixing-our-tests",
+            "name": "Travis: Fixing our tests",
+            "description": null
+        },
+        {
+            "id": "travis-creating-initial-file",
+            "name": "Travis: Creating initial file",
+            "description": null
+        },
+        {
+            "id": "travis-remove-php-7-0-support",
+            "name": "Travis: Remove php 7.0 support",
+            "description": null
+        },
+        {
+            "id": "travis-add-3-4-support-but-not-2",
+            "name": "Travis: Add 3.4 support, but not 2",
+            "description": null
+        },
+        {
+            "id": "release-remove-bundle",
+            "name": "Release: remove bundle",
+            "description": null
+        },
+        {
+            "id": "release-re-add-bundle",
+            "name": "Release: Re-add bundle",
+            "description": null
         }
     ],
-    "sha": "eac78166238fd1a2bdf74189f06977597a6bf96f"
+    "sha": "b3cccc085b79d466537d299383a54b9fed572d3e"
 }

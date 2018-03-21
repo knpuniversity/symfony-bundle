@@ -1,0 +1,77 @@
+diff --git a/LoremIpsumBundle/tests/FunctionalTest.php b/LoremIpsumBundle/tests/FunctionalTest.php
+index 8f06970..34c6ce7 100644
+--- a/LoremIpsumBundle/tests/FunctionalTest.php
++++ b/LoremIpsumBundle/tests/FunctionalTest.php
+@@ -22,28 +22,12 @@ class FunctionalTest extends TestCase
+         $this->assertInstanceOf(KnpUIpsum::class, $ipsum);
+         $this->assertInternalType('string', $ipsum->getParagraphs());
+     }
+-
+-    public function testServiceWiringWithConfiguration()
+-    {
+-        $kernel = new KnpULoremIpsumTestingKernel([
+-            'word_provider' => 'stub_word_list'
+-        ]);
+-        $kernel->boot();
+-        $container = $kernel->getContainer();
+-
+-        $ipsum = $container->get('knpu_lorem_ipsum.knpu_ipsum');
+-        $this->assertContains('stub', $ipsum->getWords(2));
+-    }
+ }
+ 
+ class KnpULoremIpsumTestingKernel extends Kernel
+ {
+-    private $knpUIpsumConfig;
+-
+-    public function __construct(array $knpUIpsumConfig = [])
++    public function __construct()
+     {
+-        $this->knpUIpsumConfig = $knpUIpsumConfig;
+-
+         parent::__construct('test', true);
+     }
+ 
+@@ -57,9 +41,8 @@ class KnpULoremIpsumTestingKernel extends Kernel
+     public function registerContainerConfiguration(LoaderInterface $loader)
+     {
+         $loader->load(function(ContainerBuilder $container) {
+-            $container->register('stub_word_list', StubWordList::class);
+-
+-            $container->loadFromExtension('knpu_lorem_ipsum', $this->knpUIpsumConfig);
++            $container->register('stub_word_list', StubWordList::class)
++                ->addTag('knpu_ipsum_word_provider');
+         });
+     }
+ 
+diff --git a/LoremIpsumBundle/tests/KnpUIpsumTest.php b/LoremIpsumBundle/tests/KnpUIpsumTest.php
+index 0fa1f52..db247ba 100644
+--- a/LoremIpsumBundle/tests/KnpUIpsumTest.php
++++ b/LoremIpsumBundle/tests/KnpUIpsumTest.php
+@@ -10,7 +10,7 @@ class KnpUIpsumTest extends TestCase
+ {
+     public function testGetWords()
+     {
+-        $ipsum = new KnpUIpsum(new KnpUWordProvider());
++        $ipsum = new KnpUIpsum([new KnpUWordProvider()]);
+ 
+         $words = $ipsum->getWords(1);
+         $this->assertInternalType('string', $words);
+@@ -25,7 +25,7 @@ class KnpUIpsumTest extends TestCase
+ 
+     public function testGetSentences()
+     {
+-        $ipsum = new KnpUIpsum(new KnpUWordProvider());
++        $ipsum = new KnpUIpsum([new KnpUWordProvider()]);
+ 
+         $text = $ipsum->getSentences(3);
+         $this->assertEquals(3, substr_count($text, '.'));
+@@ -42,7 +42,7 @@ class KnpUIpsumTest extends TestCase
+         // weird: using a loop because the results are random, and so
+         // they may pass several times by luck
+         for ($i = 0; $i < 100; $i++) {
+-            $ipsum = new KnpUIpsum(new KnpUWordProvider());
++            $ipsum = new KnpUIpsum([new KnpUWordProvider()]);
+             $text = $ipsum->getParagraphs(3);
+             $paragraphs = explode("\n\n", $text);
+             $this->assertCount(3, $paragraphs);
