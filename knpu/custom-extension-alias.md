@@ -9,6 +9,8 @@ This root key is called the extension *alias*. And *we* can *totally* control it
 How? In our extension class, go to the Code->Generate menu, or Cmd+N on a mac, select
 "Override" methods, and choose `getAlias()`. Then, return `knpu_lorem_ipsum`.
 
+[[[ code('2a0b5c58aa') ]]]
+
 Here's how things *really* work. When Symfony boots, it loops over all the extension
 classes in the system, calls `getAlias()` on each, and *this* becomes their config
 key. In the parent class, well, the *parent's* parent class, there is a *default*
@@ -46,6 +48,8 @@ Code -> Generate menu, or Cmd + N on a Mac, select Override Methods and choose
 
 Then, if `null === $this->extension`, set `$this->extension` to a new
 `KnpULoremIpsumExtension`. Return `$this->extension` at the bottom.
+
+[[[ code('be6a04d47a') ]]]
 
 This does the same thing as the parent method, but without that sanity check.
 
