@@ -27,6 +27,8 @@ Make this implement `ConfigurationInterface`: the one from the `Config` componen
 We'll need to implement one method: go to the Code -> Generate menu, or Cmd+N on
 a Mac, select "Implement Methods" and choose `getConfigBuilder()`.
 
+[[[ code('bbcfe9a420') ]]]
+
 This is one of the *strangest* classes you'll ever see. By using PHP code, we're
 going to define the entire *tree* of valid config that can be passed to our bundle.
 
@@ -47,15 +49,23 @@ Back in *our* class, start with `$treeBuilder = new TreeBuilder()`. Then,
 `$rootNode = $treeBuilder->root()` and pass the name of our key:
 `knpu_lorem_ipsum`.
 
+[[[ code('f8fb0443d9') ]]]
+
 Now... just start building the config tree! `$rootNode->children()`, and below,
 let's create two keys. The first will be for the "unicorns are real" value,
 and it should be a boolean. To add that, say `->booleanNode('unicorns_are_real')`,
 `->defaultTrue()` and to finish configuring this node, `->end()`.
 
+[[[ code('3c45ce51e5') ]]]
+
 The other option will an integer: `->integerNode('min_sunshine')`, default it to 3,
 then `->end()`. Call `->end()` one more time to finish the `children()`.
 
+[[[ code('a574871f09') ]]]
+
 Weird, right!? Return the `$treeBuilder` at the bottom.
+
+[[[ code('c771c856ae') ]]]
 
 ## Using the Configuration Class
 
@@ -63,9 +73,13 @@ In our extension, we can use this to validate and merge all the config together.
 Start with `$configuration = $this->getConfiguration()` and pass this `$configs`
 and the container. This simply instantiates the `Configuration` class.
 
+[[[ code('3a11cce9f0') ]]]
+
 Here's the *really* important part: `$config = $this->processConfiguration()`: pass
 the configuration object and the original, raw array of `$configs`. `var_dump()`
 that final config and `die`!
+
+[[[ code('ad03ae489e') ]]]
 
 Let's see what happens! Find your browser and... refresh! We get an error... which
 is awesome! It says:
@@ -80,7 +94,11 @@ Back in `knpu_lorem_ipsum.yaml`, temporarily comment-out *all* of our config.
 And, refresh again. Yes! No error! Instead, we see the final, validated & normalized
 config, with the *two* keys we created in the `Configuration` class.
 
+[[[ code('2852324fbb') ]]]
+
 Put *back* the config, but use a real value: `min_sunshine` set to 5.
+
+[[[ code('8e8b2c3063') ]]]
 
 Refresh one last time. Woohoo! `min_sunshine` equals 5. These `Configuration`
 classes are strange... but they take care of everything: validating, merging and
@@ -103,6 +121,8 @@ name, arguments and a bunch of other stuff. *Now* we can say
 `$config['']`. The first argument is `$unicornsAreReal`. So use the
 `unicorns_are_real` key. Set the second argument - index one - to `min_sunshine`.
 
+[[[ code('037de01112') ]]]
+
 That's it! Go back and refresh! It works! Sunshine now appears at least 5 times
 in every paragraph. Our dynamic value *is* being passed!
 
@@ -117,6 +137,8 @@ Yes! Our bundle now prints its config thanks to the `Configuration` class. If yo
 want to get *really* fancy - which of course we *do* - you can add documentation
 there as well. Add `->info()` and pass a short description about why you would
 set this. Do the same for `min_sunshine`.
+
+[[[ code('37d7ee8fb4') ]]]
 
 Run `config:dump` again:
 
