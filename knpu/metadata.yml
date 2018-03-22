@@ -9,9 +9,11 @@ chapters:
     - interface-alias
     - extracting-bundle
     - testing
+    - integration-test
+    - complex-config-test
     - routes-controllers
+    - controller-functional-test
     - events
     - tagging-system
     - packagist
-    - releases
     - travisci
