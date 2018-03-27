@@ -1,3 +1,112 @@
-# Integration Test
+# Service Integration Test
 
-Coming soon...
+Thanks to the unit test, we can confidently say that the `KnpUIpsum` class works
+correctly. But... that's only like 10% of our bundle's code! *Most* of the bundle
+is related to service configuration. So what guarantees the bundle, extension class,
+Configuration class and `services.xml` are all correct? Nothing! Yay!
+
+And it's not that we need to test *everything*, but it would be great to *at least*
+have a "smoke" test that made sure that the bundle correctly sets up a
+`knpu_lorem_ipsum.knpu_ipsum` service.
+
+## Bootstrapping the Integration Test
+
+We're going to do that with a functional test! Or, depending on how you name things,
+this is really more of an integration test. Details. Anyways, in the `tests` directory,
+create a new class called `FunctionalTest`.
+
+Make this extended the normal `TestCase` from PHPUnit, and add a
+`public function testServiceWiring()`.
+
+But here is where things get interesting. We basically want to initialize our bundle
+into a real app, and check that the container has that service. But... we do *not*
+have a Symfony app lying around! So... let's make the *smallest* possible Symfony
+app ever.
+
+To do this, we just need a Kernel class. And instead of creating a new file with
+a new class, we can instead hide the class *right* inside this file, because it's
+only needed here.
+
+Add `class KnpULoremIpsumTestingKernel extens Kernel` from... wait... why is this
+not auto-completing any `Kernel` class? There *should* be on in Symfony's HttpKernel
+component! What's going on?
+
+## Dependencies: symfony/framework-bunde?
+
+Remember! In our `composer.json`, other than the PHP version, the `require` key
+is empty! We're *literally* saying that someone is allowed to use this bundle even
+if they use *zero* parts of Symfony. That's not OK. We need to be explicit about
+what dependencies are *actually* required to use this bundle.
+
+But... what dependencies do we need, exactly? Honestly... most bundles simply
+require `symfony/framework-bundle`. FrameworkBundle provides all of the core services,
+like the router, session, etc. FramworkBundle *also* requires the `http-kernel`
+component, `event-dispatcher` and probably anything else that our bundle depends
+on.
+
+Requiring FrameworkBundle is *not* a horrible thing. But, it's *technically*
+possible to use the Symfony framework *without* the FrameworkBundle, and some
+people *do* do this.
+
+So we're going to take the *tougher*, more interesting path and *not* simply
+require that bundle. Instead, let's look at the actual components are code uses.
+For example, open the bundle class. Obviously, we depend on the `http-kernel`
+component. And in the extension class, we're using `config` and `dependency-injection`.
+In `Configuration`, nothing new: just `config`.
+
+Ok, this means our bundle requires `config`, `dependency-injection` and `http-kernel`.
+And by the way, this is *exactly* why we're writing the integration test! Our bundle
+is not setup correct right now, but it wasn't very obvious.
+
+## Adding our Dependencies
+
+In `composer.json`, let's add these: `symfony/config` at version `^4.0`. Copy this
+and paste it two more times. Require `symfony/dependency-injection` and
+`symfony/http-kernel`.
+
+Now, find your terminal, and run:
+
+```terminal
+composer update
+```
+
+Perfect! Once that finishes, we can go back to our functional test. Now, re-type
+the "l" and `Kernel` and... yes! *There* is the Kernel class from `http-kernel`.
+
+This requires us to implement two methods. Go to the Code -> Benerate menu - or
+Command+N on a Mac - click "Implement Methods" and choose the two.
+
+Inside `registerBundles`, return an array and *only* enable *our* bundle:
+`new DoctrineBundle()`. Since we're not dependent on any other bundles - like
+`FrameworkBundle` - we should, in theory, be able to boot an app with only this.
+
+And... that's it! Our app is ready. Back in `testServiceWiring`, add
+`$kernel = new KnpULoremIpsumTestingKernel()` and pass this `test` for the environment,
+thought that doesn't matter, and `true` for debug. Next, *boot* the kernel, and
+say `$container = $kernel->getContainer()`.
+
+This is *great*! We just booted a *real* Symfony app. And now, we can makes sure
+our service exists. Add `$ipsum = $container->get()`, copy the id of our service,
+and paste it here. We can do this because the service is public.
+
+Then let's add some very basic checks, like `$this->assertInstanceOf()` that
+`KnpUIpsum::class` is the type of `$ipsum`. And also, `$this->assertInternalType()`
+that a string is what we get back when we call `$ipsum->getParagraphs()`.
+
+The unit test *really* tests this class - so we really only need a sanity check.
+I think it's time to try this out! Find your terminal, and run:
+
+```terminal
+./vendor/bin/phpunit
+```
+
+Yes! Our services are wired up correctly! So, this functional test didn't *fail*
+like I promised in the last chapter. But the point is, before we added our dependencies,
+our bundle was *not* actually setup correctly.
+
+And, woh! In the `tests/` directory, we suddenly have a `cache/` directory! That
+comes from our Symfony app - it caches files just like a normal app. To make sure
+that doesn't get committed, open `.gitignore` and ignore `/tests/cache`.
+
+Next, let's get a little more complex by testing that some of our configuration
+options work.

@@ -1,4 +1,4 @@
-# Testing
+# Testing the Bundle
 
 Hey! Someone already made some tests for our bundle! *So* nice! Right now, they live
 in the *app*, but moving them *into* the bundle is our next job! But first... let's
