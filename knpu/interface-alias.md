@@ -12,16 +12,22 @@ Copy the alias we created earlier in order to enable autowiring. Create a new al
 whose id is `knpu_lorem_ipsum.word_provider` and set the alias to the
 `knp_word_provider` service id above.
 
+[[[ code('6d4cc8dcdc') ]]]
+
 Thanks to this, there is now a *new* service in the container called
 `knpu_lorem_ipsum.word_provider`. But when someone references it, it actually
 just points to our `knpu_lorem_ipsum.knpu_word_provider`. Now, for the argument
 to `KnpUIpsum`, pass the *alias* id instead.
+
+[[[ code('5bc6d1f4d6') ]]]
 
 So far, this won't change *anything*. But open the extension class. Instead of changing
 the argument, we can override the *alias* to point to *their* service id. Do this
 with `$container->setAlias()`. First pass `knpu_lorem_ipsum.word_provider`
 and set this alias to `$config['word_provider']`. We don't need the `new Reference()`
 here because the `setAlias()` method expects this to be a service ID.
+
+[[[ code('916cc1af03') ]]]
 
 And before even trying it, copy the service alias, find your terminal, and run:
 
@@ -59,13 +65,19 @@ class to interface.
 Inside, add the `getWordList()` method and make it return an array. This is *also*
 the perfect place to add some documentation about what this method should do.
 
+[[[ code('4483124629') ]]]
+
 With the interface done, go back to `KnpUIpsum`, change the type-hint to
 `WordProviderInterface`. The user can now pass *anything* they want, as long as it
 has this `getWordList()` method... because *that* is what we're using at the bottom
 of `KnpUIpsum`.
 
+[[[ code('b8ea260532') ]]]
+
 Then, of course, we also need to go open *our* provider and make sure it implements
 this interface: `implements WordProviderInterface`.
+
+[[[ code('6a48385ce2') ]]]
 
 If you try it now... *not* broken! And yea, *our* `CustomUserProvider` will *still*
 extend `KnpUWordProvider`, but that's now optional - we could just implement the
