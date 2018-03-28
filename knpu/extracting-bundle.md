@@ -49,10 +49,14 @@ enable the bundle when it's installed. For License, I'll use MIT - but more on
 that later. And finally, let's *not* add any dependencies yet. And, generate!
 Let's *definitely* ignore the `vendor/` directory.
 
+[[[ code('615f28e7b7') ]]]
+
 Hello `.gitignore` file and hello `composer.json`! This file has a few purposes.
 First, of course, it's where we will eventually require any packages the bundle needs.
 We'll do that later. But I am going to start at least by saying that we require php
 7.1.3. That's the version that Symfony 4.0 requires.
+
+[[[ code('57c893ff11') ]]]
 
 ## Autoloading Rules
 
@@ -62,6 +66,8 @@ needs to know what namespace our bundle uses and where those classes live.
 Up until now, we put those autoload rules inside the main project. Let's steal that
 section and remove the line for our bundle. Paste that into the bundle and remove
 the `App` line. The `KnpU\\LoremIpsumBundle\\` namespace lives in just, `src/`.
+
+[[[ code('1ce1cf0cd8') ]]]
 
 ## Using a "path" Repository
 
@@ -79,6 +85,13 @@ to `composer require`.
 
 Copy the `repositories` section, find our application's `composer.json` and, at
 the bottom, paste this. The library lives at `../LoremIpsumBundle`.
+
+***TIP
+The course code contains `LoremIpsumBundle` project inside itself, hence you won't see `../`
+on the repository URL in the code blocks.
+***
+
+[[[ code('9b435c2491') ]]]
 
 Thanks to that, our application *now* knows that there is a package called
 `knpuniversity/lorem-ipsum-bundle` available. Back at the terminal, find the tab
