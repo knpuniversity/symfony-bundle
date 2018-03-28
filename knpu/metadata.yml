@@ -14,6 +14,8 @@ chapters:
     - routes-controllers
     - controller-functional-test
     - events
+    - event-docs
     - tagging-system
+    - tags-compiler-pass
     - packagist
     - travisci
