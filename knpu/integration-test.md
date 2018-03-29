@@ -15,7 +15,7 @@ We're going to do that with a functional test! Or, depending on how you name thi
 this is really more of an integration test. Details. Anyways, in the `tests/` directory,
 create a new class called `FunctionalTest`.
 
-Make this extended the normal `TestCase` from PHPUnit, and add a
+Make this extend the normal `TestCase` from PHPUnit, and add a
 `public function testServiceWiring()`.
 
 And here is where things get interesting. We basically want to initialize our bundle
@@ -24,7 +24,7 @@ have a Symfony app lying around! So... let's make the *smallest* possible Symfon
 app ever.
 
 To do this, we just need a Kernel class. And instead of creating a new *file* with
-a new class, we can instead hide the class right inside *this* file, because it's
+a new class, we can hide the class right inside *this* file, because it's
 only needed here.
 
 Add `class KnpULoremIpsumTestingKernel extends Kernel` from... wait... why is this
@@ -55,7 +55,7 @@ In `Configuration`, nothing new: just `config`.
 
 Ok! Our bundle needs the `config`, `dependency-injection` and `http-kernel` components.
 And by the way, this is *exactly* why we're writing the integration test! Our bundle
-is not setup correct right now... but it wasn't very obvious.
+is not setup correctly right now... but it wasn't very obvious.
 
 ## Adding our Dependencies
 

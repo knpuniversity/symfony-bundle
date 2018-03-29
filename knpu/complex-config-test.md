@@ -134,7 +134,7 @@ their own.
 It's a subtle problem, but has an easy fix: we need to make the `Kernel` use a
 different cache directory each time it's instantiated. There are tons of ways to
 do this, but here's an easy one. Go back to the Code -> Generate menu, or Command + N
-on a Mac, and override a method called `getCacheDirectory()`. Return
+on a Mac, and override a method called `getCacheDir()`. Return
 `__DIR__.'/cache/'` then `spl_object_hash($this)`. So, we will *still* use that
 cache directory, but each time you create a new Kernel, it will use a different
 subdirectory.

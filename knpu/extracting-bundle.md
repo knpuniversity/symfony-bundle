@@ -11,7 +11,7 @@ Find your terminal, and kick that lazy bundle out of your house and into a new d
 next door:
 
 ```terminal-silent
-mv lib/LoremIpsumeBundle ../LoremIpsumBundle
+mv lib/LoremIpsumBundle ../LoremIpsumBundle
 ```
 
 In PhpStorm, let's open that second directory inside a new window, and re-decorate
