@@ -22,7 +22,7 @@ directory as `FunctionalTest`, which is already set to be ignored by git. Add a
 `../` to the path. Then, delete the extra `cache/` dir. There's also  an extra
 `logs` directory, but it's empty, so just ignore it.
 
-*Now* move back to your terminal, add everything to git, give it an inspriring message,
+*Now* move back to your terminal, add everything to git, give it an inspiring message,
 and commit!
 
 With everything committed, let's push this to GitHub! Well, you can host it *anywhere*,
@@ -34,7 +34,7 @@ package name in `composer.json`. Give it a clever description, make sure it's pu
 and create repository!
 
 Copy the code to push to an existing repository, go find your terminal, quick!
-Paste, hit enter, wait impantiently... then... say hello to our new repository!
+Paste, hit enter, wait impatiently... then... say hello to our new repository!
 
 ## Registering on Packagist
 
@@ -42,7 +42,7 @@ With that done, we can *now* put our bundle up on Packagist! Go to
 [packagist.org](https://packagist.org/) and make sure you're logged in. Then, it's
 *super* easy: click "Submit", copy the GitHub URL, paste, and click "Check".
 
-This does some sanity checks in the background, like parsing your `package.json`
+This does some sanity checks in the background, like parsing your `composer.json`
 file and waiting for Jordi to search for any similar packages on Packagist, to help
 avoid duplication.
 

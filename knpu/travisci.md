@@ -147,6 +147,6 @@ continuous integration, it can bake you a cake and it has a stable release.
 
 I hope you learned a ton about creating re-usable bundles... and even more about
 how Symfony works in general. As always, if you have any questions or comments,
-talk to us down in the comment section.
+talk to us down in the comments section.
 
 All right guys, seeya next time.
