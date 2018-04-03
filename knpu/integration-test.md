@@ -97,7 +97,7 @@ The unit test *truly* tests this class - so we really only need a sanity check.
 I think it's time to try this! Find your terminal, and run:
 
 ```terminal
-./vendor/bin/phpunit
+./vendor/bin/simple-phpunit
 ```
 
 Yes! We're now *sure* that our service is wired correctly! So, this functional test
