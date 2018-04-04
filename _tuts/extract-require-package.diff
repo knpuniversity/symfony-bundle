@@ -36,11 +36,10 @@ index 5f47a2f..94b764e 100644
      "packages": [
          {
              "name": "clue/stream-filter",
-@@ -705,6 +705,35 @@
-             ],
+@@ -706,6 +706,35 @@
              "time": "2018-01-23T15:34:53+00:00"
          },
-+        {
+         {
 +            "name": "knpuniversity/lorem-ipsum-bundle",
 +            "version": "dev-_tuts/master/extract-move-autoload-rules",
 +            "dist": {
@@ -69,9 +68,10 @@ index 5f47a2f..94b764e 100644
 +            ],
 +            "description": "Happy lorem ipsum"
 +        },
-         {
++        {
              "name": "michelf/php-markdown",
              "version": "1.8.0",
+             "source": {
 @@ -4248,6 +4277,7 @@
      "aliases": [],
      "minimum-stability": "stable",

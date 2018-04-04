@@ -1,0 +1,18 @@
+diff --git a/LoremIpsumBundle/tests/FunctionalTest.php b/LoremIpsumBundle/tests/FunctionalTest.php
+index 3aeb05f..922e076 100644
+--- a/LoremIpsumBundle/tests/FunctionalTest.php
++++ b/LoremIpsumBundle/tests/FunctionalTest.php
+@@ -38,8 +38,12 @@ class FunctionalTest extends TestCase
+ 
+ class KnpULoremIpsumTestingKernel extends Kernel
+ {
+-    public function __construct()
++    private $knpUIpsumConfig;
++
++    public function __construct(array $knpUIpsumConfig = [])
+     {
++        $this->knpUIpsumConfig = $knpUIpsumConfig;
++
+         parent::__construct('test', true);
+     }
+ 
