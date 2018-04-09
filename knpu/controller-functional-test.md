@@ -9,6 +9,8 @@ In the `tests/` directory, create a new `Controller` directory and a new PHP cla
 inside called `IpsumApiControllerTest`. As always, make this extend `TestCase` from
 PHPUnit, and add a `public function testIndex()`.
 
+[[[ code('590a77c155') ]]]
+
 ## How to Boot a Fake App?
 
 The setup for a functional test is pretty similar to an integration test: create
@@ -20,6 +22,8 @@ Start by stealing the testing kernel from the `FunctionalTest` class. Paste this
 at the bottom, and, just to avoid confusion, give it a different name:
 `KnpULoremIpsumControllerKernel`. Re-type the `l` and hit tab to add the `use`
 statement for the `Kernel` class.
+
+[[[ code('8ab03d7519') ]]]
 
 Then, we can simplify: we don't need any special configuration: just call the parent
 constructor. Re-type the bundle name and hit tab to get the use statement, and
@@ -63,13 +67,19 @@ think it's cool. But really, it makes life easier: `use MicroKernelTrait`. Remov
 Code -> Generate menu - or Command + N on a Mac - and implement the two missing
 methods: `configureContainer()`, and `configureRoutes()`.
 
+[[[ code('158d5285f9') ]]]
+
 Cool! So... let's import our route! `$routes->import()`, then the path to that
 file: `__DIR__.'/../../src/Resources/config/routes.xml'`.
+
+[[[ code('667e979508') ]]]
 
 ## Setting up the Test Client
 
 Nice! And... that's really all the kernel needs. Back up in `testIndex()`, create
 the new kernel: `new KnpULoremIpsumControllerKernel()`.
+
+[[[ code('bc64fbe792') ]]]
 
 Now, you can almost pretend like this a normal functional test in a normal Symfony
 app. Create a test client: `$client = new Client()`  - the one from FrameworkBundle -
@@ -80,9 +90,15 @@ get auto-completion for this method - we'll find out why soon. Make a `GET` requ
 and for the URL... actually, down in `configureRoutes()`, ah, I forgot to add a prefix!
 Add `/api` as the second argument. Make the request to `/api/`.
 
+[[[ code('8f094f9fa4') ]]]
+
+[[[ code('1fdd5cb426') ]]]
+
 Cool! Let's dump the response to see what it looks like:
 `var_dump($client->getResponse()->getContent())`. Then add an assert that 200
 matches `$client->getResponse()->getStatusCode()`.
+
+[[[ code('9cc225f5d4') ]]]
 
 Alright! Let's give this a try! Find your terminal, and run those tests!
 
@@ -121,8 +137,11 @@ This is a bit tougher to track down. When we use `MicroKernelTrait`, behind the
 scenes, it adds some `framework` configuration to the container in order to configure
 the router. But... our kernel does *not* enable FrameworkBundle!
 
-No problem: add `new FrameworkBundle` to our bundles array. Then, go back and
-try the tests again: hold your breath:
+No problem: add `new FrameworkBundle` to our bundles array.
+
+[[[ code('e48c023862') ]]]
+
+Then, go back and try the tests again: hold your breath:
 
 ```terminal-silent
 ./vendor/bin/simple-phpunit
@@ -142,6 +161,8 @@ secret, Symfony can't give you a default value. For our testing kernel, it's mea
 but it needs to exist. In `configureContainer()`, add `$c->loadFromExtension()`
 passing it `framework` and an array with `secret` set to anything. The `FrameworkExtension`
 uses this value to set that missing parameter.
+
+[[[ code('ba74b96ed6') ]]]
 
 Do those tests... one, last time:
 
