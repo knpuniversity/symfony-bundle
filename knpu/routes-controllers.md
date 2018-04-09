@@ -32,19 +32,27 @@ does *not* require that! Ignore this problem for now. Instead, find our app code
 open `AbstractController`, copy its `namespace`, and use it to add the `use` statement
 manually to the controller.
 
+[[[ code('7ff55abd7e') ]]]
+
 Next, add a public function called `index`. Here, we're going to use the `KnpUIpsum`
 class to return a JSON response with some dummy text. When you create a controller
 in a reusable bundle, the best practice is to register your controller as a proper
 service and use dependency injection to get anything you need.
 
+[[[ code('d4f87bd706') ]]]
+
 Add `public function __construct()` and type-hint the first argument with `KnpUIpsum`.
 I'll press Alt+Enter and choose Initialize Fields so that PhpStorm creates and
 sets a property for that.
+
+[[[ code('a19a2ca121') ]]]
 
 Down below, return `$this->json()` - we will *not* have auto-complete for that method
 because of the missing `AbstractController` - with a `paragraphs` key set to
 `$this->knpUIpsum->getParagraphs()` and a `sentences` key set to
 `$this->knpUIpsum->getSentences()`
+
+[[[ code('87a4bfc66f') ]]]
 
 Excellent!
 
@@ -54,6 +62,8 @@ Next, we need to register this as a service. In `services.xml`, copy the first
 service, call this one `ipsum_api_controller`, and set its class name. For now,
 *don't* add `public="true"` or `false`: we'll learn more about this in a minute.
 Pass one argument: the main `knpu_lorem_ipsum.knpu_ipsum` service.
+
+[[[ code('8cd36159d4') ]]]
 
 Perfect!
 
@@ -69,6 +79,8 @@ we did with services, search for "XML" until you find a good example.
 Copy that code and paste it into our file. Let's call the one route
 `knpu_lorem_ipsum_api`. For `controller`, copy the service id, paste, and add
 a single colon then `index`.
+
+[[[ code('8a905e7200') ]]]
 
 Fun fact: in Symfony 4.1, the syntax changes to a double `::` and using a single
 colon is deprecated. Keep a single `:` for now if you want your bundle to work in
@@ -90,6 +102,8 @@ Add a root key - `_lorem_ipsum` - this is meaningless, then `resources` set to
 `@KnpULoremIpsumBundle` and then the path to the file: `/Resources/config/routes.xml`.
 *Then*, give this a prefix! How about `/api/ipsum`.
 
+[[[ code('9f94feba69') ]]]
+
 Did it work? Let's find out: find your terminal tab for the application, and use
 the trusty old:
 
@@ -107,6 +121,8 @@ The error is not *entirely* correct for *our* circumstance. First, yes, at this 
 controllers are the *one* type of service that *must* be public. If you're building
 an *app*, you can give it this tag, which will automatically make it public. But
 for a reusable bundle, in `services.xml`, we need to set `public="true"`.
+
+[[[ code('3d8899e75b') ]]]
 
 Try that again! *Now* it works. And... you *might* be surprised! After all, our
 bundle references a class that does *not* exist! This *is* a problem... at least,
