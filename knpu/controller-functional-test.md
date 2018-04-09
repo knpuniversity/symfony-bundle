@@ -43,7 +43,7 @@ FrameworkBundle should *still* be an *optional* dependency. In other words, we a
 but we're doing things the harder, more interesting way.
 
 This leaves us with a big ugly problem! In order to *test* that the route and
-controller work, we need the route & controller system! In other words, we need
+controller work, we need the route & controller system! We need
 FrameworkBundle! This is yet *another* case when we need a dependency, but we *only*
 need the dependency when we're developing the bundle or running tests. Find your
 terminal and run:

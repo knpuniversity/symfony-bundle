@@ -1,5 +1,5 @@
 diff --git a/LoremIpsumBundle/tests/FunctionalTest.php b/LoremIpsumBundle/tests/FunctionalTest.php
-index 2e388d9..922e076 100644
+index 2e388d9..3aeb05f 100644
 --- a/LoremIpsumBundle/tests/FunctionalTest.php
 +++ b/LoremIpsumBundle/tests/FunctionalTest.php
 @@ -4,15 +4,17 @@ namespace KnpU\LoremIpsumBundle\Tests;
@@ -21,7 +21,7 @@ index 2e388d9..922e076 100644
          $kernel->boot();
          $container = $kernel->getContainer();
  
-@@ -20,10 +22,31 @@ class FunctionalTest extends TestCase
+@@ -20,10 +22,27 @@ class FunctionalTest extends TestCase
          $this->assertInstanceOf(KnpUIpsum::class, $ipsum);
          $this->assertInternalType('string', $ipsum->getParagraphs());
      }
@@ -41,19 +41,15 @@ index 2e388d9..922e076 100644
  
  class KnpULoremIpsumTestingKernel extends Kernel
  {
-+    private $knpUIpsumConfig;
-+
-+    public function __construct(array $knpUIpsumConfig = [])
++    public function __construct()
 +    {
-+        $this->knpUIpsumConfig = $knpUIpsumConfig;
-+
 +        parent::__construct('test', true);
 +    }
 +
      public function registerBundles()
      {
          return [
-@@ -33,5 +56,18 @@ class KnpULoremIpsumTestingKernel extends Kernel
+@@ -33,5 +52,18 @@ class KnpULoremIpsumTestingKernel extends Kernel
  
      public function registerContainerConfiguration(LoaderInterface $loader)
      {
