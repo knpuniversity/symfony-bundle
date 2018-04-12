@@ -17,8 +17,12 @@ to be an *array* of `$wordProviders`. Rename the property to `$wordProviders`,
 and I'll add some PHPDoc above this to help with auto-completion: this will be
 an array of `WordProviderInterface[]`.
 
+[[[ code('97ad8d934c') ]]]
+
 Let's also add a *new* property called `wordList`: in a moment, we'll use this to
 store the final word list, so that we only need to calculate it once.
+
+[[[ code('1a6bbf3d7c') ]]]
 
 The big change is down below in the `getWordList()` method. First, if
 `null === $this->wordList`, then we need to loop over all the word providers to
@@ -26,17 +30,25 @@ The big change is down below in the `getWordList()` method. First, if
 
 Once we've done, that, at the bottom, return `$this->wordList`.
 
+[[[ code('83dc2becdb') ]]]
+
 Back in the if, create an empty `$words` array, then loop over `$this->wordProviders`
 as `$wordProvider`. For each word provider, set `$words` to an `array_merge` of
 the words so far and `$wordProvider->getWordList()`.
+
+[[[ code('18775fcbaf') ]]]
 
 After, we need a sanity check: if the `count($words) <= 1`, throw an exception:
 this class only works when there are at least *two* words. Finally, set
 `$this->wordList` to `$words`.
 
+[[[ code('bba42815ec') ]]]
+
 Perfect! This class is now just a *little* bit more flexible. In `config/services.xml`,
 instead of passing one word provider, add an `<argument` with `type="collection"`,
 them move the word provider argument inside of this.
+
+[[[ code('de0846f42f') ]]]
 
 There's no fancy plugin system yet, but things *should* still work. Find your browser
 and refresh. Great! Even the article page looks fine.
@@ -52,10 +64,12 @@ on the word provider service, change this to use the longer service syntax so th
 inside, we can add `<tag name="">`, and, invent a new tag string. How about:
 `knpu_ipsum_word_provider`.
 
+[[[ code('38ac53d387') ]]]
+
 If this makes *no* sense to you, no problem. Because, it will *not* work yet: when
 you refresh, big error! At this moment, there are *zero* word providers.
 
-If you've worked with Symfony for awhile, you've probably *used* tags before. At
+If you've worked with Symfony for a while, you've probably *used* tags before. At
 a high-level, the idea is pretty simple. First, you can attach tags to services...
 which... initially... does nothing. But then, a bundle author - that's us! - can
 write some code that finds all services in the container with this tag and dynamically
