@@ -196,6 +196,11 @@
             "description": null
         },
         {
+            "id": "functional-test-configuration-constructor",
+            "name": "Functional: Test configuration constructor",
+            "description": null
+        },
+        {
             "id": "functional-fix-cache-problem",
             "name": "Functional: Fix cache problem",
             "description": null
@@ -371,5 +376,5 @@
             "description": null
         }
     ],
-    "sha": "b3cccc085b79d466537d299383a54b9fed572d3e"
+    "sha": "1f9ba1c7c3c529dbe2b35c353be0a69eff094833"
 }

@@ -42,9 +42,13 @@ This will be our fake word provider. Go to the Code -> Generate menu, or Command
 on a Mac, and implement the `getWordList()` method. Just return an array with two
 words: `stub` and `stub2`.
 
+[[[ code('74420b4ced') ]]]
+
 Next, copy the `testServiceWiring()` method, paste it, and rename it to
 `testServiceWiringWithConfiguration()`. Remove the last two asserts: we're going
 to work more on this in a minute.
+
+[[[ code('77abddfc20') ]]]
 
 ## Configuring Bundles in the Kernel
 
@@ -56,12 +60,16 @@ First, inside the kernel, go back to the Code -> Generate menu, or Command + N o
 a Mac, and override the constructor. To simplify, instead of passing the environment
 and debug flag, just hard-code those when we call the parent constructor.
 
+[[[ code('1616289470') ]]]
+
 Thanks to that, we can remove those arguments in our two test functions above.
 But *now*, add an optional array argument called `$knpUIpsumConfig`. This will be
 the configuration we want to pass under the `knpu_lorem_ipsum` key.
 
 At the top of the kernel, create a new private variable called `$knpUIpsumConfig`,
 and then assign that in the constructor to the argument.
+
+[[[ code('25817f5eef') ]]]
 
 Next, find the `registerContainerConfiguration()` method. In a normal Symfony app,
 *this* is the method that's responsible for parsing all the YAML files in the
@@ -72,22 +80,32 @@ Instead of parsing YAML files, we can instead put all that logic into PHP with
 Inside of *here*, we can start registering services and passing bundle extension
 configuration.
 
+[[[ code('46445bec67') ]]]
+
 First, in all cases, let's register our `StubWordList` as a service:
 `$container->register()`, pass it any id - like `stub_word_list` - and pass the
 class: `StubWordList::class`. It doesn't need any arguments.
+
+[[[ code('86445e8858') ]]]
 
 Next, we need to pass any custom `knpu_lorem_ipsum` bundle extension configuration.
 Do this with `$container->loadFromExtension()` with `knpu_lorem_ipsum` and, for
 the second argument, the array of config you want: `$this->knpUIpsumConfig`.
 
+[[[ code('38e6e03d52') ]]]
+
 Basically, each test case can *now* pass whatever custom config they want. The
 first won't pass any, but the second will pass the `word_provider` key set to
 the service id: `stub_word_list`.
+
+[[[ code('f1ab232c83') ]]]
 
 The *downside* of an integration test is that we can't assert *exactly* that the
 `StubWordList` was passed into `KnpUIpsum`. We can only test the *behavior* of
 the services. But since that stub word list only uses two different words, we
 can reasonably test this with `$this->assertContains('stub', $ipsum->getWords(2))`.
+
+[[[ code('2e081d48ba') ]]]
 
 Ready to try this? Find your terminal and... run those tests!
 
@@ -138,6 +156,8 @@ on a Mac, and override a method called `getCacheDir()`. Return
 `__DIR__.'/cache/'` then `spl_object_hash($this)`. So, we will *still* use that
 cache directory, but each time you create a new Kernel, it will use a different
 subdirectory.
+
+[[[ code('4b58bf8ce7') ]]]
 
 Clear out the cache directory one last time. Then, run the tests!
 

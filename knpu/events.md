@@ -22,14 +22,20 @@ you have the opportunity to pass an Event object to any listeners. To be as
 *awesome* as possible, you'll want to make sure that object contains as *much* useful
 information as you can.
 
+[[[ code('019ed33477') ]]]
+
 In this case, a listener might want to access the data that we're about to turn 
 into JSON. Cool! Add `public function __construct()` with an array `$data` argument.
 I'll press Alt+Enter and choose "Initialize Fields" to create a data property and
 set it.
 
+[[[ code('c87c4a3be7') ]]]
+
 Then, we need a way for the listeners to access this. *And*, we *also* want any
 listeners to be able to *set* this. Go back to the Code -> Generate menu, or
 Command + N on a Mac, choose "Getter and Setters" and select `data`.
+
+[[[ code('b8401ee960') ]]]
 
 It's ready!
 
@@ -39,21 +45,31 @@ Head to your controller: this is where we'll *dispatch* that event. First, set
 the data to a `$data` variable and then create the event object:
 `$event = new FilterApiResponseEvent()` passing it the data.
 
+[[[ code('0e312e1f9b') ]]]
+
 I'm not going to dispatch the event *quite* yet, but at the end, pass `$event->getData()`
 to the `json` method.
+
+[[[ code('1659a19cc7') ]]]
 
 To dispatch the event, we need... um... the event dispatcher! And of course, we're
 going to pass this in as an argument: `EventDispatcherInterface $eventDispatcher`.
 Press Alt+enter and select "Initialize Fields" to add that as a property and set
 it in the constructor.
 
+[[[ code('522728d368') ]]]
+
 As *soon* as we do this, we need to also open `services.xml` and pass a second
 argument: `type="service"` and `id="event_dispatcher"`.
+
+[[[ code('66dec817ab') ]]]
 
 Back in the controller, right after you create the event, dispatch it:
 `$this->eventDispatcher->dispatch()`. The first argument is the event *name* and
 we can actually dream up whatever name we want. Let's use:
 `knpu_lorem_ipsum.filter_api`. For the second argument, pass the event.
+
+[[[ code('19be25e81c') ]]]
 
 And... yea, that's it! I mean, we haven't tested it yet, but this should work: our
 users have a *new* hook point.
@@ -80,12 +96,18 @@ may or may not exist. Since we *want* our bundle to work without FrameworkBundle
 we need to make the `event_dispatcher` service optional. To do that, add an `on-invalid`
 attribute set to `null`.
 
+[[[ code('4203bdb5f7') ]]]
+
 Thanks to this, if the `event_dispatcher` service doesn't exist, instead of an error,
 it'll just pass `null`. That means, we need to make that argument optional, with
 ` = null`, or by adding a `?` before the type-hint.
 
+[[[ code('470a8d6ffa') ]]]
+
 Inside the action, be sure to code defensively: *if* there is an event dispatcher,
 do our magic.
+
+[[[ code('a9e7a71223') ]]]
 
 Try the tests again:
 

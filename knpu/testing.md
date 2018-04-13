@@ -4,6 +4,8 @@ Hey! Someone already made some tests for our bundle! *So* nice! Right now, they 
 in the *app*, but moving them *into* the bundle is our next job! But first... let's
 make sure they're still working.
 
+[[[ code('36083c6e13') ]]]
+
 Find the terminal tab for the application and run:
 
 ```terminal
@@ -19,10 +21,14 @@ Of course! When we moved this class into the new namespace, we did *not* update
 the test! No problem - just re-type `KnpUIpsum` and hit tab to auto-complete
 and get the new `use` statement.
 
+[[[ code('7d5fdc63b7') ]]]
+
 Perfect! But... I can already see another problem! When we added the first constructor
 argument to `KnpUIpsum`, we *also* didn't update the test. I could use mocking here,
 but it's just as easy to say `new KnpUWordProvider`. Repeat that in the two other
 places.
+
+[[[ code('bce2f18675') ]]]
 
 Ok, try those tests again!
 
@@ -46,6 +52,8 @@ itself. In fact, the *only* thing we need to change is the namespace. Instead of
 `App\Tests\Services`, start with the same namespace as the rest of the bundle. So,
 `KnpU\LoremIpsumBundle\Tests`.
 
+[[[ code('892e58f7f5') ]]]
+
 But, if we're going to start putting classes in the `tests/` directory, we need to
 make sure that Composer can autoload these files. This isn't strictly required to
 make PHPUnit work, but it *will* be needed if you add any helper or dummy classes
@@ -55,6 +63,8 @@ And, it's easy! We basically want to add a second `PSR-4` rule that says that
 the `KnpU\LoremIpsumBundle\Tests` namespace lives in the `tests/` directory. But...
 don't! Instead, copy the entire section, paste and rename it to `autoload-dev`.
 Change the namespace to end in `Tests\\` and point this at the `tests/` directory.
+
+[[[ code('2beddf5636') ]]]
 
 Why `autoload-dev`? The issue is that our end users will *not* be using anything
 in the `tests/` directory: this config exists *just* to help us when we are working
@@ -91,6 +101,8 @@ there's just no purpose to lock the dependencies: it doesn't affect our end-user
 at all. Instead, open the `.gitignore` file and ignore `composer.lock`. Now when
 we run `git status`, yep! It's gone.
 
+[[[ code('2b038d46e4') ]]]
+
 ## phpunit.xml.dist
 
 Ok, let's *finally* run the tests!
@@ -110,9 +122,13 @@ a bundle I trust. For example, Go to
 Find the `phpunit.xml.dist` file, view the raw version and copy it. Back at our
 bundle, create that file and paste it in.
 
+[[[ code('ced2b92cdd') ]]]
+
 Oh, and before I forget, in `.gitignore`, *also* ignore `phpunit.xml`. The `.dist`
 version *is* committed, but this allows anyone to have a custom version on their
 local copy that they do not commit.
+
+[[[ code('4332866cbf') ]]]
 
 Check out the new file: the really important thing is that we set the `bootstrap`
 key to `vendor/autoload.php` so that we get Composer's autoloading. This also sets

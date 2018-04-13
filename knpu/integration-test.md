@@ -18,6 +18,8 @@ create a new class called `FunctionalTest`.
 Make this extend the normal `TestCase` from PHPUnit, and add a
 `public function testServiceWiring()`.
 
+[[[ code('a1f4d1ed52') ]]]
+
 And here is where things get interesting. We basically want to initialize our bundle
 into a real app, and check that the container has that service. But... we do *not*
 have a Symfony app lying around! So... let's make the *smallest* possible Symfony
@@ -63,6 +65,8 @@ In `composer.json`, add these: `symfony/config` at version `^4.0`. Copy this
 and paste it two more times. Require `symfony/dependency-injection` and
 `symfony/http-kernel`.
 
+[[[ code('c0f567e928') ]]]
+
 Now, find your terminal, and run:
 
 ```terminal
@@ -75,15 +79,21 @@ the "l" on `Kernel` and... yes! *There* is the Kernel class from `http-kernel`.
 This requires us to implement two methods. Go to the Code -> Generate menu - or
 Command + N on a Mac - click "Implement Methods" and choose the two.
 
+[[[ code('94d7b97d78') ]]]
+
 Inside `registerBundles`, return an array and *only* enable *our* bundle:
 `new KnpULoremIpsumBundle()`. Since we're not dependent on any other bundles - like
 `FrameworkBundle` - we should, in theory, be able to boot an app with only this.
 Kinda cool!
 
+[[[ code('8e2b225603') ]]]
+
 And... that's it! Our app is ready. Back in `testServiceWiring`, add
 `$kernel = new KnpULoremIpsumTestingKernel()` and pass this `test` for the environment,
 thought that doesn't matter, and `true` for debug. Next, *boot* the kernel, and
 say `$container = $kernel->getContainer()`.
+
+[[[ code('70530682bd') ]]]
 
 This is *great*! We just booted a *real* Symfony app. And now, we can makes sure
 our service exists. Add `$ipsum = $container->get()`, copy the id of our service,
@@ -92,6 +102,8 @@ and paste it here. We can do this because the service is public.
 Let's add some very basic checks, like `$this->assertInstanceOf()` that
 `KnpUIpsum::class` is the type of `$ipsum`. And also, `$this->assertInternalType()`
 that a string is what we get back when we call `$ipsum->getParagraphs()`.
+
+[[[ code('9a59c7dba3') ]]]
 
 The unit test *truly* tests this class - so we really only need a sanity check.
 I think it's time to try this! Find your terminal, and run:
@@ -107,6 +119,8 @@ we added our dependencies, our bundle was *not* actually setup correctly.
 And, woh! In the `tests/` directory, we suddenly have a `cache/` folder! That
 comes from our kernel: it caches files just like a normal app. To make sure
 this doesn't get committed, open `.gitignore` and ignore `/tests/cache`.
+
+[[[ code('78feaee4fa') ]]]
 
 Next, let's get a little more complex by testing that some of our configuration
 options work.

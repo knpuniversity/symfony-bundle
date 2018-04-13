@@ -112,7 +112,7 @@ Instead, Symfony was smart enough to see that our class implemented
 So... what's the difference? Why can't the tag be automatically added in *this*
 situation? Well... it can! But we need to set this up in our bundle. Open the extension
 class, go anywhere in the `load()` method, and add
-`$this->registerForAutoconfiguration(WordProviderInterface::class)`. The feature
+`$container->registerForAutoconfiguration(WordProviderInterface::class)`. The feature
 that automatically adds tags is called autoconfiguration, and this method returns
 a "template" `Definition` object that we can modify. Use
 `->addTag('knpu_ipsum_word_provider')`.
