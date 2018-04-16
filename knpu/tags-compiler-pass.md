@@ -30,10 +30,14 @@ new class called `WordProviderCompilerPass`. Make this, implement a
 `CompilerPassInterface`, and then go to the Code -> Generate menu - or
 Command + N on a Mac - click "Implement Methods" and select `process()`.
 
+[[[ code('8452a3bbd9') ]]]
+
 A compiler pass *also* receives a `ContainerBuilder` argument. But, instead of being
 empty, this is full of *all* of the services from *all* of the bundles. That means
 that we can say `foreach ($container->findTaggedServiceIds()`, pass this the
 tag we're using: `knpu_ipsum_word_provider`, and say `as $id => $tags`.
+
+[[[ code('c131e39a6f') ]]]
 
 This is a little confusing: the `$id` key is the service ID that was tagged. Then,
 `$tags` is an array with extra information about the tag. Sometimes, a tag can
@@ -41,7 +45,9 @@ have other attributes, like priority. You can also tag the same service with the
 same *tag*, multiple times.
 
 Anyways, we don't need that info: let's just `var_dump($id)` to see if it works,
-then die.
+then `die`.
+
+[[[ code('e0a293fc66') ]]]
 
 ## Registering the Compiler Pass
 
@@ -49,6 +55,8 @@ To *tell* Symfony about the compiler pass, open your *bundle* class. Here, go ba
 to the Code -> Generate menu - or Command + N on a Mac - choose "Override Methods"
 and select `build()`. You don't need to call the parent `build()` method: it's
 empty. *All* we need here is `$container->addCompilerPass(new WordProviderCompilerPass())`.
+
+[[[ code('0420d41e67') ]]]
 
 There are different *types* of compiler passes, which determine when they are executed
 relative to *other* passes. And, there's also a priority. But unless you're doing
@@ -70,6 +78,8 @@ Ultimately, we need to modify *this* services's first argument. Create an empty
 Finish this with `$definition->setArgument()`, pass it `0` for the first argument,
 and the array of reference objects.
 
+[[[ code('75970fe93d') ]]]
+
 We're done! Go back to our browser and try it! Woohoo! We're now passing an *array*
 of all of the word provider services into the `KnpUIpsum` class.... which... yea,
 is just one right now.
@@ -80,10 +90,14 @@ With this in place, we can remove our old config option. In the `Configuration`
 class, delete the `word_provider` option. And in the extension class, remove the
 code that reads this.
 
+[[[ code('27a59f39c6') ]]]
+
 ## Tagging the CustomWordProvider
 
 Next, move over to the application code, and in `config/packages/knpu_lorem_ipsum.yaml`,
 yep, take out the `word_provider` key.
+
+[[[ code('LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php') ]]]
 
 If you refresh now... it's going to work. But, not surprisingly, the word "beach"
 will not appear in the text. Remember: "beach" is the word that we're adding with
@@ -95,9 +109,13 @@ Before we do that, now that there are *multiple* providers, I don't need to exte
 the core provider anymore. Implement the `WordProviderInterface` directly. Then,
 just return an array with the one word: `beach`.
 
+[[[ code('a90aafb49e') ]]]
+
 To tag the service, open `config/services.yaml`. This class is automatically
 registered as a service. But to give it a tag, we need to override that:
 `App\Service\CustomWordProvider`, and, below, `tags: [knpu_ipsum_word_provider]`.
+
+[[[ code('3f3dbe41cd') ]]]
 
 Let's try it! Refresh! Yes! It's alive!
 
@@ -116,6 +134,8 @@ class, go anywhere in the `load()` method, and add
 that automatically adds tags is called autoconfiguration, and this method returns
 a "template" `Definition` object that we can modify. Use
 `->addTag('knpu_ipsum_word_provider')`.
+
+[[[ code('1ed6575410') ]]]
 
 Cool, right? Back in our app code, remove the service entirely. And now, try it!
 Hmm, no beach the first time but on the second refresh... we got it!
