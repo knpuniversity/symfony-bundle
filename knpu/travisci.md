@@ -1,4 +1,4 @@
-# CI with Travi sCI
+# CI with Travis CI
 
 Our bundle is missing only two things: it needs a stable release and it needs
 continuous integration.
