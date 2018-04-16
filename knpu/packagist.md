@@ -11,6 +11,8 @@ license that works best for you. Symfony is licensed MIT, and that's *definitely
 the best practice. Whatever you choose, copy the license, find your bundle code,
 and at the root, create the `LICENSE` file.
 
+[[[ code('68152f15fb') ]]]
+
 ## Pushing to GitHub
 
 Legal stuff, done! Next, find your terminal: there are a bunch of uncommitted changes.
@@ -21,6 +23,8 @@ and find the `getCacheDir()` method. I *meant* to change this to use the same ca
 directory as `FunctionalTest`, which is already set to be ignored by git. Add a
 `../` to the path. Then, delete the extra `cache/` dir. There's also  an extra
 `logs` directory, but it's empty, so just ignore it.
+
+[[[ code('f69bbd52b4') ]]]
 
 *Now* move back to your terminal, add everything to git, give it an inspiring message,
 and commit!
@@ -95,6 +99,8 @@ page, this has an example README you can use to get started.
 
 Head back to our code, I'll close a few files, then create a new `README.md` file.
 And, bam! I just wrote us a README file!
+
+[[[ code('19216c7c7d') ]]]
 
 Don't worry, I'm not going to lecture you on how to write README files. Well, actually,
 can I take just *one* minute to point out the *most* important parts that I think
