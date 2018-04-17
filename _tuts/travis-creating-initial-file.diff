@@ -1,8 +1,8 @@
-diff --git a/.travis.yml b/.travis.yml
+diff --git a/LoremIpsumBundle/.travis.yml b/LoremIpsumBundle/.travis.yml
 new file mode 100644
 index 0000000..9bc705a
 --- /dev/null
-+++ b/.travis.yml
++++ b/LoremIpsumBundle/.travis.yml
 @@ -0,0 +1,58 @@
 +language: php
 +sudo: false

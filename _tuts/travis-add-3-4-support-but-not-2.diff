@@ -1,7 +1,7 @@
-diff --git a/.travis.yml b/.travis.yml
+diff --git a/LoremIpsumBundle/.travis.yml b/LoremIpsumBundle/.travis.yml
 index f218d8c..1de61c5 100644
---- a/.travis.yml
-+++ b/.travis.yml
+--- a/LoremIpsumBundle/.travis.yml
++++ b/LoremIpsumBundle/.travis.yml
 @@ -27,8 +27,6 @@ matrix:
            # Test LTS versions. This makes sure we do not use Symfony packages with version greater
            # than 2 or 3 respectively. Read more at https://github.com/symfony/lts

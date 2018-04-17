@@ -1,7 +1,7 @@
-diff --git a/.travis.yml b/.travis.yml
+diff --git a/LoremIpsumBundle/.travis.yml b/LoremIpsumBundle/.travis.yml
 index 9bc705a..f218d8c 100644
---- a/.travis.yml
-+++ b/.travis.yml
+--- a/LoremIpsumBundle/.travis.yml
++++ b/LoremIpsumBundle/.travis.yml
 @@ -16,11 +16,10 @@ matrix:
            # Minimum supported dependencies with the latest and oldest PHP version
          - php: 7.2
