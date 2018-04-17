@@ -97,7 +97,7 @@ code that reads this.
 Next, move over to the application code, and in `config/packages/knpu_lorem_ipsum.yaml`,
 yep, take out the `word_provider` key.
 
-[[[ code('LoremIpsumBundle/src/DependencyInjection/KnpULoremIpsumExtension.php') ]]]
+[[[ code('a228c64d7a') ]]]
 
 If you refresh now... it's going to work. But, not surprisingly, the word "beach"
 will not appear in the text. Remember: "beach" is the word that we're adding with
