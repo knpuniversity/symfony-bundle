@@ -19,9 +19,13 @@ delete the configuration we added in the kernel, and the `loadFromExtension()` c
 But, just for the heck of it, I'll keep the custom word provider and tag it to
 integrate our stub word list.
 
+[[[ code('3cca82eb63') ]]]
+
 The *second* failure is in `KnpUIpsumTest`. Ah yea, the first argument to `KnpUIpsum`
 is now an *array*. Wrap the argument in square brackets, then fix it in all three
 places.
+
+[[[ code('b39a3d7895') ]]]
 
 Ok, try the tests again!
 
@@ -39,6 +43,8 @@ top, Symfony has an *example* of a robust Travis configuration file! Awesome!
 
 Copy this *entire* thing, go back to the bundle, and, at the root, create a new
 file - `.travis.yml`. Paste!
+
+[[[ code('4a9e4ad713') ]]]
 
 We'll talk about some of the specifics of this file in a minute. But first, in
 your terminal, add everything we've been working on, commit, and push.
@@ -75,6 +81,8 @@ only PHP 7.1.3 or higher. But... we're testing the bundle against PHP 7.0! We
 *could* allow PHP 7.0... but let's stay with 7.1.3. In the Travis matrix, delete
 the 7.0 test, and change the `--prefer-lowest` to use 7.1.
 
+[[[ code('c33186bdb6') ]]]
+
 Go back to the main Travis page again. Hmm: two failures at the bottom deal with
 something called `symfony/lts`. These make sure that Symfony works with the LTS -
 long-term support version - of Symfony 2 - so Symfony 2.8 - as well as the LTS of
@@ -89,6 +97,8 @@ that test. But I think we should *at least* support Symfony 3.4 - the latest LTS
 
 To do that, in `composer.json`, change the version to `^3.4 || ^4.0`. Use this for
 *all* of our Symfony libraries.
+
+[[[ code('cfc80469e2') ]]]
 
 The cool thing is, we don't *actually* know whether or not our bundle *works* with
 Symfony 3.4. But... we don't care! The tests will tell us if there are any problems.
