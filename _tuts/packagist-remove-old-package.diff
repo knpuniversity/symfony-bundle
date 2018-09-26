@@ -24,11 +24,11 @@ index 7095d35..0a3bbbf 100644
 +    }
  }
 diff --git a/composer.lock b/composer.lock
-index 94b764e..5f47a2f 100644
+index 9ffb2b2..1004bdb 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,7 +4,7 @@
-         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
          "This file is @generated automatically"
      ],
 -    "content-hash": "d21dde090ac191333a773ab5dfbd93ba",
@@ -72,7 +72,7 @@ index 94b764e..5f47a2f 100644
              "name": "michelf/php-markdown",
              "version": "1.8.0",
              "source": {
-@@ -4277,7 +4248,6 @@
+@@ -4269,7 +4240,6 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {
