@@ -24,22 +24,14 @@ index 7095d35..0a3bbbf 100644
 +    }
  }
 diff --git a/composer.lock b/composer.lock
-index 9ffb2b2..1004bdb 100644
+index 4186c60..384ff5d 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -4,7 +4,7 @@
-         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-         "This file is @generated automatically"
-     ],
--    "content-hash": "d21dde090ac191333a773ab5dfbd93ba",
-+    "content-hash": "f6eba8daead9e87802e7a1b3f56dc68f",
-     "packages": [
-         {
-             "name": "clue/stream-filter",
-@@ -706,35 +706,6 @@
+@@ -705,35 +705,6 @@
+             ],
              "time": "2018-01-23T15:34:53+00:00"
          },
-         {
+-        {
 -            "name": "knpuniversity/lorem-ipsum-bundle",
 -            "version": "dev-_tuts/master/extract-move-autoload-rules",
 -            "dist": {
@@ -68,11 +60,10 @@ index 9ffb2b2..1004bdb 100644
 -            ],
 -            "description": "Happy lorem ipsum"
 -        },
--        {
+         {
              "name": "michelf/php-markdown",
              "version": "1.8.0",
-             "source": {
-@@ -4269,7 +4240,6 @@
+@@ -4328,7 +4299,6 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {

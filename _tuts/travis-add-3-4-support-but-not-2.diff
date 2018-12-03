@@ -2,15 +2,15 @@ diff --git a/LoremIpsumBundle/.travis.yml b/LoremIpsumBundle/.travis.yml
 index f218d8c..1de61c5 100644
 --- a/LoremIpsumBundle/.travis.yml
 +++ b/LoremIpsumBundle/.travis.yml
-@@ -27,8 +27,6 @@ matrix:
+@@ -26,8 +26,6 @@ matrix:
+ 
            # Test LTS versions. This makes sure we do not use Symfony packages with version greater
            # than 2 or 3 respectively. Read more at https://github.com/symfony/lts
-         - php: 7.2
--          env: DEPENDENCIES="symfony/lts:^2"
 -        - php: 7.2
+-          env: DEPENDENCIES="symfony/lts:^2"
+         - php: 7.2
            env: DEPENDENCIES="symfony/lts:^3"
  
-           # Latest commit to master
 diff --git a/LoremIpsumBundle/composer.json b/LoremIpsumBundle/composer.json
 index 1c69cf2..9e23167 100644
 --- a/LoremIpsumBundle/composer.json

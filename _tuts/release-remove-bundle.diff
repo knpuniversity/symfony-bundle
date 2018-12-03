@@ -13,19 +13,10 @@ index 7f641d9..0a3bbbf 100644
      "require-dev": {
          "easycorp/easy-log-handler": "^1.0.2",
 diff --git a/composer.lock b/composer.lock
-index 94ac6db..1004bdb 100644
+index 2a92aa6..384ff5d 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -4,7 +4,7 @@
-         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-         "This file is @generated automatically"
-     ],
--    "content-hash": "a96e864c4a93a05e1f71d79a815f6604",
-+    "content-hash": "f6eba8daead9e87802e7a1b3f56dc68f",
-     "packages": [
-         {
-             "name": "clue/stream-filter",
-@@ -3409,50 +3409,6 @@
+@@ -3468,50 +3468,6 @@
                  "templating"
              ],
              "time": "2018-03-03T16:23:01+00:00"
@@ -76,7 +67,7 @@ index 94ac6db..1004bdb 100644
          }
      ],
      "packages-dev": [
-@@ -4284,8 +4240,7 @@
+@@ -4343,8 +4299,7 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {
