@@ -24,7 +24,7 @@ time to create our own!
 
 Inside the `DependencyInjection` directory, create a new class called `Configuration`.
 Make this implement `ConfigurationInterface`: the one from the `Config` component.
-We'll need to implement one method: go to the Code -> Generate menu, or Cmd+N on
+We'll need to implement one method: go to the Code -> Generate menu, or `Cmd`+`N` on
 a Mac, select "Implement Methods" and choose `getConfigBuilder()`.
 
 [[[ code('bbcfe9a420') ]]]
@@ -50,6 +50,16 @@ Back in *our* class, start with `$treeBuilder = new TreeBuilder()`. Then,
 `knpu_lorem_ipsum`.
 
 [[[ code('f8fb0443d9') ]]]
+
+***TIP
+Since Symfony 4.3 you should pass the root node name to the `TreeBuilder` instead:
+
+```php
+$treeBuilder = new TreeBuilder('knpu_lorem_ipsum');
+$rootNode = $treeBuilder->getRootNode();
+// ...
+```
+***
 
 Now... just start building the config tree! `$rootNode->children()`, and below,
 let's create two keys. The first will be for the "unicorns are real" value,
