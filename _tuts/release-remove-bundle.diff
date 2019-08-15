@@ -1,5 +1,5 @@
 diff --git a/composer.json b/composer.json
-index 7f641d9..0a3bbbf 100644
+index 6a04938..1a05516 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -15,8 +15,7 @@
@@ -13,10 +13,10 @@ index 7f641d9..0a3bbbf 100644
      "require-dev": {
          "easycorp/easy-log-handler": "^1.0.2",
 diff --git a/composer.lock b/composer.lock
-index 2a92aa6..384ff5d 100644
+index aeb53f2..0e04459 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -3468,50 +3468,6 @@
+@@ -3473,50 +3473,6 @@
                  "templating"
              ],
              "time": "2018-03-03T16:23:01+00:00"
@@ -67,7 +67,7 @@ index 2a92aa6..384ff5d 100644
          }
      ],
      "packages-dev": [
-@@ -4343,8 +4299,7 @@
+@@ -4347,8 +4303,7 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {

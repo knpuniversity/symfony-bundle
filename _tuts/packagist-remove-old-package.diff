@@ -1,5 +1,5 @@
 diff --git a/composer.json b/composer.json
-index 7095d35..0a3bbbf 100644
+index cfe3563..1a05516 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -5,7 +5,6 @@
@@ -10,7 +10,7 @@ index 7095d35..0a3bbbf 100644
          "nexylan/slack-bundle": "^2.0",
          "php-http/guzzle6-adapter": "^1.1",
          "sensio/framework-extra-bundle": "^5.1",
-@@ -72,11 +71,5 @@
+@@ -71,11 +70,5 @@
              "id": "01C1TW989CK77ZA7B2H4HC9WAG",
              "allow-contrib": false
          }
@@ -24,7 +24,7 @@ index 7095d35..0a3bbbf 100644
 +    }
  }
 diff --git a/composer.lock b/composer.lock
-index 4186c60..384ff5d 100644
+index bf1db27..0e04459 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -705,35 +705,6 @@
@@ -63,7 +63,7 @@ index 4186c60..384ff5d 100644
          {
              "name": "michelf/php-markdown",
              "version": "1.8.0",
-@@ -4328,7 +4299,6 @@
+@@ -4332,7 +4303,6 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {
