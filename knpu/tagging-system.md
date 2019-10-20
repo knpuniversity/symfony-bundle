@@ -89,5 +89,10 @@ Symfony 3.4 or higher, there's a *super* easy way. Just replace the
 to find all services with this tag, and pass them as a collection. And... you'd
 be done!
 
+***TIP
+You will also need to change the `array $wordProviders` constructor argument
+in `KnpUIpsum` to `iterable $wordProviders`.
+***
+
 But, if you want to support *earlier* versions of Symfony, or you want to know
 how the compiler pass system works, keep watching.
