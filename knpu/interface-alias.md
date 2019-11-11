@@ -79,7 +79,7 @@ this interface: `implements WordProviderInterface`.
 
 [[[ code('6a48385ce2') ]]]
 
-If you try it now... *not* broken! And yea, *our* `CustomUserProvider` will *still*
+If you try it now... *not* broken! And yea, *our* `CustomWordProvider` will *still*
 extend `KnpUWordProvider`, but that's now optional - we could just implement the
 interface directly.
 
