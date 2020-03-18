@@ -1,8 +1,8 @@
 diff --git a/composer.json b/composer.json
-index 6a04938..1a05516 100644
+index 704036c..94800c4 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -15,8 +15,7 @@
+@@ -16,8 +16,7 @@
          "symfony/lts": "^4@dev",
          "symfony/twig-bundle": "^4.0",
          "symfony/web-server-bundle": "^4.0",
@@ -13,10 +13,10 @@ index 6a04938..1a05516 100644
      "require-dev": {
          "easycorp/easy-log-handler": "^1.0.2",
 diff --git a/composer.lock b/composer.lock
-index aeb53f2..0e04459 100644
+index 20b692b..b349ff6 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -3473,50 +3473,6 @@
+@@ -3479,50 +3479,6 @@
                  "templating"
              ],
              "time": "2018-03-03T16:23:01+00:00"
@@ -67,7 +67,7 @@ index aeb53f2..0e04459 100644
          }
      ],
      "packages-dev": [
-@@ -4347,8 +4303,7 @@
+@@ -4353,8 +4309,7 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {
@@ -88,10 +88,10 @@ index e94462b..de7f774 100644
 -    KnpU\LoremIpsumBundle\KnpULoremIpsumBundle::class => ['all' => true],
  ];
 diff --git a/symfony.lock b/symfony.lock
-index bfa08d6..6f93581 100644
+index 687bb93..0139bfa 100644
 --- a/symfony.lock
 +++ b/symfony.lock
-@@ -304,8 +304,5 @@
+@@ -307,8 +307,5 @@
      },
      "twig/twig": {
          "version": "v2.4.4"

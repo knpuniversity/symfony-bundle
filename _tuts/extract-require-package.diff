@@ -1,16 +1,16 @@
 diff --git a/composer.json b/composer.json
-index 1a05516..cfe3563 100644
+index 94800c4..1f21ab7 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -5,6 +5,7 @@
-         "php": "^7.1.3",
+@@ -6,6 +6,7 @@
          "ext-iconv": "*",
+         "doctrine/annotations": "^1.8",
          "knplabs/knp-markdown-bundle": "^1.7",
 +        "knpuniversity/lorem-ipsum-bundle": "*@dev",
          "nexylan/slack-bundle": "^2.0",
          "php-http/guzzle6-adapter": "^1.1",
          "sensio/framework-extra-bundle": "^5.1",
-@@ -70,5 +71,11 @@
+@@ -71,5 +72,11 @@
              "id": "01C1TW989CK77ZA7B2H4HC9WAG",
              "allow-contrib": false
          }
@@ -24,7 +24,7 @@ index 1a05516..cfe3563 100644
 +    ]
  }
 diff --git a/composer.lock b/composer.lock
-index 0e04459..bf1db27 100644
+index b349ff6..01d9b9a 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -705,6 +705,35 @@
@@ -63,7 +63,7 @@ index 0e04459..bf1db27 100644
          {
              "name": "michelf/php-markdown",
              "version": "1.8.0",
-@@ -4303,6 +4332,7 @@
+@@ -4309,6 +4338,7 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {
@@ -72,7 +72,7 @@ index 0e04459..bf1db27 100644
      },
      "prefer-stable": false,
 diff --git a/symfony.lock b/symfony.lock
-index 6f93581..fb50c7f 100644
+index 0139bfa..13ffbaf 100644
 --- a/symfony.lock
 +++ b/symfony.lock
 @@ -50,6 +50,9 @@
