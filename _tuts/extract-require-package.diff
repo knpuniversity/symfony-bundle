@@ -1,5 +1,5 @@
 diff --git a/composer.json b/composer.json
-index 94800c4..1f21ab7 100644
+index 473158e..c0a4359 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -6,6 +6,7 @@
@@ -10,7 +10,7 @@ index 94800c4..1f21ab7 100644
          "nexylan/slack-bundle": "^2.0",
          "php-http/guzzle6-adapter": "^1.1",
          "sensio/framework-extra-bundle": "^5.1",
-@@ -71,5 +72,11 @@
+@@ -74,5 +75,11 @@
              "id": "01C1TW989CK77ZA7B2H4HC9WAG",
              "allow-contrib": false
          }
@@ -24,7 +24,7 @@ index 94800c4..1f21ab7 100644
 +    ]
  }
 diff --git a/composer.lock b/composer.lock
-index 0ddb1b8..3114e76 100644
+index 467eaf7..7869d03 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -705,6 +705,35 @@
