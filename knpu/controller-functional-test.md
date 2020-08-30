@@ -85,6 +85,10 @@ Now, you can almost pretend like this a normal functional test in a normal Symfo
 app. Create a test client: `$client = new Client()`  - the one from FrameworkBundle -
 and pass it the `$kernel`.
 
+***TIP
+In Symfony 4.3 and higher, use `KernelBrowser` instead of `Client`: the class was renamed.
+***
+
 Use this to make requests into the app with `$client->request()`. You will *not*
 get auto-completion for this method - we'll find out why soon. Make a `GET` request,
 and for the URL... actually, down in `configureRoutes()`, ah, I forgot to add a prefix!
