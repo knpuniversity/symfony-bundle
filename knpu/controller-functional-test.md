@@ -67,6 +67,11 @@ think it's cool. But really, it makes life easier: `use MicroKernelTrait`. Remov
 Code -> Generate menu - or Command + N on a Mac - and implement the two missing
 methods: `configureContainer()`, and `configureRoutes()`.
 
+***TIP
+Starting in Symfony 5.1, the first argument to `configureRoutes()` should be
+`RoutingConfigurator $routes`.
+***
+
 [[[ code('158d5285f9') ]]]
 
 Cool! So... let's import our route! `$routes->import()`, then the path to that
