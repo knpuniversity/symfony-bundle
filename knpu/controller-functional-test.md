@@ -180,6 +180,16 @@ but it needs to exist. In `configureContainer()`, add `$c->loadFromExtension()`
 passing it `framework` and an array with `secret` set to anything. The `FrameworkExtension`
 uses this value to set that missing parameter.
 
+***TIP
+In Symfony 5.1, to avoid a deprecation warning, you'll also need to set a routing
+key with `utf8: true`:
+
+```php
+'secret' => 'F00',
+'routing' => ['utf8' => true],
+```
+***
+
 [[[ code('ba74b96ed6') ]]]
 
 Do those tests... one, last time:
