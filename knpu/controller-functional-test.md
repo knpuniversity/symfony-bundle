@@ -77,6 +77,15 @@ Starting in Symfony 5.1, the first argument to `configureRoutes()` should be
 Cool! So... let's import our route! `$routes->import()`, then the path to that
 file: `__DIR__.'/../../src/Resources/config/routes.xml'`.
 
+***TIP
+If you're using the `RoutingConfigurator $routes` argument to `configureRoutes()`
+(Symfony 5.1 and later), then import with:
+
+```php
+$routes->import(__DIR__.'/../../src/Resources/config/routes.xml')->prefix('/api');
+```
+***
+
 [[[ code('667e979508') ]]]
 
 ## Setting up the Test Client
