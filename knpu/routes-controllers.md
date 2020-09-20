@@ -65,6 +65,22 @@ Pass one argument: the main `knpu_lorem_ipsum.knpu_ipsum` service.
 
 [[[ code('8cd36159d4') ]]]
 
+***TIP
+In Symfony 5, you'll need a bit more config to get your controller service working:
+
+```xml
+<service id="knpu_lorem_ipsum.ipsum_api_controller" class="KnpU\LoremIpsumBundle\Controller\IpsumApiController" public="true">
+    <call method="setContainer">
+        <argument type="service" id="Psr\Container\ContainerInterface"/>
+    </call>
+    <tag name="container.service_subscriber"/>
+    <argument type="service" id="knpu_lorem_ipsum.knpu_ipsum"/>
+</service>
+```
+
+For a full explanation, see this thread: https://bit.ly/abstract-controller-tag
+***
+
 Perfect!
 
 ## Routing
