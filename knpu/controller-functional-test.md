@@ -181,12 +181,12 @@ passing it `framework` and an array with `secret` set to anything. The `Framewor
 uses this value to set that missing parameter.
 
 ***TIP
-In Symfony 5.1, to avoid a deprecation warning, you'll also need to set a routing
+In Symfony 5.1, to avoid a deprecation warning, you'll also need to set a `router`
 key with `utf8: true`:
 
 ```php
 'secret' => 'F00',
-'routing' => ['utf8' => true],
+'router' => ['utf8' => true],
 ```
 ***
 
