@@ -24,7 +24,7 @@ index 473158e..c0a4359 100644
 +    ]
  }
 diff --git a/composer.lock b/composer.lock
-index 467eaf7..7869d03 100644
+index 1516570..327acc7 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -705,6 +705,35 @@
@@ -63,7 +63,7 @@ index 467eaf7..7869d03 100644
          {
              "name": "michelf/php-markdown",
              "version": "1.8.0",
-@@ -4312,6 +4341,7 @@
+@@ -4326,6 +4355,7 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {
