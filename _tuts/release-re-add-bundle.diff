@@ -13,10 +13,10 @@ index 473158e..d16893c 100644
      "require-dev": {
          "easycorp/easy-log-handler": "^1.0.2",
 diff --git a/composer.lock b/composer.lock
-index 1516570..e5f9bcc 100644
+index 3789590..f4ce574 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -3495,6 +3495,50 @@
+@@ -3499,6 +3499,50 @@
                  "templating"
              ],
              "time": "2018-03-03T16:23:01+00:00"

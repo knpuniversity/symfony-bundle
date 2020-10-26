@@ -13,10 +13,10 @@ index 8defbc8..473158e 100644
      "require-dev": {
          "easycorp/easy-log-handler": "^1.0.2",
 diff --git a/composer.lock b/composer.lock
-index a0ec424..1516570 100644
+index a128f94..3789590 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -3495,50 +3495,6 @@
+@@ -3499,50 +3499,6 @@
                  "templating"
              ],
              "time": "2018-03-03T16:23:01+00:00"
@@ -67,7 +67,7 @@ index a0ec424..1516570 100644
          }
      ],
      "packages-dev": [
-@@ -4370,8 +4326,7 @@
+@@ -4374,8 +4330,7 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {
