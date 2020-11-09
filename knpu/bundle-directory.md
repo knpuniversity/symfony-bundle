@@ -67,6 +67,14 @@ mkdir lib/LoremIpsumBundle
 mkdir lib/LoremIpsumBundle/src
 ```
 
+***TIP
+You can also just type one command instead of three:
+
+```terminal-silent
+mkdir -p lib/LoremIpsumBundle/src
+```
+***
+
 Perfect! Now, move the `KnpUIpsum` class into that directory. And yea, you could
 put this into a `src/Service` directory, or anywhere else you want.
 
