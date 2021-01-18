@@ -41,6 +41,10 @@ the class name. Then, `alias=""` and type the first service's id:
 
 To see what this did, move over to your terminal and run:
 
+***TIP
+In newer versions of Symfony, the `--show-private` option is not needed anymore!
+***
+
 ```terminal
 php bin/console debug:container --show-private knpu
 ```
