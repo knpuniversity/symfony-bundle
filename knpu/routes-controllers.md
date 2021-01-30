@@ -69,7 +69,7 @@ Pass one argument: the main `knpu_lorem_ipsum.knpu_ipsum` service.
 In Symfony 5, you'll need a bit more config to get your controller service working:
 
 ```xml
-<service id="knpu_lorem_ipsum.ipsum_api_controller" class="KnpU\LoremIpsumBundle\Controller\IpsumApiController" public="true">
+<service id="knpu_lorem_ipsum.controller.ipsum_api_controller" class="KnpU\LoremIpsumBundle\Controller\IpsumApiController" public="true">
     <call method="setContainer">
         <argument type="service" id="Psr\Container\ContainerInterface"/>
     </call>
