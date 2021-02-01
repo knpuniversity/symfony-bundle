@@ -23,12 +23,12 @@ index 5c75d32..ecd728a 100644
          return $this->json($event->getData());
      }
 diff --git a/LoremIpsumBundle/src/Resources/config/services.xml b/LoremIpsumBundle/src/Resources/config/services.xml
-index 8cbaa4d..e09f115 100644
+index 6a033b2..c17a490 100644
 --- a/LoremIpsumBundle/src/Resources/config/services.xml
 +++ b/LoremIpsumBundle/src/Resources/config/services.xml
 @@ -13,7 +13,7 @@
  
-         <service id="knpu_lorem_ipsum.controller.ipsum_api_controller" class="KnpU\LoremIpsumBundle\Controller\IpsumApiController" public="true">
+         <service id="knpu_lorem_ipsum.ipsum_api_controller" class="KnpU\LoremIpsumBundle\Controller\IpsumApiController" public="true">
              <argument type="service" id="knpu_lorem_ipsum.knpu_ipsum" />
 -            <argument type="service" id="event_dispatcher" />
 +            <argument type="service" id="event_dispatcher" on-invalid="null" />
