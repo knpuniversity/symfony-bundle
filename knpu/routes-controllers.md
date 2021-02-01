@@ -63,7 +63,7 @@ service, call this one `ipsum_api_controller`, and set its class name. For now,
 *don't* add `public="true"` or `false`: we'll learn more about this in a minute.
 Pass one argument: the main `knpu_lorem_ipsum.knpu_ipsum` service.
 
-[[[ code('8cd36159d4') ]]]
+[[[ code('c836711e80') ]]]
 
 ***TIP
 In Symfony 5, you'll need a bit more config to get your controller service working:
@@ -96,7 +96,7 @@ Copy that code and paste it into our file. Let's call the one route
 `knpu_lorem_ipsum_api`. For `controller`, copy the service id, paste, and add
 a single colon then `index`.
 
-[[[ code('8a905e7200') ]]]
+[[[ code('5e30a54940') ]]]
 
 Fun fact: in Symfony 4.1, the syntax changes to a double `::` and using a single
 colon is deprecated. Keep a single `:` for now if you want your bundle to work in
@@ -138,7 +138,7 @@ controllers are the *one* type of service that *must* be public. If you're build
 an *app*, you can give it this tag, which will automatically make it public. But
 for a reusable bundle, in `services.xml`, we need to set `public="true"`.
 
-[[[ code('3d8899e75b') ]]]
+[[[ code('df664a75c4') ]]]
 
 Try that again! *Now* it works. And... you *might* be surprised! After all, our
 bundle references a class that does *not* exist! This *is* a problem... at least,
