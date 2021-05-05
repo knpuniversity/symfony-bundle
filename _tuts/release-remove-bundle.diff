@@ -13,13 +13,22 @@ index 8defbc8..473158e 100644
      "require-dev": {
          "easycorp/easy-log-handler": "^1.0.2",
 diff --git a/composer.lock b/composer.lock
-index a128f94..3789590 100644
+index a8a9a45..66007b4 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -3499,50 +3499,6 @@
-                 "templating"
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+         "This file is @generated automatically"
+     ],
+-    "content-hash": "d2f949d56a66cf6da8ca82019549c4ed",
++    "content-hash": "bb26991fde8a51c5e3fdd150797faa92",
+     "packages": [
+         {
+             "name": "clue/stream-filter",
+@@ -3512,50 +3512,6 @@
+                 }
              ],
-             "time": "2018-03-03T16:23:01+00:00"
+             "time": "2020-08-05T15:09:04+00:00"
 -        },
 -        {
 -            "name": "weaverryan_test/lorem-ipsum-bundle",
@@ -67,7 +76,7 @@ index a128f94..3789590 100644
          }
      ],
      "packages-dev": [
-@@ -4374,8 +4330,7 @@
+@@ -4387,8 +4343,7 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {
