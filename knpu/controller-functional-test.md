@@ -137,7 +137,7 @@ Basically, we're trying to use a class from a library that we don't have install
 You know the drill, find your terminal and run:
 
 ```terminal
-composer require symfony/browser-kit --dev
+composer require "symfony/browser-kit:^4.0" --dev
 ```
 
 When that finishes, try the test again!
