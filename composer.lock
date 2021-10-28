@@ -877,16 +877,16 @@
         },
         {
             "name": "nexylan/slack-bundle",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nexylan/slack-bundle.git",
-                "reference": "f8d0537dce96539eb94a184fa83be3070bafec2d"
+                "reference": "693a21a6b5e87a4cc4862fe96523f9cde4177ffe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nexylan/slack-bundle/zipball/f8d0537dce96539eb94a184fa83be3070bafec2d",
-                "reference": "f8d0537dce96539eb94a184fa83be3070bafec2d",
+                "url": "https://api.github.com/repos/nexylan/slack-bundle/zipball/693a21a6b5e87a4cc4862fe96523f9cde4177ffe",
+                "reference": "693a21a6b5e87a4cc4862fe96523f9cde4177ffe",
                 "shasum": ""
             },
             "require": {
@@ -924,12 +924,12 @@
                     "email": "soullivaneuh@gmail.com"
                 }
             ],
-            "description": "Symfony bundle integration of maknz/slack library",
+            "description": "Symfony bundle integration of nexylan/slack library",
             "support": {
                 "issues": "https://github.com/nexylan/slack-bundle/issues",
-                "source": "https://github.com/nexylan/slack-bundle/tree/v2.0.0"
+                "source": "https://github.com/nexylan/slack-bundle/tree/v2.0.1"
             },
-            "time": "2018-01-18T01:13:27+00:00"
+            "time": "2018-12-03T09:30:15+00:00"
         },
         {
             "name": "php-http/cache-plugin",
