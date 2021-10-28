@@ -4,19 +4,19 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb26991fde8a51c5e3fdd150797faa92",
+    "content-hash": "1c7298735ed8486b5947a8b521a2dd7b",
     "packages": [
         {
             "name": "clue/stream-filter",
             "version": "v1.4.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/clue/php-stream-filter.git",
+                "url": "https://github.com/clue/stream-filter.git",
                 "reference": "d80fdee9b3a7e0d16fc330a22f41f3ad0eeb09d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clue/php-stream-filter/zipball/d80fdee9b3a7e0d16fc330a22f41f3ad0eeb09d0",
+                "url": "https://api.github.com/repos/clue/stream-filter/zipball/d80fdee9b3a7e0d16fc330a22f41f3ad0eeb09d0",
                 "reference": "d80fdee9b3a7e0d16fc330a22f41f3ad0eeb09d0",
                 "shasum": ""
             },
@@ -55,6 +55,20 @@
                 "stream",
                 "stream_filter_append",
                 "stream_filter_register"
+            ],
+            "support": {
+                "issues": "https://github.com/clue/stream-filter/issues",
+                "source": "https://github.com/clue/stream-filter/tree/v1.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://clue.engineering/support",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/clue",
+                    "type": "github"
+                }
             ],
             "time": "2017-08-18T09:54:01+00:00"
         },
@@ -124,6 +138,10 @@
                 "docblock",
                 "parser"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/annotations/issues",
+                "source": "https://github.com/doctrine/annotations/tree/1.8"
+            },
             "time": "2019-10-01T18:55:10+00:00"
         },
         {
@@ -198,6 +216,10 @@
                 "cache",
                 "caching"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/cache/issues",
+                "source": "https://github.com/doctrine/cache/tree/v1.7.1"
+            },
             "time": "2017-08-25T07:02:50+00:00"
         },
         {
@@ -265,6 +287,10 @@
                 "collections",
                 "iterator"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/collections/issues",
+                "source": "https://github.com/doctrine/collections/tree/master"
+            },
             "time": "2017-07-22T10:37:32+00:00"
         },
         {
@@ -338,6 +364,10 @@
                 "persistence",
                 "spl"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/common/issues",
+                "source": "https://github.com/doctrine/common/tree/v2.8.1"
+            },
             "time": "2017-08-31T08:43:38+00:00"
         },
         {
@@ -405,6 +435,10 @@
                 "singularize",
                 "string"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/inflector/issues",
+                "source": "https://github.com/doctrine/inflector/tree/master"
+            },
             "time": "2018-01-09T20:05:19+00:00"
         },
         {
@@ -459,6 +493,9 @@
                 "lexer",
                 "parser"
             ],
+            "support": {
+                "source": "https://github.com/doctrine/lexer/tree/master"
+            },
             "time": "2014-09-09T13:34:57+00:00"
         },
         {
@@ -524,6 +561,10 @@
                 "rest",
                 "web service"
             ],
+            "support": {
+                "issues": "https://github.com/guzzle/guzzle/issues",
+                "source": "https://github.com/guzzle/guzzle/tree/master"
+            },
             "time": "2017-06-22T18:50:49+00:00"
         },
         {
@@ -575,6 +616,10 @@
             "keywords": [
                 "promise"
             ],
+            "support": {
+                "issues": "https://github.com/guzzle/promises/issues",
+                "source": "https://github.com/guzzle/promises/tree/master"
+            },
             "time": "2016-12-20T10:07:11+00:00"
         },
         {
@@ -640,6 +685,10 @@
                 "uri",
                 "url"
             ],
+            "support": {
+                "issues": "https://github.com/guzzle/psr7/issues",
+                "source": "https://github.com/guzzle/psr7/tree/1.4.2"
+            },
             "time": "2017-03-20T17:10:46+00:00"
         },
         {
@@ -703,6 +752,10 @@
                 "knplabs",
                 "markdown"
             ],
+            "support": {
+                "issues": "https://github.com/KnpLabs/KnpMarkdownBundle/issues",
+                "source": "https://github.com/KnpLabs/KnpMarkdownBundle/tree/master"
+            },
             "time": "2018-01-23T15:34:53+00:00"
         },
         {
@@ -749,6 +802,10 @@
             "keywords": [
                 "markdown"
             ],
+            "support": {
+                "issues": "https://github.com/michelf/php-markdown/issues",
+                "source": "https://github.com/michelf/php-markdown/tree/lib"
+            },
             "time": "2018-01-15T00:49:33+00:00"
         },
         {
@@ -812,6 +869,10 @@
                 "slack",
                 "webhook"
             ],
+            "support": {
+                "issues": "https://github.com/nexylan/slack/issues",
+                "source": "https://github.com/nexylan/slack/tree/master"
+            },
             "time": "2018-01-17T16:48:45+00:00"
         },
         {
@@ -864,6 +925,10 @@
                 }
             ],
             "description": "Symfony bundle integration of maknz/slack library",
+            "support": {
+                "issues": "https://github.com/nexylan/slack-bundle/issues",
+                "source": "https://github.com/nexylan/slack-bundle/tree/v2.0.0"
+            },
             "time": "2018-01-18T01:13:27+00:00"
         },
         {
@@ -920,6 +985,10 @@
                 "httplug",
                 "plugin"
             ],
+            "support": {
+                "issues": "https://github.com/php-http/cache-plugin/issues",
+                "source": "https://github.com/php-http/cache-plugin/tree/master"
+            },
             "time": "2017-11-29T20:45:41+00:00"
         },
         {
@@ -981,6 +1050,10 @@
                 "http",
                 "httplug"
             ],
+            "support": {
+                "issues": "https://github.com/php-http/client-common/issues",
+                "source": "https://github.com/php-http/client-common/tree/master"
+            },
             "time": "2017-11-30T11:06:59+00:00"
         },
         {
@@ -1043,6 +1116,10 @@
                 "message",
                 "psr7"
             ],
+            "support": {
+                "issues": "https://github.com/php-http/discovery/issues",
+                "source": "https://github.com/php-http/discovery/tree/master"
+            },
             "time": "2018-02-06T10:55:24+00:00"
         },
         {
@@ -1103,6 +1180,10 @@
                 "Guzzle",
                 "http"
             ],
+            "support": {
+                "issues": "https://github.com/php-http/guzzle6-adapter/issues",
+                "source": "https://github.com/php-http/guzzle6-adapter/tree/master"
+            },
             "time": "2016-05-10T06:13:32+00:00"
         },
         {
@@ -1159,6 +1240,10 @@
                 "client",
                 "http"
             ],
+            "support": {
+                "issues": "https://github.com/php-http/httplug/issues",
+                "source": "https://github.com/php-http/httplug/tree/master"
+            },
             "time": "2016-08-31T08:30:17+00:00"
         },
         {
@@ -1259,6 +1344,10 @@
                 "message",
                 "php-http"
             ],
+            "support": {
+                "issues": "https://github.com/php-http/HttplugBundle/issues",
+                "source": "https://github.com/php-http/HttplugBundle/tree/master"
+            },
             "time": "2018-03-06T08:57:33+00:00"
         },
         {
@@ -1314,6 +1403,10 @@
                 "logger",
                 "plugin"
             ],
+            "support": {
+                "issues": "https://github.com/php-http/logger-plugin/issues",
+                "source": "https://github.com/php-http/logger-plugin/tree/v1.0.0"
+            },
             "time": "2016-05-04T22:43:46+00:00"
         },
         {
@@ -1386,6 +1479,10 @@
                 "message",
                 "psr-7"
             ],
+            "support": {
+                "issues": "https://github.com/php-http/message/issues",
+                "source": "https://github.com/php-http/message/tree/master"
+            },
             "time": "2017-07-05T06:40:53+00:00"
         },
         {
@@ -1436,6 +1533,10 @@
                 "stream",
                 "uri"
             ],
+            "support": {
+                "issues": "https://github.com/php-http/message-factory/issues",
+                "source": "https://github.com/php-http/message-factory/tree/master"
+            },
             "time": "2015-12-19T14:08:53+00:00"
         },
         {
@@ -1486,6 +1587,10 @@
             "keywords": [
                 "promise"
             ],
+            "support": {
+                "issues": "https://github.com/php-http/promise/issues",
+                "source": "https://github.com/php-http/promise/tree/master"
+            },
             "time": "2016-01-26T13:27:02+00:00"
         },
         {
@@ -1539,6 +1644,10 @@
                 "plugin",
                 "stopwatch"
             ],
+            "support": {
+                "issues": "https://github.com/php-http/stopwatch-plugin/issues",
+                "source": "https://github.com/php-http/stopwatch-plugin/tree/master"
+            },
             "time": "2017-11-29T19:20:03+00:00"
         },
         {
@@ -1585,6 +1694,9 @@
                 "psr",
                 "psr-6"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/cache/tree/master"
+            },
             "time": "2016-08-06T20:24:11+00:00"
         },
         {
@@ -1634,6 +1746,10 @@
                 "container-interop",
                 "psr"
             ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container/tree/master"
+            },
             "time": "2017-02-14T16:28:37+00:00"
         },
         {
@@ -1684,6 +1800,9 @@
                 "request",
                 "response"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/master"
+            },
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
@@ -1731,6 +1850,9 @@
                 "psr",
                 "psr-3"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/master"
+            },
             "time": "2016-10-10T12:19:37+00:00"
         },
         {
@@ -1779,6 +1901,9 @@
                 "psr-16",
                 "simple-cache"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/simple-cache/tree/master"
+            },
             "time": "2017-10-23T01:57:42+00:00"
         },
         {
@@ -1848,6 +1973,10 @@
                 "annotations",
                 "controllers"
             ],
+            "support": {
+                "issues": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/issues",
+                "source": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/tree/master"
+            },
             "time": "2018-02-14T08:40:54+00:00"
         },
         {
@@ -1904,6 +2033,9 @@
             ],
             "description": "Symfony Asset Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/asset/tree/4.0"
+            },
             "time": "2018-01-03T07:38:00+00:00"
         },
         {
@@ -1973,6 +2105,9 @@
                 "caching",
                 "psr6"
             ],
+            "support": {
+                "source": "https://github.com/symfony/cache/tree/4.0"
+            },
             "time": "2018-02-11T17:17:44+00:00"
         },
         {
@@ -2035,6 +2170,9 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/config/tree/4.0"
+            },
             "time": "2018-02-04T16:43:51+00:00"
         },
         {
@@ -2103,6 +2241,9 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/console/tree/4.0"
+            },
             "time": "2018-02-26T15:55:47+00:00"
         },
         {
@@ -2159,6 +2300,9 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/debug/tree/4.0"
+            },
             "time": "2018-02-28T21:50:02+00:00"
         },
         {
@@ -2230,6 +2374,9 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/dependency-injection/tree/4.0"
+            },
             "time": "2018-03-05T18:28:26+00:00"
         },
         {
@@ -2293,6 +2440,9 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/event-dispatcher/tree/4.0"
+            },
             "time": "2018-02-14T14:11:10+00:00"
         },
         {
@@ -2342,6 +2492,9 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/filesystem/tree/4.0"
+            },
             "time": "2018-02-22T10:50:29+00:00"
         },
         {
@@ -2391,6 +2544,9 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/finder/tree/4.0"
+            },
             "time": "2018-03-05T18:28:26+00:00"
         },
         {
@@ -2572,6 +2728,9 @@
             ],
             "description": "Symfony FrameworkBundle",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/framework-bundle/tree/4.0"
+            },
             "time": "2018-03-02T08:28:17+00:00"
         },
         {
@@ -2625,6 +2784,9 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/http-foundation/tree/4.0"
+            },
             "time": "2018-08-01T14:06:38+00:00"
         },
         {
@@ -2712,6 +2874,9 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/http-kernel/tree/4.0"
+            },
             "time": "2018-06-25T13:02:08+00:00"
         },
         {
@@ -2805,6 +2970,10 @@
             ],
             "description": "Enforces Long Term Supported versions of Symfony components",
             "homepage": "https://symfony.com",
+            "support": {
+                "issues": "https://github.com/symfony/lts/issues",
+                "source": "https://github.com/symfony/lts/tree/master"
+            },
             "abandoned": "symfony/flex",
             "time": "2018-10-03T12:03:19+00:00"
         },
@@ -2860,6 +3029,9 @@
                 "configuration",
                 "options"
             ],
+            "support": {
+                "source": "https://github.com/symfony/options-resolver/tree/4.0"
+            },
             "time": "2018-01-18T22:19:33+00:00"
         },
         {
@@ -2918,6 +3090,9 @@
                 "polyfill",
                 "portable"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.9.0"
+            },
             "time": "2018-08-06T14:22:27+00:00"
         },
         {
@@ -2977,6 +3152,9 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/master"
+            },
             "time": "2018-01-30T19:27:44+00:00"
         },
         {
@@ -3026,6 +3204,9 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/process/tree/4.0"
+            },
             "time": "2018-02-19T12:18:43+00:00"
         },
         {
@@ -3104,6 +3285,9 @@
                 "uri",
                 "url"
             ],
+            "support": {
+                "source": "https://github.com/symfony/routing/tree/4.0"
+            },
             "time": "2018-02-28T21:50:02+00:00"
         },
         {
@@ -3153,6 +3337,9 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/stopwatch/tree/4.0"
+            },
             "time": "2018-02-19T16:50:22+00:00"
         },
         {
@@ -3243,6 +3430,9 @@
             ],
             "description": "Symfony Twig Bridge",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/twig-bridge/tree/4.0"
+            },
             "time": "2018-03-01T10:21:51+00:00"
         },
         {
@@ -3316,6 +3506,9 @@
             ],
             "description": "Symfony TwigBundle",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/twig-bundle/tree/4.0"
+            },
             "time": "2018-02-14T14:11:10+00:00"
         },
         {
@@ -3374,6 +3567,9 @@
             ],
             "description": "Symfony WebServerBundle",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/web-server-bundle/tree/4.0"
+            },
             "time": "2018-01-03T17:15:19+00:00"
         },
         {
@@ -3432,6 +3628,9 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/yaml/tree/4.0"
+            },
             "time": "2018-02-19T20:08:53+00:00"
         },
         {
@@ -3569,6 +3768,11 @@
                 "ssl",
                 "tls"
             ],
+            "support": {
+                "irc": "irc://irc.freenode.org/composer",
+                "issues": "https://github.com/composer/ca-bundle/issues",
+                "source": "https://github.com/composer/ca-bundle/tree/master"
+            },
             "time": "2017-11-29T09:37:33+00:00"
         },
         {
@@ -3619,6 +3823,10 @@
                 "monolog",
                 "productivity"
             ],
+            "support": {
+                "issues": "https://github.com/EasyCorp/easy-log-handler/issues",
+                "source": "https://github.com/EasyCorp/easy-log-handler/tree/master"
+            },
             "abandoned": true,
             "time": "2018-01-10T08:34:20+00:00"
         },
@@ -3698,6 +3906,10 @@
                 "logging",
                 "psr-3"
             ],
+            "support": {
+                "issues": "https://github.com/Seldaek/monolog/issues",
+                "source": "https://github.com/Seldaek/monolog/tree/1.23.0"
+            },
             "time": "2017-06-19T01:22:40+00:00"
         },
         {
@@ -3743,6 +3955,11 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
+            "support": {
+                "issues": "https://github.com/sensiolabs/security-checker/issues",
+                "source": "https://github.com/sensiolabs/security-checker/tree/4.1"
+            },
+            "abandoned": "https://github.com/fabpot/local-php-security-checker",
             "time": "2018-02-28T22:10:01+00:00"
         },
         {
@@ -3808,6 +4025,9 @@
             ],
             "description": "Symfony DebugBundle",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/debug-bundle/tree/4.0"
+            },
             "time": "2018-01-03T07:38:00+00:00"
         },
         {
@@ -3865,6 +4085,9 @@
                 "env",
                 "environment"
             ],
+            "support": {
+                "source": "https://github.com/symfony/dotenv/tree/4.0"
+            },
             "time": "2018-01-03T17:15:19+00:00"
         },
         {
@@ -3925,6 +4148,10 @@
                 "scaffold",
                 "scaffolding"
             ],
+            "support": {
+                "issues": "https://github.com/symfony/maker-bundle/issues",
+                "source": "https://github.com/symfony/maker-bundle/tree/master"
+            },
             "time": "2018-02-21T19:43:12+00:00"
         },
         {
@@ -3991,6 +4218,9 @@
             ],
             "description": "Symfony Monolog Bridge",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/monolog-bridge/tree/4.0"
+            },
             "time": "2018-02-04T13:08:26+00:00"
         },
         {
@@ -4054,6 +4284,10 @@
                 "log",
                 "logging"
             ],
+            "support": {
+                "issues": "https://github.com/symfony/monolog-bundle/issues",
+                "source": "https://github.com/symfony/monolog-bundle/tree/v3.2.0"
+            },
             "time": "2018-03-05T14:51:36+00:00"
         },
         {
@@ -4119,6 +4353,9 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/phpunit-bridge/tree/4.3"
+            },
             "time": "2019-07-18T13:23:37+00:00"
         },
         {
@@ -4174,6 +4411,10 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "issues": "https://github.com/symfony/polyfill-php72/issues",
+                "source": "https://github.com/symfony/polyfill-php72/tree/master"
+            },
             "time": "2018-01-31T17:43:24+00:00"
         },
         {
@@ -4202,6 +4443,10 @@
                 "MIT"
             ],
             "description": "A pack for the Symfony web profiler",
+            "support": {
+                "issues": "https://github.com/symfony/profiler-pack/issues",
+                "source": "https://github.com/symfony/profiler-pack/tree/master"
+            },
             "time": "2017-12-12T01:48:24+00:00"
         },
         {
@@ -4271,6 +4516,9 @@
                 "debug",
                 "dump"
             ],
+            "support": {
+                "source": "https://github.com/symfony/var-dumper/tree/4.0"
+            },
             "time": "2018-02-26T15:55:47+00:00"
         },
         {
@@ -4337,6 +4585,9 @@
             ],
             "description": "Symfony WebProfilerBundle",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/web-profiler-bundle/tree/4.0"
+            },
             "time": "2018-03-02T08:28:17+00:00"
         }
     ],
@@ -4355,5 +4606,5 @@
     "platform-overrides": {
         "php": "7.1.3"
     },
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
