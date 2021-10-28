@@ -1,16 +1,8 @@
 diff --git a/composer.json b/composer.json
-index c0a4359..473158e 100644
+index d0ea436..c7515bd 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -6,7 +6,6 @@
-         "ext-iconv": "*",
-         "doctrine/annotations": "^1.8",
-         "knplabs/knp-markdown-bundle": "^1.7",
--        "knpuniversity/lorem-ipsum-bundle": "*@dev",
-         "nexylan/slack-bundle": "^2.0",
-         "php-http/guzzle6-adapter": "^1.1",
-         "sensio/framework-extra-bundle": "^5.1",
-@@ -75,11 +74,5 @@
+@@ -75,11 +75,5 @@
              "id": "01C1TW989CK77ZA7B2H4HC9WAG",
              "allow-contrib": false
          }
@@ -24,74 +16,86 @@ index c0a4359..473158e 100644
 +    }
  }
 diff --git a/composer.lock b/composer.lock
-index 3e0bbb7..66007b4 100644
+index 2836deb..8410b54 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -705,35 +705,6 @@
-             ],
-             "time": "2018-01-23T15:34:53+00:00"
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+         "This file is @generated automatically"
+     ],
+-    "content-hash": "3a07a933f28bf0278f0e572c2de02dd3",
++    "content-hash": "06fde69f8703df7a4d6cc9a3263ea458",
+     "packages": [
+         {
+             "name": "clue/stream-filter",
+@@ -760,21 +760,37 @@
          },
--        {
--            "name": "knpuniversity/lorem-ipsum-bundle",
--            "version": "dev-_tuts/master/extract-move-autoload-rules",
--            "dist": {
+         {
+             "name": "knpuniversity/lorem-ipsum-bundle",
+-            "version": "dev-_tuts/master/extract-require-package",
++            "version": "dev-master",
++            "source": {
++                "type": "git",
++                "url": "https://github.com/knpuniversity/lorem-ipsum-bundle.git",
++                "reference": "7d11f6164c226bbed2e3f248c1f2a4454b25fa6b"
++            },
+             "dist": {
 -                "type": "path",
 -                "url": "LoremIpsumBundle",
--                "reference": "f6fe5faffdaaeee680f3bb742c795fe6a489b8ff",
--                "shasum": null
--            },
--            "require": {
+-                "reference": "f5ae0b3f5a934e84d29f32c18490beaf682b85d9"
++                "type": "zip",
++                "url": "https://api.github.com/repos/knpuniversity/lorem-ipsum-bundle/zipball/7d11f6164c226bbed2e3f248c1f2a4454b25fa6b",
++                "reference": "7d11f6164c226bbed2e3f248c1f2a4454b25fa6b",
++                "shasum": ""
+             },
+             "require": {
 -                "php": "^7.1.3"
--            },
--            "type": "symfony-bundle",
--            "autoload": {
--                "psr-4": {
--                    "KnpU\\LoremIpsumBundle\\": "src/"
--                }
--            },
--            "license": [
--                "MIT"
--            ],
--            "authors": [
--                {
--                    "name": "Ryan Weaver",
--                    "email": "ryan@knpuniversity.com"
--                }
--            ],
--            "description": "Happy lorem ipsum"
--        },
++                "php": "^7.1.3",
++                "symfony/config": "^3.4 || ^4.0",
++                "symfony/dependency-injection": "^3.4 || ^4.0",
++                "symfony/http-kernel": "^3.4 || ^4.0"
++            },
++            "require-dev": {
++                "symfony/browser-kit": "^3.4 || ^4.0",
++                "symfony/framework-bundle": "^3.4 || ^4.0",
++                "symfony/phpunit-bridge": "^3.4 || ^4.0"
+             },
++            "default-branch": true,
+             "type": "symfony-bundle",
+             "autoload": {
+                 "psr-4": {
+                     "KnpU\\LoremIpsumBundle\\": "src/"
+                 }
+             },
++            "notification-url": "https://packagist.org/downloads/",
+             "license": [
+                 "MIT"
+             ],
+@@ -785,9 +801,11 @@
+                 }
+             ],
+             "description": "Happy lorem ipsum",
+-            "transport-options": {
+-                "relative": true
+-            }
++            "support": {
++                "issues": "https://github.com/knpuniversity/lorem-ipsum-bundle/issues",
++                "source": "https://github.com/knpuniversity/lorem-ipsum-bundle/tree/master"
++            },
++            "time": "2020-02-21T09:37:16+00:00"
+         },
          {
              "name": "michelf/php-markdown",
-             "version": "1.8.0",
-@@ -4372,7 +4343,6 @@
-     "aliases": [],
-     "minimum-stability": "stable",
-     "stability-flags": {
--        "knpuniversity/lorem-ipsum-bundle": 20,
-         "symfony/lts": 20
-     },
-     "prefer-stable": false,
-diff --git a/config/bundles.php b/config/bundles.php
-index e94462b..de7f774 100644
---- a/config/bundles.php
-+++ b/config/bundles.php
-@@ -12,5 +12,4 @@ return [
-     Http\HttplugBundle\HttplugBundle::class => ['all' => true],
-     Nexy\SlackBundle\NexySlackBundle::class => ['all' => true],
-     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
--    KnpU\LoremIpsumBundle\KnpULoremIpsumBundle::class => ['all' => true],
- ];
 diff --git a/symfony.lock b/symfony.lock
-index 13ffbaf..0139bfa 100644
+index 13ffbaf..5c0292a 100644
 --- a/symfony.lock
 +++ b/symfony.lock
-@@ -50,9 +50,6 @@
-     "knplabs/knp-markdown-bundle": {
+@@ -51,7 +51,7 @@
          "version": "1.6.0"
      },
--    "knpuniversity/lorem-ipsum-bundle": {
+     "knpuniversity/lorem-ipsum-bundle": {
 -        "version": "dev-_tuts/master/extract-move-autoload-rules"
--    },
++        "version": "dev-master"
+     },
      "michelf/php-markdown": {
          "version": "1.8.0"
-     },

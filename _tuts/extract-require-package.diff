@@ -1,5 +1,5 @@
 diff --git a/composer.json b/composer.json
-index 473158e..c0a4359 100644
+index 41619b7..d0ea436 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -6,6 +6,7 @@
@@ -7,7 +7,7 @@ index 473158e..c0a4359 100644
          "doctrine/annotations": "^1.8",
          "knplabs/knp-markdown-bundle": "^1.7",
 +        "knpuniversity/lorem-ipsum-bundle": "*@dev",
-         "nexylan/slack-bundle": "^2.0",
+         "nexylan/slack-bundle": "^2.0,<2.2",
          "php-http/guzzle6-adapter": "^1.1",
          "sensio/framework-extra-bundle": "^5.1",
 @@ -74,5 +75,11 @@
@@ -24,21 +24,29 @@ index 473158e..c0a4359 100644
 +    ]
  }
 diff --git a/composer.lock b/composer.lock
-index 66007b4..3e0bbb7 100644
+index caa42de..2836deb 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -705,6 +705,35 @@
-             ],
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+         "This file is @generated automatically"
+     ],
+-    "content-hash": "1c7298735ed8486b5947a8b521a2dd7b",
++    "content-hash": "3a07a933f28bf0278f0e572c2de02dd3",
+     "packages": [
+         {
+             "name": "clue/stream-filter",
+@@ -758,6 +758,37 @@
+             },
              "time": "2018-01-23T15:34:53+00:00"
          },
 +        {
 +            "name": "knpuniversity/lorem-ipsum-bundle",
-+            "version": "dev-_tuts/master/extract-move-autoload-rules",
++            "version": "dev-_tuts/master/extract-require-package",
 +            "dist": {
 +                "type": "path",
 +                "url": "LoremIpsumBundle",
-+                "reference": "f6fe5faffdaaeee680f3bb742c795fe6a489b8ff",
-+                "shasum": null
++                "reference": "f5ae0b3f5a934e84d29f32c18490beaf682b85d9"
 +            },
 +            "require": {
 +                "php": "^7.1.3"
@@ -58,12 +66,15 @@ index 66007b4..3e0bbb7 100644
 +                    "email": "ryan@knpuniversity.com"
 +                }
 +            ],
-+            "description": "Happy lorem ipsum"
++            "description": "Happy lorem ipsum",
++            "transport-options": {
++                "relative": true
++            }
 +        },
          {
              "name": "michelf/php-markdown",
              "version": "1.8.0",
-@@ -4343,6 +4372,7 @@
+@@ -4594,6 +4625,7 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {

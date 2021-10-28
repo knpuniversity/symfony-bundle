@@ -1,8 +1,8 @@
 diff --git a/composer.json b/composer.json
-index 473158e..d16893c 100644
+index c7515bd..b30a307 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -16,7 +16,8 @@
+@@ -17,7 +17,8 @@
          "symfony/lts": "^4@dev",
          "symfony/twig-bundle": "^4.0",
          "symfony/web-server-bundle": "^4.0",
@@ -13,19 +13,19 @@ index 473158e..d16893c 100644
      "require-dev": {
          "easycorp/easy-log-handler": "^1.0.2",
 diff --git a/composer.lock b/composer.lock
-index 66007b4..d194e0f 100644
+index 8410b54..b20a1a2 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,7 +4,7 @@
          "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
          "This file is @generated automatically"
      ],
--    "content-hash": "bb26991fde8a51c5e3fdd150797faa92",
-+    "content-hash": "d218dc64ff02b9d9697fb85d4ac9d08e",
+-    "content-hash": "06fde69f8703df7a4d6cc9a3263ea458",
++    "content-hash": "6d6daa2d04db84634ebe1b06b6162828",
      "packages": [
          {
              "name": "clue/stream-filter",
-@@ -3512,6 +3512,50 @@
+@@ -3760,6 +3760,54 @@
                  }
              ],
              "time": "2020-08-05T15:09:04+00:00"
@@ -72,6 +72,10 @@ index 66007b4..d194e0f 100644
 +                }
 +            ],
 +            "description": "Happy lorem ipsum",
++            "support": {
++                "issues": "https://github.com/weaverryan/lorem-ipsum-bundle/issues",
++                "source": "https://github.com/weaverryan/lorem-ipsum-bundle/tree/v1.0.0"
++            },
 +            "time": "2018-03-21T14:24:42+00:00"
          }
      ],
@@ -87,10 +91,10 @@ index de7f774..e94462b 100644
 +    KnpU\LoremIpsumBundle\KnpULoremIpsumBundle::class => ['all' => true],
  ];
 diff --git a/symfony.lock b/symfony.lock
-index 0139bfa..5fed29a 100644
+index 5c0292a..3590b6e 100644
 --- a/symfony.lock
 +++ b/symfony.lock
-@@ -307,5 +307,8 @@
+@@ -310,5 +310,8 @@
      },
      "twig/twig": {
          "version": "v2.4.4"
