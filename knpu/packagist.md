@@ -75,7 +75,7 @@ And, for now, we're done! We have a *real* package! Next, open our application's
 
 Then, go to the terminal for your app, and, first, *remove* the current package:
 
-```terminal
+```terminal skip-ci
 composer remove knpuniversity/lorem-ipsum-bundle
 ```
 
