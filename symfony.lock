@@ -164,9 +164,6 @@
             "ref": "71d29aaf710fd59cd3abff2b1ade907ed73103c6"
         }
     },
-    "symfony/debug-pack": {
-        "version": "v1.0.4"
-    },
     "symfony/dependency-injection": {
         "version": "v4.0.2"
     },
@@ -253,9 +250,6 @@
     },
     "symfony/process": {
         "version": "v4.0.2"
-    },
-    "symfony/profiler-pack": {
-        "version": "v1.0.3"
     },
     "symfony/routing": {
         "version": "4.0",

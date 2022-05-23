@@ -26,8 +26,9 @@
         "symfony/maker-bundle": "^1.0",
         "symfony/monolog-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.3|^4.0",
-        "symfony/profiler-pack": "^1.0",
-        "symfony/var-dumper": "^3.3|^4.0"
+        "symfony/stopwatch": "^3.3|^4.0",
+        "symfony/var-dumper": "^3.3|^4.0",
+        "symfony/web-profiler-bundle": "^3.3|^4.0"
     },
     "config": {
         "platform": {
@@ -36,7 +37,10 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "autoload": {
         "psr-4": {
