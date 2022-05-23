@@ -140,7 +140,7 @@ in your route. To stay compatible with 4.0, we'll leave it.
 Now that we *finally* have a stable release, let's install it in our app. At
 your terminal, first remove the bundle:
 
-```terminal
+```terminal skip-ci
 composer remove knpuniversity/lorem-ipsum-bundle
 ```
 
