@@ -1,8 +1,8 @@
 diff --git a/composer.json b/composer.json
-index d0ea436..c7515bd 100644
+index d7e2782..0409afb 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -75,11 +75,5 @@
+@@ -79,11 +79,5 @@
              "id": "01C1TW989CK77ZA7B2H4HC9WAG",
              "allow-contrib": false
          }
@@ -16,15 +16,15 @@ index d0ea436..c7515bd 100644
 +    }
  }
 diff --git a/composer.lock b/composer.lock
-index 2836deb..8410b54 100644
+index ee7d578..fcc732d 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,7 +4,7 @@
          "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
          "This file is @generated automatically"
      ],
--    "content-hash": "3a07a933f28bf0278f0e572c2de02dd3",
-+    "content-hash": "06fde69f8703df7a4d6cc9a3263ea458",
+-    "content-hash": "f23103e52309b11d2c6de94970769c3f",
++    "content-hash": "18698d4f2618bd92848d7a9d78a90671",
      "packages": [
          {
              "name": "clue/stream-filter",
@@ -87,7 +87,7 @@ index 2836deb..8410b54 100644
          {
              "name": "michelf/php-markdown",
 diff --git a/symfony.lock b/symfony.lock
-index 13ffbaf..5c0292a 100644
+index b3da794..3c5afa7 100644
 --- a/symfony.lock
 +++ b/symfony.lock
 @@ -51,7 +51,7 @@

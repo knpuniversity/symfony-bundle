@@ -14,10 +14,10 @@ index 6a4ee92..f7dd429 100644
      }
  }
 diff --git a/composer.json b/composer.json
-index 9ae22e9..41619b7 100644
+index 82c127e..a06ffdd 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -40,7 +40,6 @@
+@@ -44,7 +44,6 @@
      },
      "autoload": {
          "psr-4": {

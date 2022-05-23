@@ -1,5 +1,5 @@
 diff --git a/composer.json b/composer.json
-index 41619b7..d0ea436 100644
+index a06ffdd..d7e2782 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -6,6 +6,7 @@
@@ -10,7 +10,7 @@ index 41619b7..d0ea436 100644
          "nexylan/slack-bundle": "^2.0,<2.2",
          "php-http/guzzle6-adapter": "^1.1",
          "sensio/framework-extra-bundle": "^5.1",
-@@ -74,5 +75,11 @@
+@@ -78,5 +79,11 @@
              "id": "01C1TW989CK77ZA7B2H4HC9WAG",
              "allow-contrib": false
          }
@@ -24,15 +24,15 @@ index 41619b7..d0ea436 100644
 +    ]
  }
 diff --git a/composer.lock b/composer.lock
-index caa42de..2836deb 100644
+index 3e39966..ee7d578 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,7 +4,7 @@
          "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
          "This file is @generated automatically"
      ],
--    "content-hash": "1c7298735ed8486b5947a8b521a2dd7b",
-+    "content-hash": "3a07a933f28bf0278f0e572c2de02dd3",
+-    "content-hash": "f50a5b88b7afd3150bc11dac4f17c51b",
++    "content-hash": "f23103e52309b11d2c6de94970769c3f",
      "packages": [
          {
              "name": "clue/stream-filter",
@@ -74,7 +74,7 @@ index caa42de..2836deb 100644
          {
              "name": "michelf/php-markdown",
              "version": "1.8.0",
-@@ -4594,6 +4625,7 @@
+@@ -4560,6 +4591,7 @@
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": {
@@ -83,7 +83,7 @@ index caa42de..2836deb 100644
      },
      "prefer-stable": false,
 diff --git a/symfony.lock b/symfony.lock
-index 0139bfa..13ffbaf 100644
+index d9cb262..b3da794 100644
 --- a/symfony.lock
 +++ b/symfony.lock
 @@ -50,6 +50,9 @@

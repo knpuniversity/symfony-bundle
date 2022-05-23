@@ -1,5 +1,5 @@
 diff --git a/composer.json b/composer.json
-index ab197d5..c7515bd 100644
+index 80b5070..0409afb 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -17,8 +17,7 @@
@@ -13,19 +13,19 @@ index ab197d5..c7515bd 100644
      "require-dev": {
          "easycorp/easy-log-handler": "^1.0.2",
 diff --git a/composer.lock b/composer.lock
-index 5dd63c9..8410b54 100644
+index 0a3476b..fcc732d 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,7 +4,7 @@
          "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
          "This file is @generated automatically"
      ],
--    "content-hash": "daae087f26d2e96e1f6c51b18b78caf1",
-+    "content-hash": "06fde69f8703df7a4d6cc9a3263ea458",
+-    "content-hash": "ba6fea0ac774235e90f6efeab441dbdf",
++    "content-hash": "18698d4f2618bd92848d7a9d78a90671",
      "packages": [
          {
              "name": "clue/stream-filter",
-@@ -3760,50 +3760,6 @@
+@@ -3758,50 +3758,6 @@
                  }
              ],
              "time": "2020-08-05T15:09:04+00:00"
@@ -76,7 +76,7 @@ index 5dd63c9..8410b54 100644
          }
      ],
      "packages-dev": [
-@@ -4688,8 +4644,7 @@
+@@ -4654,8 +4610,7 @@
      "minimum-stability": "stable",
      "stability-flags": {
          "knpuniversity/lorem-ipsum-bundle": 20,
@@ -97,10 +97,10 @@ index e94462b..de7f774 100644
 -    KnpU\LoremIpsumBundle\KnpULoremIpsumBundle::class => ['all' => true],
  ];
 diff --git a/symfony.lock b/symfony.lock
-index ca5a24c..5c0292a 100644
+index 0fc5e84..3c5afa7 100644
 --- a/symfony.lock
 +++ b/symfony.lock
-@@ -310,8 +310,5 @@
+@@ -304,8 +304,5 @@
      },
      "twig/twig": {
          "version": "v2.4.4"
