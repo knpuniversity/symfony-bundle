@@ -99,7 +99,7 @@ for our application and
 `composer require knpuniversity/lorem-ipsum-bundle`, with a `:*@dev` at the end.
 
 ```terminal-silent
-composer require knpuniversity/lorem-ipsum-bundle:*@dev
+composer require "knpuniversity/lorem-ipsum-bundle:*@dev"
 ```
 
 A `path` package isn't quite as smart as a normal package: you don't have versions
