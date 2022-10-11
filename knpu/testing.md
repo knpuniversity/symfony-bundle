@@ -16,7 +16,7 @@ The first time you run this, it'll download PHPUnit behind the scenes. Then...
 it does *not* pass!
 
 ***TIP
-The `assertInternalType` method has been removed, you can use `assertIsString` instead:
+The `assertInternalType()` method has been removed, you can use `assertIsString()` instead:
 ```php
 $this->assertIsString($words);
 ```
