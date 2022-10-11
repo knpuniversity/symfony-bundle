@@ -79,6 +79,14 @@ this interface: `implements WordProviderInterface`.
 
 [[[ code('6a48385ce2') ]]]
 
+***TIP
+You can now remove this configuration from the `config/services.yaml` file:
+
+```yaml
+KnpU\LoremIpsumBundle\KnpUIpsum: ~
+```
+***
+
 If you try it now... *not* broken! And yea, *our* `CustomWordProvider` will *still*
 extend `KnpUWordProvider`, but that's now optional - we could just implement the
 interface directly.
