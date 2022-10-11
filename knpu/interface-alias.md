@@ -79,6 +79,14 @@ this interface: `implements WordProviderInterface`.
 
 [[[ code('6a48385ce2') ]]]
 
+***TIP
+If you're on Symfony 4.4 or higher, you can remove this configuration from the `config/services.yaml` file:
+
+```yaml
+KnpU\LoremIpsumBundle\KnpUIpsum: ~
+```
+***
+
 If you try it now... *not* broken! And yea, *our* `CustomWordProvider` will *still*
 extend `KnpUWordProvider`, but that's now optional - we could just implement the
 interface directly.
