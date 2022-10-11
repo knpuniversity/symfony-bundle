@@ -80,7 +80,7 @@ this interface: `implements WordProviderInterface`.
 [[[ code('6a48385ce2') ]]]
 
 ***TIP
-You can now remove this configuration from the `config/services.yaml` file:
+If you're on Symfony 4.4 or higher, you can remove this configuration from the `config/services.yaml` file:
 
 ```yaml
 KnpU\LoremIpsumBundle\KnpUIpsum: ~
