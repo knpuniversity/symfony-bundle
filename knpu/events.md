@@ -78,10 +78,14 @@ we can actually dream up whatever name we want. Let's use:
 [[[ code('19be25e81c') ]]]
 
 ***TIP
-Starting from Symfony 4.4, you should use instead:
+Starting in Symfony 4.4, you only need to pass the `$event` argument:
+
 ```php
-$this->eventDispatcher->dispatch($event, 'knpu_lorem_ipsum.filter_api');
+$this->eventDispatcher->dispatch($event);
 ```
+
+Then, instead of `knpu_lorem_ipsum.filter_api`, the event name becomes the event class:
+in our  case `FilterApiResponseEvent::class`.
 ***
 
 And... yea, that's it! I mean, we haven't tested it yet, but this should work: our
