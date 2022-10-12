@@ -27,7 +27,6 @@ Starting from Symfony 4.4, you should use the `Event` class from `Symfony\Contra
 If you want to know more about this: https://github.com/symfony/event-dispatcher/blob/4.4/Event.php
 ***
 
-
 [[[ code('019ed33477') ]]]
 
 In this case, a listener might want to access the data that we're about to turn 
