@@ -22,6 +22,11 @@ you have the opportunity to pass an Event object to any listeners. To be as
 *awesome* as possible, you'll want to make sure that object contains as *much* useful
 information as you can.
 
+***TIP
+Starting from Symfony 4.4, you should use the `Event` class from `Symfony\Contracts\EventDispatcher`:
+If you want to know more about this: https://github.com/symfony/event-dispatcher/blob/4.4/Event.php
+***
+
 [[[ code('019ed33477') ]]]
 
 In this case, a listener might want to access the data that we're about to turn 
@@ -70,6 +75,17 @@ we can actually dream up whatever name we want. Let's use:
 `knpu_lorem_ipsum.filter_api`. For the second argument, pass the event.
 
 [[[ code('19be25e81c') ]]]
+
+***TIP
+Starting in Symfony 4.4, you only need to pass the `$event` argument:
+
+```php
+$this->eventDispatcher->dispatch($event);
+```
+
+Then, instead of `knpu_lorem_ipsum.filter_api`, the event name becomes the event class:
+in our  case `FilterApiResponseEvent::class`.
+***
 
 And... yea, that's it! I mean, we haven't tested it yet, but this should work: our
 users have a *new* hook point.
