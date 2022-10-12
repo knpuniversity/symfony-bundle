@@ -6,6 +6,14 @@ make sure they're still working.
 
 [[[ code('36083c6e13') ]]]
 
+***TIP
+The `assertInternalType()` method has been removed, you can use `assertIsString()` instead:
+```php
+$this->assertIsString($words);
+```
+If you want to know more about this: https://github.com/sebastianbergmann/phpunit/issues/3369
+***
+
 Find the terminal tab for the application and run:
 
 ```terminal
@@ -14,14 +22,6 @@ Find the terminal tab for the application and run:
 
 The first time you run this, it'll download PHPUnit behind the scenes. Then...
 it does *not* pass!
-
-***TIP
-The `assertInternalType()` method has been removed, you can use `assertIsString()` instead:
-```php
-$this->assertIsString($words);
-```
-If you want to know more about this: https://github.com/sebastianbergmann/phpunit/issues/3369
-***
 
 > Class `App\Service\KnpUIpsum` not found
 
