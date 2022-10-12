@@ -1,8 +1,6 @@
 # Testing the Bundle
 
-Hey! Someone already made some tests for our bundle! *So* nice! Right now, they live
-in the *app*, but moving them *into* the bundle is our next job! But first... let's
-make sure they're still working.
+Hey! Someone already made some tests for our bundle!
 
 [[[ code('36083c6e13') ]]]
 
@@ -13,6 +11,9 @@ $this->assertIsString($words);
 ```
 If you want to know more about this: https://github.com/sebastianbergmann/phpunit/issues/3369
 ***
+
+*So* nice! Right now, they live in the *app*, but moving them *into* the bundle is our next job!
+But first... let's make sure they're still working.
 
 Find the terminal tab for the application and run:
 
