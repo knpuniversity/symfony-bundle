@@ -49,6 +49,7 @@ file - `.travis.yml`. Paste!
 ***TIP
 You can use Github Actions as an alternative. There's an configuration example:
 ```yaml
+# .github/workflows/ci.yaml
 name: Lorem Ipsum Bundle CI
 
 on:
