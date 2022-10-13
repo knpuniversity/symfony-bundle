@@ -134,6 +134,11 @@ To do that, at the bottom of this file, add `KnpU\LoremIpsumBundle\KnpUIpsum: ~`
 
 [[[ code('1c16809db1') ]]]
 
+***TIP
+If you're on Symfony 4.4 or higher, you can remove this `KnpU\LoremIpsumBundle\KnpUIpsum: ~`
+configuration line from the `config/services.yaml` file.
+***
+
 This adds a new service for that class. And because we don't need to pass any
 options or arguments, we can just set this to `~`. The class *does* have constructor
 arguments, but they have default values.
