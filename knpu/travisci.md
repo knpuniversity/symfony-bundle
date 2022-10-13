@@ -47,7 +47,7 @@ file - `.travis.yml`. Paste!
 [[[ code('4a9e4ad713') ]]]
 
 ***TIP
-You can use Github Actions as an alternative. There's an configuration example:
+You can use GitHub Actions as an alternative to Travis CI. Here's a configuration example:
 ```yaml
 # .github/workflows/ci.yaml
 name: Lorem Ipsum Bundle CI
