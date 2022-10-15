@@ -46,6 +46,47 @@ file - `.travis.yml`. Paste!
 
 [[[ code('4a9e4ad713') ]]]
 
+***TIP
+You can use GitHub Actions as an alternative to Travis CI. Here's a configuration example:
+```yaml
+# .github/workflows/ci.yaml
+name: Lorem Ipsum Bundle CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tests:
+    name: Testing Lorem Ipsum Bundle
+    # https://hub.docker.com/_/ubuntu/
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: true
+      matrix:
+        php-versions: ['7.2','7.3','7.4']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP, extensions and composer with shivammathur/setup-php
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, iconv, json, mbstring, pdo
+          tools: composer:v2
+        env:
+          update: true
+
+      - name: Install Composer dependencies
+        run: composer install
+
+      - name: Run tests
+        run: SYMFONY_DEPRECATIONS_HELPER=disabled ./vendor/bin/simple-phpunit
+```
+***
+
 We'll talk about some of the specifics of this file in a minute. But first, in
 your terminal, add everything we've been working on, commit, and push.
 
