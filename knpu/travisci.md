@@ -65,7 +65,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php-versions: ['7.2','7.3','7.4','8.0', '8.1']
+        php-versions: ['7.2','7.3','7.4']
     steps:
       - name: Checkout
         uses: actions/checkout@v2
