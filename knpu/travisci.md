@@ -55,7 +55,7 @@ name: Lorem Ipsum Bundle CI
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   tests:
