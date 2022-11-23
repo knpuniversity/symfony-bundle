@@ -149,6 +149,17 @@ a few `php.ini` settings and... yes: we tell PHPUnit *where* our test files live
 ./vendor/bin/simple-phpunit
 ```
 
+Now it does neither pass or fail, but it does warn us that there are *no tests to be executed*. Let's go back to our `phpunit.xml.file` and add the following lines.
+```xml
+    <testsuites>
+        <testsuite name="Project Test Suite">
+            <directory>tests/</directory>
+        </testsuite>
+    </testsuites>
+```
+    
+*Now* try again.
+
 It passes! Woo!
 
 After seeing these fancy green colors, you *might* be thinking that our bundle
