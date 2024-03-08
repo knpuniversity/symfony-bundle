@@ -13,7 +13,7 @@ index 0409afb..80b5070 100644
      "require-dev": {
          "easycorp/easy-log-handler": "^1.0.2",
 diff --git a/composer.lock b/composer.lock
-index fcc732d..0a3476b 100644
+index 28ee747..82641be 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,7 +4,7 @@
